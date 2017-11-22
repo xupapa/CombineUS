@@ -9,7 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <!-- <script src="./js/echarts.min.js"></script> -->
@@ -56,10 +56,7 @@
         </div>
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <div class="progress">
-                    <div class="progress-bar progress-success">
-                    </div>
-                </div>
+                <div id="time" style="height:100px;width:1000px"></div>
             </div>
         </div>
         <div class="row clearfix row-tabs">
@@ -167,20 +164,22 @@
                         <img alt="140x140" src="./img/a.jpg" />
                     </div>
                 </div> -->
-                <div id="container" style="width:450px;height: 100%"></div>
-
+                <!-- <div id="container" style="width:450px;height: 100%"></div> -->
+                <div id="pie" style="height:200px;width:200px"></div>
+                <!-- 这里以后是地图 -->
+                <div id="dataBar" style="height:200px;width:200px"></div>
+                <!-- <div id="map" style="height:100px;width:1000px"></div> -->
             </div>
         </div>
         <div class="row clearfix">
-            <div class="col-md-12 column">
-                <div class="progress">
-                    <div class="progress-bar progress-success">
-                    </div>
-                </div>
+            <div class="col-md-12 column" id="cityContainer">
+                <div id="cityBar" style="height:200px;width:200px"></div>
+
             </div>
         </div>
     </div>
 </body>
-<script src="./js/charts.js"></script>
+<!-- <script src="./js/charts.js"></script> -->
+<script src="js/charsV2.0.js"></script>
 
 </html>
