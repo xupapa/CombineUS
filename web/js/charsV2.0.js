@@ -4,15 +4,46 @@
  * 2.组件数据绑定
  * 3.异步加载数据
  */
-//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+// 用于使chart自适应高度和宽度, 通过窗体高宽计算容器高宽-- -- --底部柱状图
 var cityBar = document.getElementById('cityBar');
 var cityContainers = document.getElementById('cityContainer');
-var resizeWorldMapContainer = function () {
+var resizeWorldMapContainerOfcityBar = function () {
     cityBar.style.width = cityContainers.clientWidth + 'px';
     cityBar.style.height = cityContainers.clientHeight + 'px';
 };
 //设置容器高宽
-resizeWorldMapContainer();
+resizeWorldMapContainerOfcityBar();
+
+//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------环图和小柱状图
+var pie = document.getElementById('pie');
+var dataBar = document.getElementById('dataBar');
+var mainContainers1 = document.getElementById('mainContainer1');
+var mainContainers2 = document.getElementById('mainContainer2');
+
+var resizeWorldMapContainerOfMain = function () {
+    pie.style.width = mainContainers1.clientWidth + 'px';
+    pie.style.height = mainContainers1.clientHeight / 10 + 'px';
+    dataBar.style.width = mainContainers2.clientWidth + 'px';
+    dataBar.style.height = mainContainers2.clientHeight * 0.7 + 'px';
+};
+//设置容器高宽
+resizeWorldMapContainerOfMain();
+
+//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------时间轴
+var time = document.getElementById('pie');
+var timeContainers = document.getElementById('mainContainer');
+var resizeWorldMapContainerOfTime = function () {
+    time.style.width = timeContainers.clientWidth + 'px';
+    time.style.height = timeContainers.clientHeight + 'px';
+};
+//设置容器高宽
+resizeWorldMapContainerOfTime();
+var i = 0;
+var j = 0;
+var k = 0;
+//柱状图颜色
+var colors = ['#25E37B', '#FD9752', '#319BFF', '#FEE327'];
+var colorsOfCity = ['#25E37B', '#FD9752', '#319BFF'];
 var commonClass = (function () {
     var selectedTime;
     var selectedCity;
@@ -135,19 +166,24 @@ var timeLineClass = (function () {
         },
         /**
          * 监听时间轴变化事件
-         * 
          */
         listenTimeLine: function (timeData, data) {
             time.on('timelinechanged', function (param) {
                 var currentTime = timeData[param.currentIndex];
                 commonClass.changeTime(currentTime, data)
             })
+        },
+        getEcharts: function () {
+            return time
         }
     };
     return {
         init: function (timeData, data) {
             privateMethod.initTimeLine(timeData);
             privateMethod.listenTimeLine(timeData, data);
+        },
+        getEcharts: function () {
+            return privateMethod.getEcharts();
         }
     }
 })();
@@ -160,20 +196,57 @@ var dataBarClass = (function () {
         initDataBar: function (xData, data) {
             var option = {
                 title: {
-                    text: '数据展示'
+                    text: '数据展示',
+                    textStyle: {
+                        color: '#ffffff'
+                    }
                 },
                 tooltip: {},
                 legend: {
                     data: ['数量']
                 },
+                // itemStyle: {
+                //     normal: {
+                //         color: function () {
+                //             return colors[i++];
+                //         },
+                //         label: {
+                //             show: false
+                //         },
+                //         labelLine: {
+                //             show: false
+                //         }
+                //     }
+                // },
                 xAxis: {
-                    data: xData
+                    data: xData,
+                    //调整x坐标轴字体颜色
+                    axisLabel: {
+                        textStyle: {
+                            color: 'white',
+                            fontSize: '12'
+                        },
+                    }
                 },
-                yAxis: {},
+                yAxis: {
+                    //调整y坐标轴字体颜色
+                    axisLabel: {
+                        textStyle: {
+                            color: 'white',
+                            fontSize: '12'
+                        },
+                    }
+                },
                 series: [{
                     name: '销量',
                     type: 'bar',
-                    data: data.detail
+                    data: data.detail,
+                    //动画的设置 动画类型 缓动效果 延迟时间
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut',
+                    animationDelay: function (idx) {
+                        return Math.random() * 400;
+                    }
                 }]
             };
             // 使用刚指定的配置项和数据显示图表。
@@ -202,20 +275,58 @@ var cityBarClass = (function () {
             }
             var option = {
                 title: {
-                    text: '数据展示'
+                    text: '数据展示',
+                    textStyle: {
+                        color: '#ffffff'
+                    }
                 },
                 tooltip: {},
                 legend: {
                     data: ['数量']
                 },
                 xAxis: {
-                    data: cityNames
+                    data: cityNames,
+                    //调整x坐标轴字体颜色
+                    axisLabel: {
+                        textStyle: {
+                            color: 'white',
+                            fontSize: '12'
+                        },
+                    }
                 },
-                yAxis: {},
+                yAxis: {
+                    //调整y坐标轴字体颜色
+                    axisLabel: {
+                        textStyle: {
+                            color: 'white',
+                            fontSize: '12'
+                        },
+                    }
+                },
+                // itemStyle: {
+                //     normal: {
+                //         color: function () {
+                //             return colors[k++];
+                //         },
+                //         label: {
+                //             show: false
+                //         },
+                //         labelLine: {
+                //             show: false
+                //         }
+                //     }
+                // },
                 series: [{
                     name: '销量',
                     type: 'bar',
-                    data: cityDatas
+                    barWidth: '60%',
+                    data: cityDatas,
+                    //动画的设置 动画类型 缓动效果 延迟时间
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut',
+                    animationDelay: function (idx) {
+                        return Math.random() * 400;
+                    }
                 }]
             };
             // 使用刚指定的配置项和数据显示图表。
@@ -264,12 +375,39 @@ var pieClass = (function () {
                 legend: {
                     orient: 'vertical',
                     x: 'left',
-                    data: xdata
+                    data: xdata,
+                    textStyle: {
+                        color: '#ffffff'
+                    }
                 },
+                // itemStyle: {
+                //     normal: {
+                //         color: function () {
+                //             return colors[j++];
+                //         },
+                //         label: {
+                //             show: false
+                //         },
+                //         labelLine: {
+                //             show: false
+                //         }
+                //     },
+                //     emphasis: {
+                //         label: {
+                //             show: true,
+                //             position: 'center',
+                //             textStyle: {
+                //                 fontSize: '30',
+                //                 fontWeight: 'bold'
+                //             }
+                //         }
+                //     }
+                // },
                 series: [{
                     name: '访问来源',
                     type: 'pie',
                     radius: ['50%', '70%'],
+                    center: ['40%', '40%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
@@ -289,7 +427,13 @@ var pieClass = (function () {
                             show: false
                         }
                     },
-                    data: datas
+                    data: datas,
+                    //动画的设置 动画类型 缓动效果 延迟时间
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut',
+                    animationDelay: function (idx) {
+                        return Math.random() * 400;
+                    }
                 }]
             };
             pie.setOption(option)
@@ -323,6 +467,10 @@ $.get('data.json').done(function (data) {
 //用于使chart自适应高度和宽度
 window.onresize = function () {
     //重置容器高宽
-    resizeWorldMapContainer();
-    myChart.resize();
+    resizeWorldMapContainerOfcityBar();
+    resizeWorldMapContainerOfMain();
+    resizeWorldMapContainerOfTime();
+
+    var myCharts = timeLineClass.getEcharts()
+    myCharts.resize();
 };

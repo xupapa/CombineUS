@@ -26,7 +26,55 @@
                 "cityName":"广州",
                 "point":[],
                 "detail":[300,290,910,365]
-               }
+               },
+             {
+               "cityCode":"beijing",
+               "cityData":"3000",
+               "coordinate":[116.46,39.92],
+               "cityName":"张家口",
+               "point":[],
+               "detail":[300,290,910,365]
+             },
+             {
+               "cityCode":"beijing",
+               "cityData":"3000",
+               "coordinate":[116.46,39.92],
+               "cityName":"石家庄",
+               "point":[],
+               "detail":[300,290,910,365]
+             },
+             {
+               "cityCode":"beijing",
+               "cityData":"3000",
+               "coordinate":[116.46,39.92],
+               "cityName":"湖北",
+               "point":[],
+               "detail":[300,290,910,365]
+             },
+             {
+               "cityCode":"beijing",
+               "cityData":"3000",
+               "coordinate":[116.46,39.92],
+               "cityName":"浙江",
+               "point":[],
+               "detail":[300,290,910,365]
+             },
+             {
+               "cityCode":"beijing",
+               "cityData":"3000",
+               "coordinate":[116.46,39.92],
+               "cityName":"苏州",
+               "point":[],
+               "detail":[300,290,910,365]
+             },
+             {
+               "cityCode":"beijing",
+               "cityData":"3000",
+               "coordinate":[116.46,39.92],
+               "cityName":"南宁",
+               "point":[],
+               "detail":[300,290,910,365]
+             }
 
            ]
        },
@@ -56,7 +104,55 @@
             "cityName":"广州",
             "point":[],
             "detail":[657,290,324,125]
-           }
+           },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"张家口",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"石家庄",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"湖北",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"浙江",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"苏州",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"南宁",
+            "point":[],
+            "detail":[300,290,910,365]
+          }
         ]
     },
     {
@@ -85,7 +181,55 @@
             "cityName":"广州",
             "point":[],
             "detail":[678,234,578,145]
-           }
+           },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"张家口",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"石家庄",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"湖北",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"浙江",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"苏州",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"南宁",
+            "point":[],
+            "detail":[300,290,910,365]
+          }
         ]
     },
     {
@@ -114,7 +258,55 @@
             "cityName":"广州",
             "point":[],
             "detail":[456,386,345,564]
-           }
+           },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"张家口",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"石家庄",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"湖北",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"浙江",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"苏州",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"南宁",
+            "point":[],
+            "detail":[300,290,910,365]
+          }
         ]
     },
     {
@@ -143,7 +335,55 @@
             "cityName":"广州",
             "point":[],
             "detail":[435,123,546,890]
-           }
+           },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"张家口",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"石家庄",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"湖北",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"浙江",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"苏州",
+            "point":[],
+            "detail":[300,290,910,365]
+          },
+          {
+            "cityCode":"beijing",
+            "cityData":"3000",
+            "coordinate":[116.46,39.92],
+            "cityName":"南宁",
+            "point":[],
+            "detail":[300,290,910,365]
+          }
         ]
     }
     ],
