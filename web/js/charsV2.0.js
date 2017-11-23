@@ -485,15 +485,27 @@ $.get('data.json').done(function (data) {
     commonClass.init(dataMap);
 })
 //用于使chart自适应高度和宽度
-window.onresize = function () {
-    // //重置容器高宽
-    // resizeWorldMapContainerOfcityBar();
-    // resizeWorldMapContainerOfMain();
-    // resizeWorldMapContainerOfTime();
+// window.onresize = function () {
+//     // //重置容器高宽
+//     // resizeWorldMapContainerOfcityBar();
+//     // resizeWorldMapContainerOfMain();
+//     // resizeWorldMapContainerOfTime();
 
-    // var myCharts = dataBarClass.getEcharts()
-    // myCharts.resize();
-    // window.location.reload()
-    // history.go(0)
-    document.execCommand('Refresh')
+//     // var myCharts = dataBarClass.getEcharts()
+//     // myCharts.resize();
+//     // window.location.reload()
+//     // history.go(0)
+//     document.execCommand('Refresh')
+
+// };
+// window.addEventListener("resize", function () {
+
+//     option.chart.resize();
+
+// });
+var char = echarts.init($('#timeContainer'));
+window.onresize = function () {
+    $('#timeContainer').width('100%');
+    char.resize();
+    console.log($('#timeContainer'))
 };
