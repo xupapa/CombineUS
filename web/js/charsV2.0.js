@@ -158,9 +158,9 @@ var timeLineClass = (function () {
                 timeline: {
                     axisType: 'category',
                     autoPlay: false,
-                    playInterval: 1000,
+                    playInterval: 3000,
                     data: timeData,
-                },
+                }
             }
             time.setOption(optionLine)
         },
