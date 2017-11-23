@@ -24,7 +24,7 @@ var resizeWorldMapContainerOfMain = function () {
     pie.style.width = mainContainers1.clientWidth + 'px';
     pie.style.height = mainContainers1.clientHeight * 0.6 + 'px';
     dataBar.style.width = mainContainers2.clientWidth + 'px';
-    dataBar.style.height = mainContainers2.clientHeight * 0.8 + 'px';
+    dataBar.style.height = mainContainers2.clientHeight * 0.9 + 'px';
 };
 //设置容器高宽
 resizeWorldMapContainerOfMain();
