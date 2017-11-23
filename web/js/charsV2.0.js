@@ -254,11 +254,17 @@ var dataBarClass = (function () {
             //清除颜色计数器
             i = 0;
         },
+        getEcharts: function () {
+            return time
+        }
     };
     return {
         init: function (xData, data) {
             privateMethod.initDataBar(xData, data);
         },
+        getEcharts: function () {
+            return privateMethod.getEcharts();
+        }
     }
 })();
 /**
@@ -480,11 +486,14 @@ $.get('data.json').done(function (data) {
 })
 //用于使chart自适应高度和宽度
 window.onresize = function () {
-    //重置容器高宽
-    resizeWorldMapContainerOfcityBar();
-    resizeWorldMapContainerOfMain();
-    resizeWorldMapContainerOfTime();
+    // //重置容器高宽
+    // resizeWorldMapContainerOfcityBar();
+    // resizeWorldMapContainerOfMain();
+    // resizeWorldMapContainerOfTime();
 
-    var myCharts = timeLineClass.getEcharts()
-    myCharts.resize();
+    // var myCharts = dataBarClass.getEcharts()
+    // myCharts.resize();
+    // window.location.reload()
+    // history.go(0)
+    document.execCommand('Refresh')
 };
