@@ -43,7 +43,7 @@ var j = 0;
 var k = 0;
 //柱状图颜色
 var colors = ['#25E37B', '#FD9752', '#319BFF', '#FEE327'];
-var colorsOfCity = ['#25E37B', '#FD9752', '#319BFF'];
+var colorsOfCity = ['#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98AAFE', '#FC790F', '#ffffff', '#938E94'];
 var commonClass = (function () {
     var selectedTime;
     var selectedCity;
@@ -205,19 +205,19 @@ var dataBarClass = (function () {
                 legend: {
                     data: ['数量']
                 },
-                // itemStyle: {
-                //     normal: {
-                //         color: function () {
-                //             return colors[i++];
-                //         },
-                //         label: {
-                //             show: false
-                //         },
-                //         labelLine: {
-                //             show: false
-                //         }
-                //     }
-                // },
+                itemStyle: {
+                    normal: {
+                        color: function () {
+                            return colors[i++];
+                        },
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    }
+                },
                 xAxis: {
                     data: xData,
                     //调整x坐标轴字体颜色
@@ -251,6 +251,8 @@ var dataBarClass = (function () {
             };
             // 使用刚指定的配置项和数据显示图表。
             dataBar.setOption(option);
+            //清除颜色计数器
+            i = 0;
         },
     };
     return {
@@ -303,19 +305,19 @@ var cityBarClass = (function () {
                         },
                     }
                 },
-                // itemStyle: {
-                //     normal: {
-                //         color: function () {
-                //             return colors[k++];
-                //         },
-                //         label: {
-                //             show: false
-                //         },
-                //         labelLine: {
-                //             show: false
-                //         }
-                //     }
-                // },
+                itemStyle: {
+                    normal: {
+                        color: function () {
+                            return colorsOfCity[k++];
+                        },
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    }
+                },
                 series: [{
                     name: '销量',
                     type: 'bar',
@@ -331,6 +333,8 @@ var cityBarClass = (function () {
             };
             // 使用刚指定的配置项和数据显示图表。
             cityBar.setOption(option);
+            //清除颜色计数器
+            k = 0;
         },
         /**
          * 监听城市变化事件
@@ -388,29 +392,29 @@ var pieClass = (function () {
                         color: '#ffffff'
                     }
                 },
-                // itemStyle: {
-                //     normal: {
-                //         color: function () {
-                //             return colors[j++];
-                //         },
-                //         label: {
-                //             show: false
-                //         },
-                //         labelLine: {
-                //             show: false
-                //         }
-                //     },
-                //     emphasis: {
-                //         label: {
-                //             show: true,
-                //             position: 'center',
-                //             textStyle: {
-                //                 fontSize: '30',
-                //                 fontWeight: 'bold'
-                //             }
-                //         }
-                //     }
-                // },
+                itemStyle: {
+                    normal: {
+                        color: function () {
+                            return colors[j++];
+                        },
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            position: 'center',
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    }
+                },
                 series: [{
                     name: '访问来源',
                     type: 'pie',
@@ -445,6 +449,8 @@ var pieClass = (function () {
                 }]
             };
             pie.setOption(option)
+            //清除颜色计数器
+            j = 0;
         }
     };
     return {
