@@ -22,16 +22,16 @@ var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
     pie.style.width = mainContainers1.clientWidth + 'px';
-    pie.style.height = mainContainers1.clientHeight / 10 + 'px';
+    pie.style.height = mainContainers1.clientHeight / 2 + 'px';
     dataBar.style.width = mainContainers2.clientWidth + 'px';
-    dataBar.style.height = mainContainers2.clientHeight * 0.7 + 'px';
+    dataBar.style.height = mainContainers2.clientHeight + 'px';
 };
 //设置容器高宽
 resizeWorldMapContainerOfMain();
 
 //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------时间轴
-var time = document.getElementById('pie');
-var timeContainers = document.getElementById('mainContainer');
+var time = document.getElementById('time');
+var timeContainers = document.getElementById('timeContainer');
 var resizeWorldMapContainerOfTime = function () {
     time.style.width = timeContainers.clientWidth + 'px';
     time.style.height = timeContainers.clientHeight + 'px';
@@ -196,7 +196,7 @@ var dataBarClass = (function () {
         initDataBar: function (xData, data) {
             var option = {
                 title: {
-                    text: '数据展示',
+                    text: '',
                     textStyle: {
                         color: '#ffffff'
                     }
@@ -368,13 +368,21 @@ var pieClass = (function () {
                 datas.push(meta)
             }
             option = {
+                title: {
+                    text: data.cityName,
+                    textStyle: {
+                        color: '#ffffff'
+                    },
+                    // left
+                },
                 tooltip: {
                     trigger: 'item',
                     formatter: "{a} <br/>{b}: {c} ({d}%)"
                 },
                 legend: {
                     orient: 'vertical',
-                    x: 'left',
+                    // x: 'middle',
+                    right: '10%',
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
