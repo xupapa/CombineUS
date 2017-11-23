@@ -22,9 +22,9 @@ var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
     pie.style.width = mainContainers1.clientWidth + 'px';
-    pie.style.height = mainContainers1.clientHeight / 2 + 'px';
+    pie.style.height = mainContainers1.clientHeight * 0.6 + 'px';
     dataBar.style.width = mainContainers2.clientWidth + 'px';
-    dataBar.style.height = mainContainers2.clientHeight + 'px';
+    dataBar.style.height = mainContainers2.clientHeight * 0.8 + 'px';
 };
 //设置容器高宽
 resizeWorldMapContainerOfMain();
@@ -415,7 +415,7 @@ var pieClass = (function () {
                     name: '访问来源',
                     type: 'pie',
                     radius: ['50%', '70%'],
-                    center: ['40%', '40%'],
+                    center: ['45%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
