@@ -21,9 +21,9 @@ var mainContainers1 = document.getElementById('mainContainer1');
 var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
-    pie.style.width = mainContainers1.clientWidth + 'px';
+    pie.style.width = mainContainers1.clientWidth * 0.8 + 'px';
     pie.style.height = mainContainers1.clientHeight * 0.6 + 'px';
-    dataBar.style.width = mainContainers2.clientWidth + 'px';
+    dataBar.style.width = mainContainers2.clientWidth * 0.8 + 'px';
     dataBar.style.height = mainContainers2.clientHeight * 0.8 + 'px';
 };
 //设置容器高宽
@@ -159,7 +159,7 @@ var timeLineClass = (function () {
                     axisType: 'category',
                     autoPlay: false,
                     playInterval: 3000,
-                    data: timeData,
+                    data: timeData
                 }
             }
             time.setOption(optionLine)
@@ -419,7 +419,7 @@ var pieClass = (function () {
                     name: '访问来源',
                     type: 'pie',
                     radius: ['50%', '70%'],
-                    center: ['45%', '50%'],
+                    center: ['40%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
@@ -485,6 +485,4 @@ window.onresize = function () {
     resizeWorldMapContainerOfMain();
     resizeWorldMapContainerOfTime();
 
-    var myCharts = timeLineClass.getEcharts()
-    myCharts.resize();
 };
