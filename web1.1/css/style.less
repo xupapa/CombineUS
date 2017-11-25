@@ -5,6 +5,7 @@ html, body {
     background-size: 100% 100%;
     background-attachment: fixed;
     position: relative;
+    // overflow: hidden;
 }
 .container {
     width: 100%;
@@ -128,13 +129,13 @@ html, body {
                         li {
                             list-style: none;
                             display: inline-block;
-                            margin-right: 25px;
+                            margin-right: 10px;
                         }
                     }
                 }
             }
             .tips {
-                ul {
+                .ull {
                     font-size: 0;
                     margin: 0 auto;                    
                     li{
@@ -167,7 +168,10 @@ html, body {
         .right {
             float: right;
             // display: inline-block;
-            padding: 10px;
+            padding-top: 10px;
+            padding-right: 0px;
+            padding-left: 20px;
+            padding-bottom: 0;
             background-color: rgba(12, 14, 9, 0.8);
             border: 1px solid rgb(137, 191, 213);
             border-radius: 5px;            
@@ -246,8 +250,13 @@ html, body {
     }
 }
 .bottom {
-    // position: absolute;
-    // bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     padding: 10px;
+    // width: 100%;
     background: rgba(12, 14, 9, 0.3);
+    border: 1px solid rgb(137, 191, 213);    
+    border-radius: 5px;
     }

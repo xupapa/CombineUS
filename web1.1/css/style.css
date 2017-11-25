@@ -101,13 +101,13 @@ body {
 .container .middle .center .tabs .col-md-12 .nav-tabs li {
   list-style: none;
   display: inline-block;
-  margin-right: 25px;
+  margin-right: 10px;
 }
-.container .middle .center .tips ul {
+.container .middle .center .tips .ull {
   font-size: 0;
   margin: 0 auto;
 }
-.container .middle .center .tips ul li {
+.container .middle .center .tips .ull li {
   font-size: 12px;
   display: inline-block;
   padding: 10px;
@@ -115,21 +115,24 @@ body {
   color: #ffffff;
   border-right: 2px solid rgba(255, 255, 255, 0.1);
 }
-.container .middle .center .tips ul li .purple {
+.container .middle .center .tips .ull li .purple {
   color: purple;
 }
-.container .middle .center .tips ul li .pink {
+.container .middle .center .tips .ull li .pink {
   color: pink;
 }
-.container .middle .center .tips ul li .green {
+.container .middle .center .tips .ull li .green {
   color: green;
 }
-.container .middle .center .tips ul li .yellow {
+.container .middle .center .tips .ull li .yellow {
   color: yellow;
 }
 .container .middle .right {
   float: right;
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-left: 20px;
+  padding-bottom: 0;
   background-color: rgba(12, 14, 9, 0.8);
   border: 1px solid #89bfd5;
   border-radius: 5px;
@@ -183,6 +186,12 @@ body {
   padding-right: 0;
 }
 .bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 10px;
   background: rgba(12, 14, 9, 0.3);
+  border: 1px solid #89bfd5;
+  border-radius: 5px;
 }
