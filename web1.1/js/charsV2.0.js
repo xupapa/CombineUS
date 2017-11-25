@@ -22,7 +22,7 @@ var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
     pie.style.width = mainContainers1.clientWidth * 0.8 + 'px';
-    pie.style.height = mainContainers1.clientHeight * 0.6 + 'px';
+    pie.style.height = mainContainers1.clientHeight * 0.7 + 'px';
     dataBar.style.width = mainContainers2.clientWidth * 0.8 + 'px';
     dataBar.style.height = mainContainers2.clientHeight * 0.8 + 'px';
 };
@@ -159,7 +159,11 @@ var timeLineClass = (function () {
                     axisType: 'category',
                     autoPlay: false,
                     playInterval: 3000,
-                    data: timeData
+                    data: timeData,
+                    checkpointStyle:{
+                        color:'#fee327',
+                        borderWidth:0
+                    }
                 }
             }
             time.setOption(optionLine)
@@ -423,8 +427,7 @@ var pieClass = (function () {
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
-                            show: false,
-                            position: 'center'
+                            show: true,
                         },
                         emphasis: {
                             show: true,
@@ -436,7 +439,7 @@ var pieClass = (function () {
                     },
                     labelLine: {
                         normal: {
-                            show: false
+                            show: true
                         }
                     },
                     data: datas,
@@ -449,6 +452,13 @@ var pieClass = (function () {
                 }]
             };
             pie.setOption(option)
+            // console.log(window.onresize)
+            // console.log(pie)
+            window.onresize=function(){
+
+                console.log(123)
+                pie.resize();
+            }
             //清除颜色计数器
             j = 0;
         }
