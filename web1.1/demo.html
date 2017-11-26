@@ -18,7 +18,7 @@
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-    <script type="text/javascript" src = 'http://webapi.amap.com/maps?v=1.4.0&key=af2360cf23bbc2630e2dcd59da5e5ef2'></script>                
+    <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.0&key=af2360cf23bbc2630e2dcd59da5e5ef2'></script>
     <title>全国地质灾害信息管理系统</title>
 </head>
 
@@ -59,148 +59,149 @@
             </div>
         </div>
         <div class="row clearfix middle">
-            <div class="left">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <span>灾害点</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <span>隐患点</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <span>险情隐患点</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <span>年度新增隐患点</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <span>年度核销隐患点</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <span>年度成功避让</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tip">
-                    <h1 class="title">图例</h1>
-                    <ul class="list">
+            <div id="map" style="height:100%;width:100%">
+                <div class="left">
+                    <ul>
                         <li>
-                            <div>
-                                <span>
-                                    <span class="dot-red">●</span>新增隐患点
-                                </span>
-                            </div>
+                            <a href="#">
+                                <div>
+                                    <span>灾害点</span>
+                                </div>
+                            </a>
                         </li>
-                        <!-- <li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>隐患点</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>险情隐患点</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>年度新增隐患点</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>年度核销隐患点</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span>年度成功避让</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tip">
+                        <h1 class="title">图例</h1>
+                        <ul class="list">
+                            <li>
+                                <div>
+                                    <span>
+                                        <span class="dot-red">●</span>新增隐患点
+                                    </span>
+                                </div>
+                            </li>
+                            <!-- <li>
                             <div>
                                 <span>
                                     <span class="dot-orange">●</span>橙色预警
                                 </span>
                             </div>
                         </li> -->
-                        <li>
-                            <div>
-                                <span>
-                                    <span class="dot-yellow">●</span>隐患点
-                                </span>
-                            </div>
-                        </li>
-                        <!-- <li>
+                            <li>
+                                <div>
+                                    <span>
+                                        <span class="dot-yellow">●</span>隐患点
+                                    </span>
+                                </div>
+                            </li>
+                            <!-- <li>
                             <div>
                                 <span>
                                     <span class="dot-blue">●</span>蓝色预警
                                 </span>
                             </div>
                         </li> -->
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-12 column center">
-                <div class="row clearfix tabs tips">
-                    <div class="col-md-12 column">
-                        <ul class="nav nav-tabs">
-                            <li>
-                                <a rel="nofollow" href="#">
-                                    <img src="./img/1.jpg" alt="灾害隐患点">
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">
-                                    <img src="./img/2.jpg" alt="调查评价">
-                                </a>
-                            </li>
-                            <li class="disabled">
-                                <a rel="nofollow" href="#">
-                                    <img src="./img/3.jpg" alt="监测预警">
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">
-                                    <img src="./img/4.jpg" alt="综合治理">
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">
-                                    <img src="./img/5.jpg" alt="应急体系">
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="#">
-                                    <img src="./img/6.png" alt="建设能力">
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="ull">
-                            <li>
-                                <div>
-                                    <span>灾害点（
-                                        <span class="purple">120</span>）处</span>
-                                </div>
-                                <li>
-                                    <div>
-                                        <span>隐患点（
-                                            <span class="pink">200</span>）处</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <span>年度新增隐患点（
-                                            <span class="green">210</span>）处</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <span>年度核销隐患点（
-                                            <span class="yellow">300</span>）处</span>
-                                    </div>
-                                </li>
-                            </li>
                         </ul>
                     </div>
-                    <!-- <div class="col-md-12 column tips">
+                </div>
+                <div class="col-md-12 column center">
+                    <div class="row clearfix tabs tips">
+                        <div class="col-md-12 column">
+                            <ul class="nav nav-tabs">
+                                <li>
+                                    <a rel="nofollow" href="#">
+                                        <img src="./img/1.jpg" alt="灾害隐患点">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#">
+                                        <img src="./img/2.jpg" alt="调查评价">
+                                    </a>
+                                </li>
+                                <li class="disabled">
+                                    <a rel="nofollow" href="#">
+                                        <img src="./img/3.jpg" alt="监测预警">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#">
+                                        <img src="./img/4.jpg" alt="综合治理">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#">
+                                        <img src="./img/5.jpg" alt="应急体系">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#">
+                                        <img src="./img/6.png" alt="建设能力">
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="ull">
+                                <li>
+                                    <div>
+                                        <span>灾害点（
+                                            <span class="purple">120</span>）处</span>
+                                    </div>
+                                    <li>
+                                        <div>
+                                            <span>隐患点（
+                                                <span class="pink">200</span>）处</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span>年度新增隐患点（
+                                                <span class="green">210</span>）处</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span>年度核销隐患点（
+                                                <span class="yellow">300</span>）处</span>
+                                        </div>
+                                    </li>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-md-12 column tips">
                         <ul>
                             <li>
                                 <div>
@@ -228,32 +229,32 @@
                             </li>
                         </ul>
                     </div> -->
+                    </div>
                 </div>
-            </div>
-            <div class="right" id="mainContainer">
-                <div class="col-md-12 column" id="mainContainer1">
-                    <div id="pie" style="height:300px;width:380px"></div>
+                <div class="right" id="mainContainer">
+                    <div class="col-md-12 column" id="mainContainer1">
+                        <div id="pie" style="height:300px;width:380px"></div>
 
-                </div>
-                <div class="col-md-12 column" id="mainContainer2">
-                    <div id="dataBar" style="height:300px;width:380px"></div>
+                    </div>
+                    <div class="col-md-12 column" id="mainContainer2">
+                        <div id="dataBar" style="height:300px;width:380px"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="row clearfix bottom" style="padding-left:20px;padding-right:20px">
+        <div class="row clearfix bottom" style="padding-left:20px;padding-right:20px">
             <div class="col-md-12 column" id="cityContainer">
                 <div id="cityBar" style="height:200px;width:200px"></div>
 
             </div>
-        </div> -->
+        </div>
     </div>
-    <div class="row clearfix bottom" style="padding-left:20px;padding-right:20px;">
+    <!-- <div class="row clearfix bottom" style="padding-left:20px;padding-right:20px;">
         <div class="col-md-12 column" id="cityContainer">
             <div id="cityBar" style="height:200px;width:200px"></div>
-            <div id="map" style="height:200px;width:200px"></div>
         </div>
-        
-    </div>
+
+    </div> -->
 </body>
 <script src="./js/charsV2.0.js"></script>
 

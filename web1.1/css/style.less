@@ -1,9 +1,9 @@
 html, body {
     height: 100%;
-    background-image: url(../img/map.png);
-    background-repeat: no-repeat;
-    background-size: 100% ;
-    background-attachment: fixed;
+    // background-image: url(../img/map.png);
+    // background-repeat: no-repeat;
+    // background-size: 100% ;
+    // background-attachment: fixed;
     position: relative;
     // overflow: hidden;
 }
@@ -53,13 +53,17 @@ html, body {
     }
     .middle {
         padding: 10px 10px;
-        position: relative;
+        position: absolute;
+        top: 14%;
+        left: 0;
+        bottom: 0;
+        right: 0;  
+        margin: auto;
         .left {
-            // float: left;  
-            // display: none;   
             position: absolute;
             left: 0;    
-            top: 80px;   
+            top: 80px;
+            z-index: 999;   
             ul {
                 display: inline-block;
                 li {
@@ -121,7 +125,13 @@ html, body {
             }
         }
         .center {
+            position: absolute;
+            top: 5%;
+            left: 0;
+            right: 0; 
+            z-index: 999;   
             text-align: center;
+            margin: auto;
             .tabs {
                 .col-md-12 {
                     .nav-tabs {
@@ -166,7 +176,10 @@ html, body {
             }
         }
         .right {
-            float: right;
+            // float: right;
+            position: absolute;
+            right: 0;
+            z-index: 999;
             // display: inline-block;
             padding-top: 10px;
             padding-right: 0px;
@@ -194,13 +207,17 @@ html, body {
             clear: both;
         }
     }
-    // .bottom {
-    //     padding: 10px;
-    //     background: rgba(12, 14, 9, 0.3);
-    //     // filter:alpha(Opacity=80);
-    //     // -moz-opacity:0.5;
-    //     // opacity: 0.5;
-    // }
+    .bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+        // width: 100%;
+        background: rgba(12, 14, 9, 0.3);
+        border: 1px solid rgb(137, 191, 213);    
+        border-radius: 5px;
+    }
     .row-tabs {
         .col-md-9 {
             width: 65%;

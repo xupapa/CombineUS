@@ -164,9 +164,9 @@ var timeLineClass = (function () {
                     autoPlay: false,
                     playInterval: 3000,
                     data: timeData,
-                    checkpointStyle:{
-                        color:'#fee327',
-                        borderWidth:0
+                    checkpointStyle: {
+                        color: '#fee327',
+                        borderWidth: 0
                     }
                 }
             }
@@ -458,7 +458,7 @@ var pieClass = (function () {
             pie.setOption(option)
             // console.log(window.onresize)
             // console.log(pie)
-            window.onresize=function(){
+            window.onresize = function () {
 
                 console.log(123)
                 pie.resize();
@@ -467,7 +467,7 @@ var pieClass = (function () {
             j = 0;
         }
     };
-    return {    
+    return {
         init: function (xdata, data) {
             privateMethod.initPie(xdata, data);
         }
@@ -476,34 +476,34 @@ var pieClass = (function () {
 /**
  * 地图实现类
  */
-var mapClass = (function(){
+var mapClass = (function () {
     //私有属性map
-    var map = new AMap.Map('map',{
+    var map = new AMap.Map('map', {
         //自适应开启
-        resizeEnable:true
-    }) 
+        resizeEnable: true
+    })
     //私有属性地图标注类
-    var privateMethod ={
+    var privateMethod = {
         //标注地图点
-        markPoint:function(position){
-            var marker= new AMap.Marker({
-                map:map,
-                position:position
+        markPoint: function (position) {
+            var marker = new AMap.Marker({
+                map: map,
+                position: position
             });
         },
         //map初始化
-        initMap:function(data){
+        initMap: function (data) {
             //设置皮肤
             map.setMapStyle("amap://styles/macaron");
             //设置初始化中心点坐标
             map.setCenter(data.coordinate)
         },
-            };
-            return {
-                init:function(data){
-                    privateMethod.initMap(data);
-                }
-            }
+    };
+    return {
+        init: function (data) {
+            privateMethod.initMap(data);
+        }
+    }
 })();
 
 

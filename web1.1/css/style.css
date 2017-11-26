@@ -1,10 +1,6 @@
 html,
 body {
   height: 100%;
-  background-image: url(../img/map.png);
-  background-repeat: no-repeat;
-  background-size: 100% ;
-  background-attachment: fixed;
   position: relative;
 }
 .container {
@@ -39,12 +35,18 @@ body {
 }
 .container .middle {
   padding: 10px 10px;
-  position: relative;
+  position: absolute;
+  top: 14%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 .container .middle .left {
   position: absolute;
   left: 0;
   top: 80px;
+  z-index: 999;
 }
 .container .middle .left ul {
   display: inline-block;
@@ -93,7 +95,13 @@ body {
   color: blue;
 }
 .container .middle .center {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  z-index: 999;
   text-align: center;
+  margin: auto;
 }
 .container .middle .center .tabs .col-md-12 .nav-tabs {
   margin: 0 auto;
@@ -128,7 +136,9 @@ body {
   color: yellow;
 }
 .container .middle .right {
-  float: right;
+  position: absolute;
+  right: 0;
+  z-index: 999;
   padding-top: 10px;
   padding-right: 0px;
   padding-left: 20px;
@@ -149,6 +159,16 @@ body {
   visibility: hidden;
   height: 0;
   clear: both;
+}
+.container .bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  background: rgba(12, 14, 9, 0.3);
+  border: 1px solid #89bfd5;
+  border-radius: 5px;
 }
 .container .row-tabs .col-md-9 {
   width: 65%;
