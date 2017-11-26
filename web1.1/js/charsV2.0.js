@@ -54,6 +54,7 @@ var commonClass = (function () {
                 timeLine: [],
                 dataX: [],
                 citys: {}
+
             }
             //元数据赋值
             metadata.dataX = data.titleData;
@@ -92,7 +93,6 @@ var commonClass = (function () {
             //更新selectedTime
             selectedTime = time;
             return metadata;
-            console.log(metadata)
         },
         changeCity: function (cityName, data) {
             selectedCity = cityName;
@@ -126,6 +126,7 @@ var commonClass = (function () {
             dataBarClass.init(matedata.dataX, matedata.citys[0]);
             cityBarClass.init(matedata.citys, data);
             pieClass.init(matedata.dataX, matedata.citys[0]);
+            mapClass.init(matedata.citys[0])
         },
         changeTime: function (time, data) {
 
@@ -133,12 +134,15 @@ var commonClass = (function () {
             dataBarClass.init(matedata.dataX, matedata.city);
             cityBarClass.init(matedata.citys, data);
             pieClass.init(matedata.dataX, matedata.city);
+            mapClass.init(matedata.city)
         },
         changeCity: function (cityName, data) {
             var matedata = privateMethod.changeCity(cityName, data)
             dataBarClass.init(matedata.dataX, matedata.city);
             pieClass.init(matedata.dataX, matedata.city);
+            mapClass.init(matedata.city)
         }
+
 
     }
 })();
@@ -463,7 +467,7 @@ var pieClass = (function () {
             j = 0;
         }
     };
-    return {
+    return {    
         init: function (xdata, data) {
             privateMethod.initPie(xdata, data);
         }
@@ -472,16 +476,35 @@ var pieClass = (function () {
 /**
  * 地图实现类
  */
-// var mapClass = (function(){
-//     var privateMethod ={
-
-//             };
-//             return {
-//                 init:function(){
-
-//                 }
-//             }
-// })();
+var mapClass = (function(){
+    //私有属性map
+    var map = new AMap.Map('map',{
+        //自适应开启
+        resizeEnable:true
+    }) 
+    //私有属性地图标注类
+    var privateMethod ={
+        //标注地图点
+        markPoint:function(position){
+            var marker= new AMap.Marker({
+                map:map,
+                position:position
+            });
+        },
+        //map初始化
+        initMap:function(data){
+            //设置皮肤
+            map.setMapStyle("amap://styles/macaron");
+            //设置初始化中心点坐标
+            map.setCenter(data.coordinate)
+        },
+            };
+            return {
+                init:function(data){
+                    privateMethod.initMap(data);
+                }
+            }
+})();
 
 
 $.get('data.json').done(function (data) {
