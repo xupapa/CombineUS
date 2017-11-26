@@ -143,10 +143,6 @@ html, body {
                         display: inline-block;
                         padding: 10px;
                         background: rgba(35, 33, 31, 1);
-                        // background: linear-gradient(to right, rgb(19, 22, 12), rgba(255, 255, 255, 0.3));
-                        // filter:alpha(Opacity=80);
-                        // -moz-opacity:0.5;
-                        // opacity: 0.5;
                         color: #ffffff;
                         border-right: 2px solid rgba(255, 255,255, 0.1);
                         .purple {
@@ -200,7 +196,7 @@ html, body {
         bottom: 0;
         padding: 10px;
         // width: 100%;
-        background: rgba(12, 14, 9, 0.3);
+        background: rgba(12, 14, 9, 0.5);
         border: 1px solid rgb(137, 191, 213);    
         border-radius: 5px;
     }
@@ -242,13 +238,13 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 0;
+                        top: 20px;
                     }
                     .center {
 
                     }
                     .right {
-                        top: 0;
+                        // top: 0;
                     }
                 }
                 .left {
@@ -258,7 +254,7 @@ html, body {
                 }
                 .right {
                     max-width: 320px;
-                    max-height: 250px;
+                    max-height: 400px;
                 }
             }
             .bottom {
@@ -275,4 +271,50 @@ html, body {
     } 
     @media (min-width: 1920px) {
     body{font-size: 33px;}
+     .container {
+            .middle {
+                #map {
+                    .left {
+                        top: 10%;
+                    }
+                    .center {
+                        .tips {
+                            .ull {
+                                li {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                    .right {
+                        // top: 0;
+                    }
+                }
+                .left {
+                    top: 20px;
+                    .list {
+                        li{ 
+                            a {
+                                font-size: 16px;     
+                            }
+                        }
+                    }
+                    .tip {
+                        // margin-top: 5px;
+                        font-size: 16px;
+                        text-align: left;
+                        font-weight: 450;
+                    }
+                }
+                .right {
+                    max-width: 320px;
+                    max-height: 400px;
+                }
+            }
+            .bottom {
+                #cityContainer {
+                    max-height: 500px;
+                }
+            }
+        }
     } 

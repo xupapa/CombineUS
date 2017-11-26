@@ -21,10 +21,10 @@ var mainContainers1 = document.getElementById('mainContainer1');
 var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
-    pie.style.width = mainContainers1.clientWidth * 0.8 + 'px';
-    pie.style.height = mainContainers1.clientHeight * 0.7 + 'px';
+    pie.style.width = mainContainers1.clientWidth * 1 + 'px';
+    pie.style.height = mainContainers1.clientHeight * 0.5 + 'px';
     dataBar.style.width = mainContainers2.clientWidth * 1 + 'px';
-    dataBar.style.height = mainContainers2.clientHeight * 0.8 + 'px';
+    dataBar.style.height = mainContainers2.clientHeight * 0.5 + 'px';
 };
 //设置容器高宽
 resizeWorldMapContainerOfMain();
@@ -402,7 +402,7 @@ var pieClass = (function () {
                 },
                 legend: {
                     orient: 'vertical',
-                    x2: 10,
+                    x2: 0,
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
@@ -425,7 +425,7 @@ var pieClass = (function () {
                             show: true,
                             position: 'center',
                             textStyle: {
-                                fontSize: '30',
+                                fontSize: '18',
                                 fontWeight: 'bold'
                             }
                         }
@@ -434,8 +434,8 @@ var pieClass = (function () {
                 series: [{
                     name: '访问来源',
                     type: 'pie',
-                    radius: ['10%', '30%'],
-                    center: ['45%', '50%'],
+                    radius: ['40%', '60%'],
+                    center: ['43%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
@@ -444,7 +444,7 @@ var pieClass = (function () {
                         emphasis: {
                             show: true,
                             textStyle: {
-                                fontSize: '30',
+                                fontSize: '14',
                                 fontWeight: 'bold'
                             }
                         }

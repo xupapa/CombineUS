@@ -166,7 +166,7 @@ body {
   right: 0;
   bottom: 0;
   padding: 10px;
-  background: rgba(12, 14, 9, 0.3);
+  background: rgba(12, 14, 9, 0.5);
   border: 1px solid #89bfd5;
   border-radius: 5px;
 }
@@ -197,17 +197,14 @@ body {
     font-size: 25px;
   }
   .container .middle #map .left {
-    top: 0;
-  }
-  .container .middle #map .right {
-    top: 0;
+    top: 20px;
   }
   .container .middle .left .tip {
     margin-top: 5px;
   }
   .container .middle .right {
     max-width: 320px;
-    max-height: 250px;
+    max-height: 400px;
   }
   .container .bottom #cityContainer {
     max-height: 150px;
@@ -221,5 +218,29 @@ body {
 @media (min-width: 1920px) {
   body {
     font-size: 33px;
+  }
+  .container .middle #map .left {
+    top: 10%;
+  }
+  .container .middle #map .center .tips .ull li {
+    font-size: 18px;
+  }
+  .container .middle .left {
+    top: 20px;
+  }
+  .container .middle .left .list li a {
+    font-size: 16px;
+  }
+  .container .middle .left .tip {
+    font-size: 16px;
+    text-align: left;
+    font-weight: 450;
+  }
+  .container .middle .right {
+    max-width: 320px;
+    max-height: 400px;
+  }
+  .container .bottom #cityContainer {
+    max-height: 500px;
   }
 }
