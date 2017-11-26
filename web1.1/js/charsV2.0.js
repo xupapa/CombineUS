@@ -21,10 +21,30 @@ var mainContainers1 = document.getElementById('mainContainer1');
 var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
-    pie.style.width = mainContainers1.clientWidth * 1 + 'px';
-    pie.style.height = mainContainers1.clientHeight * 0.5 + 'px';
-    dataBar.style.width = mainContainers2.clientWidth * 1 + 'px';
-    dataBar.style.height = mainContainers2.clientHeight * 0.5 + 'px';
+    var scaleWidth = 1;
+    var scaleHeight = 1;
+    // if (window.innerWidth <= 1440) {
+    //     scaleWidth = 1;
+    //     scaleHeight = 0.5;
+    // }
+    if (window.innerWidth < 1680) {
+        scaleWidth = 1;
+        scaleHeight = 0.5;
+    }
+    if (window.innerWidth >= 1680) {
+        scaleWidth = 1;
+        scaleHeight = 0.65;
+    }
+    console.log(window.screen.availWidth);
+    console.log(window.innerWidth)
+    // switch (window.innerWidth) {
+    //     case window.innerWidth <= 1440:
+    //         scaleHeight = 0.5;
+    // }
+    pie.style.width = mainContainers1.clientWidth * scaleWidth + 'px';
+    pie.style.height = mainContainers1.clientHeight * scaleHeight + 'px';
+    dataBar.style.width = mainContainers2.clientWidth * scaleWidth + 'px';
+    dataBar.style.height = mainContainers2.clientHeight * scaleHeight + 'px';
 };
 //设置容器高宽
 resizeWorldMapContainerOfMain();
@@ -402,7 +422,7 @@ var pieClass = (function () {
                 },
                 legend: {
                     orient: 'vertical',
-                    x2: 0,
+                    x2: 15,
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
@@ -464,11 +484,7 @@ var pieClass = (function () {
                 }]
             };
             pie.setOption(option)
-            // console.log(window.onresize)
-            // console.log(pie)
             window.onresize = function () {
-
-                console.log(123)
                 pie.resize();
             }
             //清除颜色计数器

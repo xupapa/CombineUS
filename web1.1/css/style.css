@@ -67,8 +67,8 @@ body {
 .container .middle .left .tip {
   font-size: 14px;
   padding: 10px;
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 10px;
+  text-align: left;
   border: 1px solid #89bfd5;
   background: rgba(63, 54, 45, 0.8);
   color: #ffffff;
@@ -140,12 +140,15 @@ body {
   right: 0;
   z-index: 999;
   padding-top: 10px;
-  padding-right: 0px;
-  padding-left: 20px;
+  padding-right: 0;
+  padding-left: 0;
   padding-bottom: 0;
   background-color: rgba(12, 14, 9, 0.8);
   border: 1px solid #89bfd5;
   border-radius: 5px;
+}
+.container .middle .right #mainContainer1 {
+  padding: 0;
 }
 .container .middle .right ul {
   display: inline-block;
@@ -186,15 +189,23 @@ body {
   body {
     font-size: 22px;
   }
+  .container .middle #map .left {
+    top: 20px;
+  }
+  .container .middle .left .tip {
+    margin-top: 5px;
+  }
+  .container .middle .right {
+    max-width: 320px;
+    max-height: 400px;
+  }
+  .container .bottom #cityContainer {
+    max-height: 150px;
+  }
 }
 @media (min-width: 1366px) {
   body {
     font-size: 24px;
-  }
-}
-@media (max-width: 1440px) {
-  body {
-    font-size: 25px;
   }
   .container .middle #map .left {
     top: 20px;
@@ -210,12 +221,54 @@ body {
     max-height: 150px;
   }
 }
-@media (min-width: 1680px) {
+@media screen and (min-device-width: 1440px) {
+  body {
+    font-size: 25px;
+  }
+  .container .middle #map .left {
+    top: 20px;
+  }
+  .container .middle .left .tip {
+    margin-top: 5px;
+  }
+  .container .middle .right {
+    max-width: 350px;
+    max-height: 350px;
+  }
+  .container .bottom #cityContainer {
+    max-height: 150px;
+  }
+}
+@media screen and (min-device-width: 1680px) {
   body {
     font-size: 28px;
   }
+  .container .middle #map .left {
+    top: 10%;
+  }
+  .container .middle #map .center .tips .ull li {
+    font-size: 18px;
+  }
+  .container .middle .left {
+    top: 20px;
+  }
+  .container .middle .left .list li a {
+    font-size: 16px;
+  }
+  .container .middle .left .tip {
+    font-size: 16px;
+    text-align: left;
+    font-weight: 450;
+  }
+  .container .middle .right {
+    width: 500px;
+    height: 600px;
+  }
+  .container .bottom #cityContainer {
+    max-height: 500px;
+  }
 }
-@media (min-width: 1920px) {
+@media screen and (min-device-width: 1920px) {
   body {
     font-size: 33px;
   }
@@ -237,8 +290,8 @@ body {
     font-weight: 450;
   }
   .container .middle .right {
-    max-width: 320px;
-    max-height: 400px;
+    width: 400px;
+    height: 600px;
   }
   .container .bottom #cityContainer {
     max-height: 500px;

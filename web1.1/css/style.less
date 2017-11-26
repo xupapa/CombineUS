@@ -78,8 +78,8 @@ html, body {
             .tip {
                 font-size: 14px; 
                 padding: 10px;
-                margin-top: 20px;
-                text-align: center;
+                margin-top: 10px;
+                text-align: left;
                 border: 1px solid rgb(137, 191, 213);
                 // background: #443C31;
                 // filter:alpha(Opacity=80);
@@ -167,12 +167,15 @@ html, body {
             right: 0;
             z-index: 999;
             padding-top: 10px;
-            padding-right: 0px;
-            padding-left: 20px;
+            padding-right: 0;
+            padding-left: 0;
             padding-bottom: 0;
             background-color: rgba(12, 14, 9, 0.8);
             border: 1px solid rgb(137, 191, 213);
-            border-radius: 5px;            
+            border-radius: 5px; 
+            #mainContainer1 {
+                padding: 0;
+            }           
             ul {
                 display: inline-block;
                 li {
@@ -210,30 +213,6 @@ html, body {
     } /*>=1024的设备*/
     @media (min-width: 1280px) {
         body{font-size: 22px;}
-        // .container {
-        //     .middle {
-        //         #map {
-        //             .left {
-        //                 top: 0;
-        //             }
-        //             .center {
-
-        //             }
-        //             .right {
-        //                 top: 0;
-        //             }
-        //         }
-        //     }
-        // }
-    } 
-
-    @media (min-width: 1366px) {
-
-        body{font-size: 24px;}
-    }  
-
-    @media (max-width: 1440px) {
-        body{font-size: 25px}
          .container {
             .middle {
                 #map {
@@ -266,10 +245,123 @@ html, body {
         }
     } 
 
-    @media (min-width: 1680px) {
-        body{font-size: 28px;}
+    @media (min-width: 1366px) {
+        body{font-size: 24px;}
+         .container {
+            .middle {
+                #map {
+                    .left {
+                        top: 20px;
+                    }
+                    .center {
+
+                    }
+                    .right {
+                        // top: 0;
+                    }
+                }
+                .left {
+                    .tip {
+                        margin-top: 5px;
+                    }
+                }
+                .right {
+                    max-width: 320px;
+                    max-height: 400px;
+                }
+            }
+            .bottom {
+                #cityContainer {
+                    max-height: 150px;
+
+                }
+            }
+        }
+    }  
+
+    @media screen and(min-device-width: 1440px) {
+        body{font-size: 25px}
+         .container {
+            .middle {
+                #map {
+                    .left {
+                        top: 20px;
+                    }
+                    .center {
+
+                    }
+                    .right {
+                        // top: 0;
+                    }
+                }
+                .left {
+                    .tip {
+                        margin-top: 5px;
+                    }
+                }
+                .right {
+                    max-width: 350px;
+                    max-height: 350px;
+                }
+            }
+            .bottom {
+                #cityContainer {
+                    max-height: 150px;
+
+                }
+            }
+        }
     } 
-    @media (min-width: 1920px) {
+
+    @media screen and (min-device-width: 1680px) {
+        body{font-size: 28px;}
+             .container {
+            .middle {
+                #map {
+                    .left {
+                        top: 10%;
+                    }
+                    .center {
+                        .tips {
+                            .ull {
+                                li {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                    .right {
+                        // top: 0;
+                    }
+                }
+                .left {
+                    top: 20px;
+                    .list {
+                        li{ 
+                            a {
+                                font-size: 16px;     
+                            }
+                        }
+                    }
+                    .tip {
+                        font-size: 16px;
+                        text-align: left;
+                        font-weight: 450;
+                    }
+                }
+                .right {
+                    width: 500px;
+                    height: 600px;
+                }
+            }
+            .bottom {
+                #cityContainer {
+                    max-height: 500px;
+                }
+            }
+        }
+    } 
+    @media screen and(min-device-width: 1920px) {
     body{font-size: 33px;}
      .container {
             .middle {
@@ -300,15 +392,14 @@ html, body {
                         }
                     }
                     .tip {
-                        // margin-top: 5px;
                         font-size: 16px;
                         text-align: left;
                         font-weight: 450;
                     }
                 }
                 .right {
-                    max-width: 320px;
-                    max-height: 400px;
+                    width: 400px;
+                    height: 600px;
                 }
             }
             .bottom {
