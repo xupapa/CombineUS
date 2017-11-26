@@ -304,6 +304,7 @@ var cityBarClass = (function () {
                     data: cityNames,
                     //调整x坐标轴字体颜色
                     axisLabel: {
+                        interval:0,
                         textStyle: {
                             color: 'white',
                             fontSize: '12'
