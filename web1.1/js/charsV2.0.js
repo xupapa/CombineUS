@@ -21,9 +21,9 @@ var mainContainers1 = document.getElementById('mainContainer1');
 var mainContainers2 = document.getElementById('mainContainer2');
 
 var resizeWorldMapContainerOfMain = function () {
-    pie.style.width = mainContainers1.clientWidth * 0.8 + 'px';
+    pie.style.width = mainContainers1.clientWidth * 1 + 'px';
     pie.style.height = mainContainers1.clientHeight * 0.7 + 'px';
-    dataBar.style.width = mainContainers2.clientWidth * 0.8 + 'px';
+    dataBar.style.width = mainContainers2.clientWidth * 1 + 'px';
     dataBar.style.height = mainContainers2.clientHeight * 0.8 + 'px';
 };
 //设置容器高宽
@@ -160,9 +160,9 @@ var timeLineClass = (function () {
                     autoPlay: false,
                     playInterval: 3000,
                     data: timeData,
-                    checkpointStyle:{
-                        color:'#fee327',
-                        borderWidth:0
+                    checkpointStyle: {
+                        color: '#fee327',
+                        borderWidth: 0
                     }
                 }
             }
@@ -204,6 +204,12 @@ var dataBarClass = (function () {
                     textStyle: {
                         color: '#ffffff'
                     }
+                },
+                grid: {
+                    top: 20,
+                    left: 50,
+                    right: 20,
+                    bottom: 40
                 },
                 tooltip: {},
                 legend: {
@@ -286,10 +292,14 @@ var cityBarClass = (function () {
                         color: '#ffffff'
                     }
                 },
+                grid: {
+                    bottom: 20
+                },
                 tooltip: {},
                 legend: {
                     data: ['数量']
                 },
+
                 xAxis: {
                     data: cityNames,
                     //调整x坐标轴字体颜色
@@ -380,8 +390,7 @@ var pieClass = (function () {
                     text: data.cityName,
                     textStyle: {
                         color: '#ffffff'
-                    },
-                    // left
+                    }
                 },
                 tooltip: {
                     trigger: 'item',
@@ -389,8 +398,7 @@ var pieClass = (function () {
                 },
                 legend: {
                     orient: 'vertical',
-                    // x: 'middle',
-                    right: '10%',
+                    x2: 10,
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
@@ -423,7 +431,7 @@ var pieClass = (function () {
                     name: '访问来源',
                     type: 'pie',
                     radius: ['50%', '70%'],
-                    center: ['40%', '50%'],
+                    center: ['45%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
@@ -454,7 +462,7 @@ var pieClass = (function () {
             pie.setOption(option)
             // console.log(window.onresize)
             // console.log(pie)
-            window.onresize=function(){
+            window.onresize = function () {
 
                 console.log(123)
                 pie.resize();
