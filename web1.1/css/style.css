@@ -10,6 +10,7 @@ body {
   padding-left: 0;
   padding-right: 0;
   overflow: hidden;
+  position: relative;
 }
 .container .row-head {
   padding-left: 0;
@@ -34,18 +35,15 @@ body {
   opacity: 0.8;
 }
 .container .middle {
-  padding: 10px 10px;
-  position: absolute;
-  top: 14%;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 .container .middle .left {
   position: absolute;
   left: 0;
-  top: 80px;
+  top: 10%;
   z-index: 999;
 }
 .container .middle .left ul {
@@ -67,6 +65,7 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 .container .middle .left .tip {
+  font-size: 14px;
   padding: 10px;
   margin-top: 20px;
   text-align: center;
@@ -96,7 +95,7 @@ body {
 }
 .container .middle .center {
   position: absolute;
-  top: 5%;
+  top: 10px;
   left: 0;
   right: 0;
   z-index: 999;
@@ -137,6 +136,7 @@ body {
 }
 .container .middle .right {
   position: absolute;
+  top: 10%;
   right: 0;
   z-index: 999;
   padding-top: 10px;
@@ -170,44 +170,56 @@ body {
   border: 1px solid #89bfd5;
   border-radius: 5px;
 }
-.container .row-tabs .col-md-9 {
-  width: 65%;
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
 }
-.container .row-tabs .col-md-9 .tabs .col-md-12 .nav-tabs {
-  padding: 20px;
-  padding-right: 0;
+/*>=1024的设备*/
+@media (min-width: 1100px) {
+  body {
+    font-size: 20px;
+  }
 }
-.container .row-tabs .col-md-9 .tabs .col-md-12 .nav-tabs li {
-  width: 110px;
-  height: 60px;
-  margin-right: 10px;
+/*>=1024的设备*/
+@media (min-width: 1280px) {
+  body {
+    font-size: 22px;
+  }
 }
-.container .row-tabs .col-md-9 .tabs .col-md-12 .nav-tabs li a {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  height: 60px;
+@media (min-width: 1366px) {
+  body {
+    font-size: 24px;
+  }
 }
-.container .row-tabs .col-md-9 .tabs .col-md-12 .nav-tabs li a img {
-  width: 110px;
-  height: 60px;
+@media (max-width: 1440px) {
+  body {
+    font-size: 25px;
+  }
+  .container .middle #map .left {
+    top: 0;
+  }
+  .container .middle #map .right {
+    top: 0;
+  }
+  .container .middle .left .tip {
+    margin-top: 5px;
+  }
+  .container .middle .right {
+    max-width: 320px;
+    max-height: 250px;
+  }
+  .container .bottom #cityContainer {
+    max-height: 150px;
+  }
 }
-.container .row-tabs .col-md-3 {
-  padding-left: 0;
-  width: 35%;
-  padding-top: 20px;
+@media (min-width: 1680px) {
+  body {
+    font-size: 28px;
+  }
 }
-.container .row-tabs .col-md-3 #mainContainer {
-  padding-left: 0;
-  padding-right: 0;
-}
-.container .row-tabs .col-md-3 #mainContainer .col-md-12 {
-  padding-left: 0;
-  padding-right: 0;
-}
-.bottom {
-  padding: 10px;
-  background: rgba(12, 14, 9, 0.3);
-  border: 1px solid #89bfd5;
-  border-radius: 5px;
+@media (min-width: 1920px) {
+  body {
+    font-size: 33px;
+  }
 }
