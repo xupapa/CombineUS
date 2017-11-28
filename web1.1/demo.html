@@ -12,6 +12,7 @@
     <!-- <script src="./js/echarts.min.js"></script> -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animation.css">
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
@@ -38,9 +39,17 @@
                         </div>
                     </div>
                     <div class="col-md-2 column account">
-                        <img class="account-img" src="./img/icon/account-filling.png" alt="account">
-                        <span class="name">超级管理员</span>
-                        <img class="login" src="./img/icon/开关.png" alt="login">
+                        <div class="account-wrapper">
+                            <img class="account-img" src="./img/icon/account-filling.png" alt="account">
+
+                        </div>
+                        <div class="name-wrapper">
+                            <span class="name">三三管理员</span>
+                        </div>
+                        <div class="login-wrapper">
+                            <img class="login" src="./img/icon/switch.png" alt="login">
+
+                        </div>
                     </div>
                     <!-- <div class="col-md-4 column">
                         <div class="row clearfix">
@@ -57,9 +66,11 @@
         </div>
         <div class="row clearfix time">
             <div class="col-md-12 column" id="timeContainer">
-                <div id="time" style="height:35px;"></div>
+                <div id="time" style="height:50px;"></div>
                 <div class="link-img">
-                    <!-- <img src="./img/icon/link-oc.png" alt="link"> -->
+                    <a href="#">
+                        <img src="./img/icon/link-oc.png" alt="link">
+                    </a>
                 </div>
             </div>
         </div>
@@ -217,7 +228,10 @@
                     <div class="col-md-12 column" id="mainContainer1">
                         <div id="pie" style="height:300px;width:380px"></div>
                     </div>
-                    <div class="col-md-12 column" id="mainContainer2" style="padding:0;padding-top:10px">
+                    <a href="#" class="a-btn">
+                        <div class="triangle_border_right"></div>
+                    </a>
+                    <div class="col-md-12 column" id="mainContainer2" style="padding:0;margin-top:-10px;">
                         <div id="pie2" style="height:300px;width:380px"></div>
                     </div>
                     <!-- <div class="col-md-12 column" id="mainContainer2">
@@ -226,10 +240,12 @@
                 </div>
             </div>
         </div>
-        <div class="row clearfix bottom" style="padding-left:20px;padding-right:20px">
+        <div class="row clearfix bottom">
             <div class="col-md-12 column" id="cityContainer">
+                <a href="#" class="a-btn-down">
+                    <div class="triangle_border_down"></div>
+                </a>
                 <div id="cityBar" style="height:200px;width:200px"></div>
-
             </div>
         </div>
     </div>

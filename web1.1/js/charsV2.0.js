@@ -193,20 +193,48 @@ var timeLineClass = (function () {
                     data: timeData,
                     checkpointStyle: {
                         color: '#fee327',
-                        borderWidth: 0
+                        borderWidth: 0,
+                        symbolSize: 20
+                    },
+                    lineStyle: {
+                        color: '#ffffff'
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: "#ffffff",
+                            // opacity: 0
+                        },
+                        emphasis: {
+                            // color: "green",
+                            color: 'white'
+                            // opacity: 0
+                        }
+                    },
+                    controlStyle: {
+                        normal: {
+                            color: '#ffffff',
+                            borderColor: '#ffffff'
+                        },
+                        emphasis: {
+                            color: '#ffffff',
+                            borderColor: '#fee327'
+                        }
                     },
                     top: 4,
                     // bottom: 0,
-                    left: '5%',
-                    right: '5%',
-                    symbolSize: 18,
+                    left: 150,
+                    right: 150,
+                    // symbol: 'path:../img/circle.png',
+                    symbolSize: 20,
                     label: {
                         normal: {
                             show: true,
-                            position: 'bottom'
+                            position: 'bottom',
+                            color: '#ffffff'
                         },
                         emphasis: {
-                            show: true
+                            show: true,
+                            color: '#fee327'
                         }
                     }
                 }
@@ -336,13 +364,14 @@ var cityBarClass = (function () {
                     textStyle: {
                         color: '#ffffff'
                     },
-                    x: 'center'
+                    x: 'center',
+                    y: 10
                 },
                 grid: {
-                    top: 50,
+                    top: 40,
                     left: 50,
                     right: 50,
-                    bottom: 20
+                    bottom: 30
                 },
                 tooltip: {},
                 legend: {
@@ -459,7 +488,7 @@ var pieClass = (function () {
                 },
                 tooltip: {
                     trigger: 'item',
-                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    formatter: "{b}: {c} ({d}%)"
                 },
                 legend: {
                     show: false,
@@ -511,7 +540,7 @@ var pieClass = (function () {
                     }
                 },
                 series: [{
-                    name: '访问来源',
+                    // name: '访问来源',
                     type: 'pie',
                     radius: ['50%', '70%'],
                     center: ['50%', '50%'],
@@ -519,6 +548,22 @@ var pieClass = (function () {
                     label: {
                         normal: {
                             show: true,
+                            formatter: '{b|{b}}\n{per|{d}%}',
+                            // formatter: '{b|{b}}\n{a|{a}}',
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center',
+                                    data: xdata
+                                },
+                                per: {
+                                    fontSize: '12',
+                                    function () {
+                                        return colors[j++];
+                                    }
+                                }
+                            }
                         },
                         emphasis: {
                             show: true,
@@ -581,7 +626,8 @@ var pieClass2 = (function () {
                 },
                 tooltip: {
                     trigger: 'item',
-                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    // formatter: "{a} <br/>{b}: {c} ({d}%)"
+                    formatter: "{b}: {c}"
                 },
                 legend: {
                     show: false,
@@ -599,7 +645,7 @@ var pieClass2 = (function () {
                     z: 2,
                     zlevel: 100,
                     style: {
-                        text: '威胁人口\n（人）',
+                        text: '威胁财产\n（万元）',
                         // x: 100,
                         // y: 100,
                         font: '14px "STHeiti", sans-serif',
@@ -641,6 +687,23 @@ var pieClass2 = (function () {
                     label: {
                         normal: {
                             show: true,
+                            // formatter: '{b|{b}}\n{per|{d}%}  ',
+                            formatter: '{b|{b}}\n{c}',
+
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center',
+                                    data: xdata
+                                },
+                                per: {
+                                    fontSize: '12',
+                                    color: function () {
+                                        return colors[j++];
+                                    }
+                                }
+                            }
                         },
                         emphasis: {
                             show: true,

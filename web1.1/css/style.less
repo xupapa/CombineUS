@@ -8,6 +8,7 @@ html, body {
 .link-active-bg {
     opacity: 0.8;    
 }
+
 .container {
     width: 100%;
     height: 100%;
@@ -24,38 +25,53 @@ html, body {
                 background-color: rgba(35, 33, 31, 1);
                 .account {
                     height: 69px;
-                    display: table-cell;
-                    vertical-align: middle;
-                    text-align: center;
+                    display: flex;
+                        align-items:center;
+                    
+                    // vertical-align: middle;
+                    // text-align: center;
+                    .account-wrapper {
+                        flex: 1;
+                        // padding: 0 10px;
+                    }
+                    .login-wrapper {
+                        flex: 1;
+                        padding-left: 10px; 
+                        border-left: 2px solid #ffffff;
+                                                
+                    }
+                    .name-wrapper {
+                        flex: 2;
+                    }
                     .account-img {
                         width: 24px;
                         height: 24px;
-                        position: absolute;
-                        top: 50%;
-                        left: 15%;
-                        margin-top: -12px; /* 高度的一半 */
+                        // position: absolute;
+                        // top: 50%;
+                        // right: 75%;
+                        // margin-top: -12px; /* 高度的一半 */
                         // margin-left: -14px; /* 宽度的一半 */
                     }
                     .login {
                         width: 24px;
                         height: 24px;
-                        position: absolute;
-                        top: 50%;
-                        right: 15%;
-                        margin-top: -14px; /* 高度的一半 */
+                        // position: absolute;
+                        // top: 50%;
+                        // right: 15%;
+                        // margin-top: -14px; /* 高度的一半 */
                         color: #ffffff;
                     }
                     .name {
-                        display: inline-block;
+                        display: block;
                         font-size: 14px;
                         color: #ffffff;
-                        position: absolute;
-                        // line-height: 69px;
-                        top: 60%;
-                        left: 30%;
-                        margin-top: -14px; /* 高度的一半 */
-                        padding-right: 5px;
-                        border-right: 2px solid #ffffff;
+                        // position: absolute;
+                        line-height: 69px;
+                        // top: 60%;
+                        // left: 30%;
+                        // margin-top: -14px; /* 高度的一半 */
+                        // margin-left: -20px;
+                        // border-right: 2px solid #ffffff;
                     }
                 }
                 #header {
@@ -92,9 +108,16 @@ html, body {
         filter:alpha(Opacity=80);
         -moz-opacity:0.8;
         opacity: 0.8;
+        position: relative;
         .link-img {
-            width: 12px;
-            height: 12px;
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            margin-top: -12px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
         }
     }
     .middle {
@@ -141,6 +164,7 @@ html, body {
                     color: #ffffff;
                     text-align: center;
                     padding-top: 10px;
+                    padding-bottom: 10px;
                 }
                 .list {
                     display: block;
@@ -270,14 +294,32 @@ html, body {
             right: 0;
             z-index: 999;
             padding-top: 5px;
-            padding-right: 0;
-            padding-left: 0;
+            padding-right: 10px;
+            padding-left: 10px;
             padding-bottom: 0;
             background-color: rgba(12, 14, 9, 0.8);
             border: 1px solid rgb(137, 191, 213);
             border-radius: 5px; 
+            /*向右*/
+            .a-btn {
+                position: relative;
+                padding: 0 10px 0;
+            }
+            .triangle_border_right{
+                width:0;
+                height:0;
+                border-width:10px 0 10px 10px;
+                border-style:solid;
+                border-color:transparent transparent transparent rgb(171, 168, 168);/*透明 透明 透明 灰*/
+                margin:0;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -21px;
+            }
             #mainContainer1 {
-                padding: 0;                
+                padding: 0;
+                border-bottom:1px solid rgb(171, 168, 168);
             }           
             ul {
                 display: inline-block;
@@ -301,10 +343,32 @@ html, body {
         right: 0;
         bottom: 0;
         padding: 10px;
+        padding-top: 0;
         // width: 100%;
         background: rgba(12, 14, 9, 0.5);
         border: 1px solid rgb(137, 191, 213);    
         border-radius: 5px;
+        /*向下*/
+        .a-btn-down {
+                // position: relative;
+                padding: 0 15px 0;
+                display: block;
+                width: 12px;
+                height: 12px;
+                margin: 0 auto;
+            }
+        .triangle_border_down{
+            width:0;
+            height:0;
+            border-width:10px 10px 0;
+            border-style:solid;
+            border-color:rgb(171, 168, 168) transparent transparent;/*灰 透明 透明 */
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -14px;
+            margin-top: 5px;
+        }
     }
 }
     @media (min-width: 1024px){
@@ -323,7 +387,7 @@ html, body {
 
                     }
                     .right {
-                        top: 0;
+                        top: 10px;
                     }
                 }
                 .left {

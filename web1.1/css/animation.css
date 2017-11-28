@@ -1,0 +1,111 @@
+@keyframes slideRight {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(90%);
+    }
+}
+
+@-moz-keyframes slideRight
+/* Firefox */
+
+{
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(90%);
+    }
+}
+
+@-webkit-keyframes slideRight
+/* Safari 和 Chrome */
+
+{
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(90%);
+    }
+}
+
+@-o-keyframes slideRight
+/* Opera */
+
+{
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(90%);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(85%);
+    }
+}
+
+@-moz-keyframes slideDown
+/* Firefox */
+
+{
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(85%);
+    }
+}
+
+@-webkit-keyframes slideDown
+/* Safari 和 Chrome */
+
+{
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(85%);
+    }
+}
+
+@-o-keyframes slideDown
+/* Opera */
+
+{
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(85%);
+    }
+}
+
+.slide-show {
+    animation: slideRight 1s;
+    -moz-animation: slideRight 1s;
+    /* Firefox */
+    -webkit-animation: slideRight 1s;
+    /* Safari 和 Chrome */
+    -o-animation: slideRight 1s;
+    /* Opera */
+    animation-fill-mode: forwards;
+}
+
+.slide-down {
+    animation: slideDown 1s;
+    -moz-animation: slideDown 1s;
+    /* Firefox */
+    -webkit-animation: slideDown 1s;
+    /* Safari 和 Chrome */
+    -o-animation: slideDown 1s;
+    /* Opera */
+    animation-fill-mode: forwards;
+}
