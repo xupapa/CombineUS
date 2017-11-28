@@ -32,6 +32,7 @@ body {
 }
 .container .row-head .wrapper-head .head .account .account-wrapper {
   flex: 1;
+  text-align: right;
 }
 .container .row-head .wrapper-head .head .account .login-wrapper {
   flex: 1;
@@ -39,7 +40,8 @@ body {
   border-left: 2px solid #ffffff;
 }
 .container .row-head .wrapper-head .head .account .name-wrapper {
-  flex: 2;
+  flex: 1;
+  text-align: center;
 }
 .container .row-head .wrapper-head .head .account .account-img {
   width: 24px;
@@ -285,7 +287,7 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  margin-top: -21px;
+  margin-top: -20px;
 }
 .container .middle .right #mainContainer1 {
   padding: 0;

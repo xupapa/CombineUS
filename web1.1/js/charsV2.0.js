@@ -223,7 +223,7 @@ var timeLineClass = (function () {
                     top: 4,
                     // bottom: 0,
                     left: 150,
-                    right: 150,
+                    right: 200,
                     // symbol: 'path:../img/circle.png',
                     symbolSize: 20,
                     label: {
