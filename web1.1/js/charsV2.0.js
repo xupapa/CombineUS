@@ -16,7 +16,9 @@ resizeWorldMapContainerOfcityBar();
 
 //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------环图和小柱状图
 var pie = document.getElementById('pie');
-var dataBar = document.getElementById('dataBar');
+var pie2 = document.getElementById('pie2');
+
+// var dataBar = document.getElementById('dataBar');
 var mainContainers1 = document.getElementById('mainContainer1');
 var mainContainers2 = document.getElementById('mainContainer2');
 
@@ -29,11 +31,11 @@ var resizeWorldMapContainerOfMain = function () {
     // }
     if (window.innerWidth < 1680) {
         scaleWidth = 1;
-        scaleHeight = 0.5;
+        scaleHeight = 0.6;
     }
     if (window.innerWidth >= 1680) {
         scaleWidth = 1;
-        scaleHeight = 0.65;
+        scaleHeight = 0.6;
     }
     console.log(window.screen.availWidth);
     console.log(window.innerWidth)
@@ -43,8 +45,10 @@ var resizeWorldMapContainerOfMain = function () {
     // }
     pie.style.width = mainContainers1.clientWidth * scaleWidth + 'px';
     pie.style.height = mainContainers1.clientHeight * scaleHeight + 'px';
-    dataBar.style.width = mainContainers2.clientWidth * scaleWidth + 'px';
-    dataBar.style.height = mainContainers2.clientHeight * scaleHeight + 'px';
+    pie2.style.width = mainContainers2.clientWidth * scaleWidth + 'px';
+    pie2.style.height = mainContainers2.clientHeight * scaleHeight + 'px';
+    // dataBar.style.width = mainContainers2.clientWidth * scaleWidth + 'px';
+    // dataBar.style.height = mainContainers2.clientHeight * scaleHeight + 'px';
 };
 //设置容器高宽
 resizeWorldMapContainerOfMain();
@@ -143,23 +147,26 @@ var commonClass = (function () {
         init: function (data) {
             var matedata = privateMethod.formatInitData(data);
             timeLineClass.init(matedata.timeLine, data);
-            dataBarClass.init(matedata.dataX, matedata.citys[0]);
+            // dataBarClass.init(matedata.dataX, matedata.citys[0]);
             cityBarClass.init(matedata.citys, data);
             pieClass.init(matedata.dataX, matedata.citys[0]);
+            pieClass2.init(matedata.dataX, matedata.citys[0]);
             mapClass.init(matedata.citys[0])
         },
         changeTime: function (time, data) {
 
             var matedata = privateMethod.changeTime(time, data);
-            dataBarClass.init(matedata.dataX, matedata.city);
+            // dataBarClass.init(matedata.dataX, matedata.city);
             cityBarClass.init(matedata.citys, data);
             pieClass.init(matedata.dataX, matedata.city);
+            pieClass2.init(matedata.dataX, matedata.city);
             mapClass.init(matedata.city)
         },
         changeCity: function (cityName, data) {
             var matedata = privateMethod.changeCity(cityName, data)
-            dataBarClass.init(matedata.dataX, matedata.city);
+            // dataBarClass.init(matedata.dataX, matedata.city);
             pieClass.init(matedata.dataX, matedata.city);
+            pieClass2.init(matedata.dataX, matedata.city);
             mapClass.init(matedata.city)
         }
 
@@ -187,6 +194,20 @@ var timeLineClass = (function () {
                     checkpointStyle: {
                         color: '#fee327',
                         borderWidth: 0
+                    },
+                    top: 4,
+                    // bottom: 0,
+                    left: '5%',
+                    right: '5%',
+                    symbolSize: 18,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'bottom'
+                        },
+                        emphasis: {
+                            show: true
+                        }
                     }
                 }
             }
@@ -218,83 +239,83 @@ var timeLineClass = (function () {
 /**
  * 数据条形图实现类
  */
-var dataBarClass = (function () {
-    var dataBar = echarts.init(document.getElementById('dataBar'));
-    var privateMethod = {
-        initDataBar: function (xData, data) {
-            var option = {
-                title: {
-                    text: '',
-                    textStyle: {
-                        color: '#ffffff'
-                    }
-                },
-                grid: {
-                    top: 20,
-                    left: 50,
-                    right: 20,
-                    bottom: 40
-                },
-                tooltip: {},
-                legend: {
-                    data: ['数量']
-                },
-                itemStyle: {
-                    normal: {
-                        color: function () {
-                            return colors[i++];
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    }
-                },
-                xAxis: {
-                    data: xData,
-                    //调整x坐标轴字体颜色
-                    axisLabel: {
-                        textStyle: {
-                            color: 'white',
-                            fontSize: '12'
-                        },
-                    }
-                },
-                yAxis: {
-                    //调整y坐标轴字体颜色
-                    axisLabel: {
-                        textStyle: {
-                            color: 'white',
-                            fontSize: '12'
-                        },
-                    }
-                },
-                series: [{
-                    name: '销量',
-                    type: 'bar',
-                    data: data.detail,
-                    //动画的设置 动画类型 缓动效果 延迟时间
-                    animationType: 'scale',
-                    animationEasing: 'elasticOut',
-                    animationDelay: function (idx) {
-                        return Math.random() * 400;
-                    }
-                }]
-            };
-            // 使用刚指定的配置项和数据显示图表。
-            dataBar.setOption(option);
-            //清除颜色计数器
-            i = 0;
-        },
-    };
-    return {
-        init: function (xData, data) {
-            privateMethod.initDataBar(xData, data);
-        },
-    }
-})();
+// var dataBarClass = (function () {
+//     var dataBar = echarts.init(document.getElementById('dataBar'));
+//     var privateMethod = {
+//         initDataBar: function (xData, data) {
+//             var option = {
+//                 title: {
+//                     text: '',
+//                     textStyle: {
+//                         color: '#ffffff'
+//                     }
+//                 },
+//                 grid: {
+//                     top: 20,
+//                     left: 50,
+//                     right: 20,
+//                     bottom: 40
+//                 },
+//                 tooltip: {},
+//                 legend: {
+//                     data: ['数量']
+//                 },
+//                 itemStyle: {
+//                     normal: {
+//                         color: function () {
+//                             return colors[i++];
+//                         },
+//                         label: {
+//                             show: false
+//                         },
+//                         labelLine: {
+//                             show: false
+//                         }
+//                     }
+//                 },
+//                 xAxis: {
+//                     data: xData,
+//                     //调整x坐标轴字体颜色
+//                     axisLabel: {
+//                         textStyle: {
+//                             color: 'white',
+//                             fontSize: '12'
+//                         },
+//                     }
+//                 },
+//                 yAxis: {
+//                     //调整y坐标轴字体颜色
+//                     axisLabel: {
+//                         textStyle: {
+//                             color: 'white',
+//                             fontSize: '12'
+//                         },
+//                     }
+//                 },
+//                 series: [{
+//                     name: '销量',
+//                     type: 'bar',
+//                     data: data.detail,
+//                     //动画的设置 动画类型 缓动效果 延迟时间
+//                     animationType: 'scale',
+//                     animationEasing: 'elasticOut',
+//                     animationDelay: function (idx) {
+//                         return Math.random() * 400;
+//                     }
+//                 }]
+//             };
+//             // 使用刚指定的配置项和数据显示图表。
+//             dataBar.setOption(option);
+//             //清除颜色计数器
+//             i = 0;
+//         },
+//     };
+//     return {
+//         init: function (xData, data) {
+//             privateMethod.initDataBar(xData, data);
+//         },
+//     }
+// })();
 /**
  * 城市条形图实现类
  */
@@ -311,17 +332,22 @@ var cityBarClass = (function () {
             }
             var option = {
                 title: {
-                    text: '数据展示',
+                    text: '地址灾害及隐患点分省统计',
                     textStyle: {
                         color: '#ffffff'
-                    }
+                    },
+                    x: 'center'
                 },
                 grid: {
+                    top: 50,
+                    left: 50,
+                    right: 50,
                     bottom: 20
                 },
                 tooltip: {},
                 legend: {
-                    data: ['数量']
+                    data: ['数量'],
+                    x: 'left'
                 },
                 xAxis: {
                     data: cityNames,
@@ -331,16 +357,30 @@ var cityBarClass = (function () {
                             color: 'white',
                             fontSize: '12'
                         },
+                    },
+                    splitLine: {
+                        show: false
                     }
                 },
                 yAxis: {
                     //调整y坐标轴字体颜色
+                    name: '（个）',
+                    nameTextStyle: {
+                        color: "#ffffff",
+                        fontSize: 12
+                    },
                     axisLabel: {
                         textStyle: {
                             color: 'white',
                             fontSize: '12'
                         },
+                    },
+                    splitLine: {
+                        show: false
                     }
+                },
+                label: {
+
                 },
                 itemStyle: {
                     normal: {
@@ -412,20 +452,39 @@ var pieClass = (function () {
                 title: {
                     text: data.cityName,
                     textStyle: {
-                        color: '#ffffff'
+                        color: '#ffffff',
                     },
-                    // left
+                    top: 0,
+                    show: false
                 },
                 tooltip: {
                     trigger: 'item',
                     formatter: "{a} <br/>{b}: {c} ({d}%)"
                 },
                 legend: {
+                    show: false,
                     orient: 'vertical',
-                    x2: 15,
+                    x2: 5,
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
+                    }
+                },
+                graphic: {
+                    type: 'text',
+                    left: 'center',
+                    top: 'center',
+                    z: 2,
+                    zlevel: 100,
+                    style: {
+                        text: '威胁人口\n（人）',
+                        // x: 100,
+                        // y: 100,
+                        font: '14px "STHeiti", sans-serif',
+                        textAlign: 'center',
+                        fill: '#ffffff',
+                        width: 20,
+                        height: 20
                     }
                 },
                 itemStyle: {
@@ -454,8 +513,130 @@ var pieClass = (function () {
                 series: [{
                     name: '访问来源',
                     type: 'pie',
-                    radius: ['40%', '60%'],
-                    center: ['43%', '50%'],
+                    radius: ['50%', '70%'],
+                    center: ['50%', '50%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: true,
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '14',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: true
+                        }
+                    },
+                    data: datas,
+                    //动画的设置 动画类型 缓动效果 延迟时间
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut',
+                    animationDelay: function (idx) {
+                        return Math.random() * 400;
+                    }
+                }]
+            };
+            pie.setOption(option)
+            window.onresize = function () {
+                pie.resize();
+            }
+            //清除颜色计数器
+            j = 0;
+        }
+    };
+    return {
+        init: function (xdata, data) {
+            privateMethod.initPie(xdata, data);
+        }
+    }
+})();
+var pieClass2 = (function () {
+    var pie = echarts.init(document.getElementById('pie2'));
+    var privateMethod = {
+        initPie: function (xdata, data) {
+            var datas = []
+            for (var i = 0; i < data.detail.length; i++) {
+                var meta = {
+                    value: "",
+                    name: ""
+                }
+                meta.value = data.detail[i]
+                meta.name = xdata[i]
+                datas.push(meta)
+            }
+            option = {
+                title: {
+                    text: data.cityName,
+                    textStyle: {
+                        color: '#ffffff',
+                    },
+                    top: 0,
+                    show: false
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    show: false,
+                    orient: 'vertical',
+                    x2: 5,
+                    data: xdata,
+                    textStyle: {
+                        color: '#ffffff'
+                    }
+                },
+                graphic: {
+                    type: 'text',
+                    left: 'center',
+                    top: 'center',
+                    z: 2,
+                    zlevel: 100,
+                    style: {
+                        text: '威胁人口\n（人）',
+                        // x: 100,
+                        // y: 100,
+                        font: '14px "STHeiti", sans-serif',
+                        textAlign: 'center',
+                        fill: '#ffffff',
+                        width: 20,
+                        height: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: function () {
+                            return colors[j++];
+                        },
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        }
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            position: 'center',
+                            textStyle: {
+                                fontSize: '18',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    center: ['50%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
