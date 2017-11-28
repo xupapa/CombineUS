@@ -270,10 +270,6 @@ body {
   border-radius: 5px;
   /*向右*/
 }
-.container .middle .right .a-btn {
-  position: relative;
-  padding: 0 10px 0;
-}
 .container .middle .right .triangle_border_right {
   width: 0;
   height: 0;
@@ -284,8 +280,9 @@ body {
   margin: 0;
   position: absolute;
   top: 50%;
-  left: 0;
-  margin-top: -20px;
+  left: 10px;
+  margin-top: -14px;
+  cursor: pointer;
 }
 .container .middle .right #mainContainer1 {
   padding: 0;
@@ -380,7 +377,7 @@ body {
   }
   .container .middle .right {
     max-width: 300px;
-    max-height: 400px;
+    max-height: 380px;
   }
   .container .bottom #cityContainer {
     max-height: 150px;
@@ -401,7 +398,7 @@ body {
   }
   .container .middle .right {
     max-width: 300px;
-    max-height: 400px;
+    max-height: 380px;
   }
   .container .bottom #cityContainer {
     max-height: 150px;
@@ -445,7 +442,7 @@ body {
   }
   .container .middle .right {
     max-width: 300px;
-    max-height: 400px;
+    max-height: 380px;
   }
   .container .bottom #cityContainer {
     max-height: 150px;
@@ -477,7 +474,7 @@ body {
   }
   .container .middle .right {
     width: 300px;
-    height: 400px;
+    height: 380px;
   }
   .container .bottom #cityContainer {
     max-height: 500px;
@@ -509,7 +506,7 @@ body {
   }
   .container .middle .right {
     width: 300px;
-    height: 400px;
+    height: 380px;
   }
   .container .bottom #cityContainer {
     max-height: 500px;
