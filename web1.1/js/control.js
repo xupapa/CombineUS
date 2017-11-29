@@ -7,7 +7,8 @@ $(function () {
         $(this).find('span').addClass("link-active");
     })
     var triangle_right = $('.triangle_border_right');
-    triangle_right.click(function () {
+    triangle_right.click(function (e) {
+        e.stopPropagation()
         var mainContainer = $('#mainContainer');
         if (mainContainer.hasClass("slide-show")) {
             mainContainer.removeClass("slide-show");
