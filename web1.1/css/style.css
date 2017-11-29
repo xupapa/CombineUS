@@ -176,7 +176,7 @@ body {
 }
 .container .middle .center {
   position: absolute;
-  top: 10px;
+  top: 150px;
   left: 0;
   right: 0;
   z-index: 999;
