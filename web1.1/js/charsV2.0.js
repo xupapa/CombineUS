@@ -754,35 +754,37 @@ var pieClass2 = (function () {
  */
 var mapClass = (function () {
     //私有属性map
-    var map = new AMap.Map('map', {
-        //自适应开启
-        resizeEnable: true,
-        layers: [new AMap.TileLayer.RoadNet(),
-            new AMap.TileLayer.Satellite()
-        ],
-    })
+    var map=new T.Map('map');
+    // var map = new AMap.Map('map', {
+    //     //自适应开启
+    //     resizeEnable: true,
+    //     layers: [new AMap.TileLayer.RoadNet(),
+    //         new AMap.TileLayer.Satellite()
+    //     ],
+    // })
     //私有属性地图标注类
     var privateMethod = {
         //标注地图点
-        markPoint: function (points) {
-            for (var i = 0; i < points.length; i++) {
-                //构建绘图对象
-                var marker = new AMap.Marker({
-                    map: map,
-                    position: points[i]
-                });
-            }
+        // markPoint: function (points) {
+        //     for (var i = 0; i < points.length; i++) {
+        //         //构建绘图对象
+        //         var marker = new AMap.Marker({
+        //             map: map,
+        //             position: points[i]
+        //         });
+        //     }
 
-        },
+        // },
         //map初始化
         initMap: function (data) {
-            console.log(data)
             //设置皮肤
+            var zoom = 12;            
+            map.centerAndZoom(new T.LngLat(116.40769, 39.89945), zoom);            
             // map.setMapStyle("amap://styles/macaron");
             //设置初始化中心点坐标
-            map.setCenter(data.coordinate)
-            //渲染灾难点
-            privateMethod.markPoint(data.point)
+            // map.setCenter(data.coordinate)
+            // //渲染灾难点
+            // privateMethod.markPoint(data.point)
         },
     };
     return {
