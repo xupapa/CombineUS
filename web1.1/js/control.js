@@ -2,8 +2,10 @@ $(function () {
     var clickedLink = $('.container').find('.middle').find('.center').find('.link');
     clickedLink.click(function () {
         clickedLink.find('.link-active').removeClass("link-active");
+        clickedLink.find('.yellow').removeClass("yellow");
         clickedLink.find('.tab').css('opacity', '0.7');
         $(this).find('.tab').css('opacity', '0.8');
+        $(this).find('.tab').addClass("yellow");
         $(this).find('span').addClass("link-active");
     })
     var triangle_right = $('.triangle_border_right');

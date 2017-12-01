@@ -193,7 +193,8 @@ var timeLineClass = (function () {
                     data: timeData,
                     checkpointStyle: {
                         color: '#fee327',
-                        borderWidth: 0,
+                        borderWidth: 1,
+                        borderColor: '#ffffff',
                         symbolSize: 20,
                         // opacity: 0
 
@@ -203,24 +204,26 @@ var timeLineClass = (function () {
                     },
                     itemStyle: {
                         normal: {
-                            color: "#ffffff",
-                            borderWidth: 0,
+                            color: "#1f1f1f",
+                            borderType: 'solid',
+                            borderColor: '#ffffff',
+                            borderWidth: 1,
                             // opacity: 0
                         },
                         emphasis: {
                             // color: "green",
-                            color: 'white'
+                            color: '#fee327'
                             // opacity: 0
                         }
                     },
                     controlStyle: {
                         normal: {
                             color: '#ffffff',
-                            // borderColor: '#ffffff'
+                            borderColor: '#ffffff'
                         },
                         emphasis: {
                             color: '#ffffff',
-                            // borderColor: '#fee327'
+                            borderColor: '#fee327'
                         }
                     },
                     top: 2,
@@ -228,6 +231,7 @@ var timeLineClass = (function () {
                     left: 150,
                     right: 200,
                     // symbol: 'path:../img/circle.png',
+                    symbol: 'circle',
                     symbolSize: 20,
                     label: {
                         normal: {
@@ -767,16 +771,16 @@ var mapClass = (function () {
     //私有属性地图标注类
     var privateMethod = {
         //标注地图点
-        // markPoint: function (points) {
-        //     for (var i = 0; i < points.length; i++) {
-        //         //构建绘图对象
-        //         var marker = new AMap.Marker({
-        //             map: map,
-        //             position: points[i]
-        //         });
-        //     }
+        markPoint: function (points) {
+            for (var i = 0; i < points.length; i++) {
+                //构建绘图对象
+                var marker = new AMap.Marker({
+                    map: map,
+                    position: points[i]
+                });
+            }
 
-        // },
+        },
         //map初始化
         initMap: function (data) {
             //设置皮肤

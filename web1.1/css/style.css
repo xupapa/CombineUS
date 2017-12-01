@@ -243,6 +243,9 @@ body {
   margin: 0 auto;
   padding: 2px;
 }
+.container .middle .center .tabs .col-md-12 .nav-tabs li .link .white {
+  border: 2px solid white;
+}
 .container .middle .center .tabs .col-md-12 .nav-tabs li .link .orange {
   border: 2px solid orange;
 }
@@ -253,7 +256,7 @@ body {
   border: 2px solid purple;
 }
 .container .middle .center .tabs .col-md-12 .nav-tabs li .link .yellow {
-  border: 2px solid yellow;
+  border: 3px solid yellow;
 }
 .container .middle .center .tabs .col-md-12 .nav-tabs li .link .red {
   border: 2px solid red;
