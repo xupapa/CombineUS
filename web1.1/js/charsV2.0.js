@@ -31,11 +31,11 @@ var resizeWorldMapContainerOfMain = function () {
     // }
     if (window.innerWidth < 1680) {
         scaleWidth = 1;
-        scaleHeight = 0.6;
+        scaleHeight = 0.5;
     }
     if (window.innerWidth >= 1680) {
         scaleWidth = 1;
-        scaleHeight = 0.6;
+        scaleHeight = 0.5;
     }
     // console.log(window.screen.availWidth);
     // console.log(window.innerWidth)
@@ -550,7 +550,7 @@ var pieClass = (function () {
                 series: [{
                     // name: '访问来源',
                     type: 'pie',
-                    radius: ['50%', '70%'],
+                    radius: ['40%', '50%'],
                     center: ['50%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
@@ -596,9 +596,10 @@ var pieClass = (function () {
                 }]
             };
             pie.setOption(option)
-            window.onresize = function () {
-                pie.resize();
-            }
+            window.onresize = pie.resize;
+            // window.onresize = function () {
+            //     pie.resize();
+            // }
             //清除颜色计数器
             j = 0;
         }
@@ -689,7 +690,7 @@ var pieClass2 = (function () {
                 series: [{
                     name: '访问来源',
                     type: 'pie',
-                    radius: ['50%', '70%'],
+                    radius: ['40%', '50%'],
                     center: ['50%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
@@ -736,9 +737,10 @@ var pieClass2 = (function () {
                 }]
             };
             pie.setOption(option)
-            window.onresize = function () {
-                pie.resize();
-            }
+            window.onresize = pie.resize;
+            // window.onresize = function () {
+            //     pie.resize();
+            // }
             //清除颜色计数器
             j = 0;
         }
@@ -754,7 +756,7 @@ var pieClass2 = (function () {
  */
 var mapClass = (function () {
     //私有属性map
-    var map=new T.Map('map');
+    var map = new T.Map('map');
     // var map = new AMap.Map('map', {
     //     //自适应开启
     //     resizeEnable: true,
@@ -778,8 +780,8 @@ var mapClass = (function () {
         //map初始化
         initMap: function (data) {
             //设置皮肤
-            var zoom = 12;            
-            map.centerAndZoom(new T.LngLat(116.40769, 39.89945), zoom);            
+            var zoom = 12;
+            map.centerAndZoom(new T.LngLat(116.40769, 39.89945), zoom);
             // map.setMapStyle("amap://styles/macaron");
             //设置初始化中心点坐标
             // map.setCenter(data.coordinate)

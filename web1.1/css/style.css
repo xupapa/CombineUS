@@ -21,6 +21,11 @@ body {
 .container .row-head {
   padding-left: 0;
   padding-right: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 .container .row-head .wrapper-head .head {
   background-color: #23211f;
@@ -87,7 +92,11 @@ body {
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
   opacity: 0.8;
-  position: relative;
+  position: absolute;
+  top: 69px;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 .container .time .link-img img {
   width: 24px;
@@ -109,6 +118,9 @@ body {
   top: 10%;
   z-index: 999;
   padding-left: 10px;
+}
+.container .middle .left .list-wrapper {
+  width: 60%;
 }
 .container .middle .left ul {
   display: inline-block;
@@ -133,6 +145,7 @@ body {
   color: #fff900;
 }
 .container .middle .left .tip {
+  width: 60%;
   font-size: 14px;
   padding: 0;
   margin-top: 10px;
@@ -155,6 +168,17 @@ body {
   padding: 0 10px 10px 10px;
   color: #ffffff;
   font-size: 12px;
+}
+.container .middle .left .tip .list li .dot .dot-style {
+  font-size: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+.container .middle .left .tip .list li .dot .text-style {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 24px;
+  vertical-align: middle;
 }
 .container .middle .left .tip .list li .dot .dot-red {
   display: inline-block;
@@ -201,6 +225,11 @@ body {
 .container .middle .center .tabs .col-md-12 .nav-tabs li .link:active {
   color: yellow;
 }
+.container .middle .center .tabs .col-md-12 .nav-tabs li .link:hover {
+  background-color: black;
+  opacity: 0.7;
+  border-radius: 8px;
+}
 .container .middle .center .tabs .col-md-12 .nav-tabs li .link .tab {
   color: white;
   width: 90px;
@@ -240,7 +269,7 @@ body {
   text-align: left;
   font-size: 12px;
   display: inline-block;
-  padding: 10px;
+  padding: 5px 10px 5px;
   background: linear-gradient(to right, #23211f, rgba(35, 33, 31, 0.1));
   color: #ffffff;
 }
@@ -289,6 +318,10 @@ body {
   padding: 0;
   border-bottom: 1px solid #aba8a8;
 }
+.container .middle .right #mainContainer2 {
+  padding: 0;
+  padding-top: 5px;
+}
 .container .middle .right ul {
   display: inline-block;
 }
@@ -304,8 +337,8 @@ body {
 }
 .container .bottom {
   position: absolute;
-  left: 20px;
-  right: 20px;
+  left: 25px;
+  right: 25px;
   bottom: 0;
   z-index: 999;
   padding-bottom: 10px;
@@ -345,10 +378,10 @@ body {
     font-size: 20px;
   }
   .container .middle #map .left {
-    top: 10px;
+    top: calc(50px + 10%);
   }
   .container .middle #map .right {
-    top: 10px;
+    top: calc(60px + 10%);
   }
   .container .middle .left .tip {
     margin-top: 0;
@@ -367,11 +400,11 @@ body {
     font-size: 22px;
   }
   .container .middle #map .left {
-    top: 5px;
+    top: 18%;
   }
   .container .middle #map .right {
-    top: 5px;
-    right: 15px;
+    top: 18%;
+    right: 10px;
   }
   .container .middle .left .tip {
     margin-top: 5px;
@@ -389,10 +422,10 @@ body {
     font-size: 24px;
   }
   .container .middle #map .left {
-    top: 5px;
+    top: 18%;
   }
   .container .middle #map .right {
-    top: 5px;
+    top: 18%;
   }
   .container .middle .left .tip {
     margin-top: 5px;
@@ -410,7 +443,7 @@ body {
     font-size: 25px;
   }
   .container .middle #map .left {
-    top: 10%;
+    top: calc(60px + 10%);
   }
   .container .middle #map .center .tabs .col-md-12 .nav-tabs {
     text-align: center;
@@ -436,7 +469,7 @@ body {
     font-size: 12px !important;
   }
   .container .middle #map .right {
-    top: 10%;
+    top: calc(60px + 10%);
   }
   .container .middle .left .tip {
     margin-top: 5px;
@@ -454,16 +487,19 @@ body {
     font-size: 28px;
   }
   .container .middle #map .left {
-    top: 10%;
+    top: calc(60px + 10%);
   }
   .container .middle #map .center .tips .ull li {
     font-size: 18px;
   }
   .container .middle #map .right {
-    top: 10%;
+    top: calc(60px + 10%);
   }
   .container .middle .left {
     top: 20px;
+  }
+  .container .middle .left .list {
+    width: 60%;
   }
   .container .middle .left .list li a {
     font-size: 16px;
@@ -486,13 +522,13 @@ body {
     font-size: 33px;
   }
   .container .middle #map .left {
-    top: 10%;
+    top: calc(60px + 10%);
   }
   .container .middle #map .center .tips .ull li {
     font-size: 18px;
   }
   .container .middle #map .right {
-    top: 10%;
+    top: calc(60px + 10%);
   }
   .container .middle .left {
     top: 20px;
