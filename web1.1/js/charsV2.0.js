@@ -31,10 +31,11 @@ var resizeWorldMapContainerOfMain = function () {
     // }
     if (window.innerWidth < 1680) {
         scaleWidth = 1;
-        scaleHeight = 0.6;
+        scaleHeight = 0.5;
     }
     if (window.innerWidth >= 1680) {
         scaleWidth = 1;
+        scaleHeight = 0.5;
     }
     // console.log(window.screen.availWidth);
     // console.log(window.innerWidth)
@@ -549,6 +550,7 @@ var pieClass = (function () {
                 series: [{
                     // name: '访问来源',
                     type: 'pie',
+                    radius: ['40%', '50%'],
                     center: ['50%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
@@ -594,6 +596,10 @@ var pieClass = (function () {
                 }]
             };
             pie.setOption(option)
+            window.onresize = pie.resize;
+            // window.onresize = function () {
+            //     pie.resize();
+            // }
             //清除颜色计数器
             j = 0;
         }
@@ -684,6 +690,7 @@ var pieClass2 = (function () {
                 series: [{
                     name: '访问来源',
                     type: 'pie',
+                    radius: ['40%', '50%'],
                     center: ['50%', '50%'],
                     avoidLabelOverlap: false,
                     label: {
@@ -730,6 +737,10 @@ var pieClass2 = (function () {
                 }]
             };
             pie.setOption(option)
+            window.onresize = pie.resize;
+            // window.onresize = function () {
+            //     pie.resize();
+            // }
             //清除颜色计数器
             j = 0;
         }
@@ -745,6 +756,7 @@ var pieClass2 = (function () {
  */
 var mapClass = (function () {
     //私有属性map
+    var map = new T.Map('map');
     // var map = new AMap.Map('map', {
     //     //自适应开启
     //     resizeEnable: true,
@@ -768,14 +780,18 @@ var mapClass = (function () {
         //map初始化
         initMap: function (data) {
             //设置皮肤
-<<<<<<< HEAD
             center = new T.LngLat(116.63072 ,40.054952);
             var zoom=11
             //初始化地图对象
             //设置显示地图的中心点和级别
             map.centerAndZoom(center, zoom);
+            var imageURL = "http://t0.tianditu.cn/img_w/wmts?" +
+            "SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles" +
+            "&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
+            lay = new T.TileLayer(imageURL, {minZoom: 1, maxZoom: 18});
+            map.addLayer(lay)
             //创建信息窗口对象
-
+            console.log(map.getOverlays())
             marker = new T.Marker(center);// 创建标注
             map.addOverLay(marker);
             var infoWin1 = new T.InfoWindow();
@@ -887,6 +903,7 @@ var mapClass = (function () {
                 </div>
             </div>`
             infoWin1.setContent(sContent);
+            console.log(infoWin1.getContent())
             marker.addEventListener("click", function () {
                 marker.openInfoWindow(infoWin1);
             });// 将标注添加到地图中
@@ -897,8 +914,6 @@ var mapClass = (function () {
             //创建搜索对象
             localsearch = new T.LocalSearch(map,config);
 
-=======
->>>>>>> d2caa25eac208ed5e4a6cfd07d150edce63e88e2
             // map.setMapStyle("amap://styles/macaron");
             //设置初始化中心点坐标
             // map.setCenter(data.coordinate)
