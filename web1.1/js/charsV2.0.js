@@ -778,8 +778,134 @@ var mapClass = (function () {
         //map初始化
         initMap: function (data) {
             //设置皮肤
-            var zoom = 12;            
-            map.centerAndZoom(new T.LngLat(116.40769, 39.89945), zoom);            
+            center = new T.LngLat(116.63072 ,40.054952);
+            var zoom=11
+            //初始化地图对象
+            //设置显示地图的中心点和级别
+            map.centerAndZoom(center, zoom);
+            //创建信息窗口对象
+
+            marker = new T.Marker(center);// 创建标注
+            map.addOverLay(marker);
+            var infoWin1 = new T.InfoWindow();
+            var sContent =
+            `<div class="alert_window tag" style="border: 5px solid #09F;width: 400px;border: 2px solid #09F;background: rgba(63, 54, 45, 0.8);border-radius: 10px;z-index: 1000;">
+            <em class="em-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></em>
+            <span class="span-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></span>
+            <div class="alert_title" style="width: 100%;height: 35px;border-bottom: 1px solid #09F;position: relative;">
+                <h1 class="title" style=" padding-left: 10px;line-height: 35px;font-size: 14px;color: #ffffff;">县二中滑坡</h1>
+                <img class="close-icon" src="./img/icon/close.png" alt="close" style=" position: absolute;top: 50%;right: 10px;width: 24px;height: 24px;margin-top: -12px;">
+            </div>
+            <div class="alert_content" style="width: 100%;border-bottom:1px solid #09F;text-align: left;">
+                <div class="first-line" style="display: flex;">
+                    <div style="flex: 1;padding-top: 10px;padding-left: 10px;">
+                        <p style="color: #ffffff;font-size: 12px;margin:0;">灾害类型：
+                            <span>滑坡</span>
+                        </p>
+                    </div>
+                    <div style="flex: 1;padding-top: 10px;padding-left: 10px;">
+                        <p style="color: #ffffff;font-size: 12px;margin:0;">规模等级：
+                            <span>巨型</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="second-line" style="display: flex;">
+                    <div style="padding-top: 10px;padding-left: 10px;flex: 1;">
+                        <p style="color: #ffffff;font-size: 12px;margin:0;">威胁人数：
+                            <span class="span-red" style="color: red;">150</span>人
+                        </p>
+                    </div>
+                    <div style="padding-top: 10px;padding-left: 10px;flex: 1;">
+                        <p style="color: #ffffff;font-size: 12px;margin:0;" >威胁财产：
+                            <span class="span-orange" style="orange">2725.7</span>万元
+                        </p>
+                    </div>
+                </div>
+                <div class="third-line" style="display: flex;padding-top: 10px;padding-left: 10px;padding-bottom: 10px;">
+                    <p style="color: #ffffff;font-size: 12px;margin:0;">地理位置：
+                        <span>陕西省商洛市镇安县</span>
+                    </p>
+                </div>
+            </div>
+            <div class="alert_tips" style="padding: 5px;display: flex;">
+                <div class="img" style="flex: 1;border-right:1px solid #09F;text-align: center;">
+                    <img class="icon-heart" src="./img/icon/heart.png" alt="heart" style="width: 40px;height: 40px;">
+                    <h1 class="title" style="font-size: 12px;color: #ffffff;">
+                        全生命周期
+                    </h1>
+                </div>
+                <div class="tip" style="flex: 2;padding-top: 5px;padding-left: 10px;">
+                    <ul class="items" style="padding-left:0">
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-orange" style="font-size:24px;line-height:24px;vertical-align:middle;color: orange;">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">基本情况</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-yellow" style="font-size:24px;line-height:24px;vertical-align:middle;color: yellow;">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">群测群防</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-green" style="font-size:24px;line-height:24px;vertical-align:middle;color: green;">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">勘察</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-red" style="font-size:24px;line-height:24px;vertical-align:middle;color: red;">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">测绘</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-yellow" style="font-size:24px;line-height:24px;vertical-align:middle;color: yellow;">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">监测预警</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-purple" style="font-size:24px;line-height:24px;vertical-align:middle;color: purple;">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">搬迁避让</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
+                            <div class="dot">
+                                <p style="margin:0;">
+                                    <span class="dot-light-green" style="font-size:24px;line-height:24px;vertical-align:middle;color: color: rgb(103, 207, 200);">●</span>
+                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">工程治理</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>`
+            infoWin1.setContent(sContent);
+            marker.addEventListener("click", function () {
+                marker.openInfoWindow(infoWin1);
+            });// 将标注添加到地图中
+            var config = {
+                pageCapacity:10,	//每页显示的数量
+                onSearchComplete:localSearchResult	//接收数据的回调函数
+            };
+            //创建搜索对象
+            localsearch = new T.LocalSearch(map,config);
+
             // map.setMapStyle("amap://styles/macaron");
             //设置初始化中心点坐标
             // map.setCenter(data.coordinate)
