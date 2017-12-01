@@ -20,6 +20,11 @@ html, body {
     .row-head {
         padding-left: 0;
         padding-right: 0;
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        z-index:999;
         .wrapper-head {
             .head {
                 background-color: rgba(35, 33, 31, 1);
@@ -103,13 +108,16 @@ html, body {
         }
     }
     .time {
-        // padding: 10px;
         padding-bottom: 0;
         background: rgb(19, 22,12);
         filter:alpha(Opacity=80);
         -moz-opacity:0.8;
         opacity: 0.8;
-        position: relative;
+        position:absolute;
+        top:69px;
+        left:0;
+        right:0;
+        z-index:999;
         .link-img {
             img {
                 width: 24px;
@@ -131,8 +139,12 @@ html, body {
             left: 0;    
             top: 10%;            
             z-index: 999;  
-            padding-left: 10px; 
+            padding-left: 10px;
+            .list-wrapper{
+                width: 60%;
+            } 
             ul {
+                // width: 60%;
                 display: inline-block;                                 
                 li {
                     list-style: none;
@@ -155,6 +167,7 @@ html, body {
                 }
             }
             .tip {
+                width: 60%;                
                 font-size: 14px; 
                 padding: 0;
                 margin-top: 10px;
@@ -176,6 +189,17 @@ html, body {
                             padding: 0 10px 10px 10px;                                
                             color: #ffffff;                               
                             font-size: 12px;
+                            .dot-style {
+                                font-size:24px;
+                                line-height:24px;
+                                vertical-align:middle;
+                            }
+                            .text-style {
+                                display:inline-block;
+                                font-size:12px;
+                                line-height:24px;
+                                vertical-align:middle;
+                            }
                             .dot-red {
                                 display: inline-block;   
                                 font-size: 24px;
@@ -225,6 +249,11 @@ html, body {
                                 &:active {
                                     color: yellow;
                                 }
+                                &:hover {
+                                    background-color:black;
+                                    opacity:0.7;
+                                    border-radius:8px;
+                                }
                                 .tab {
                                     color:white;
                                     width:90px;
@@ -270,7 +299,7 @@ html, body {
                         text-align: left;
                         font-size: 12px;
                         display: inline-block;
-                        padding: 10px;
+                        padding: 5px 10px 5px;
                         background: linear-gradient(to right, rgba(35, 33, 31, 1), rgba(35, 33, 31, 0.1));
                         color: #ffffff;
                         .purple {
@@ -327,7 +356,11 @@ html, body {
             #mainContainer1 {
                 padding: 0;
                 border-bottom:1px solid rgb(171, 168, 168);
-            }           
+            }
+            #mainContainer2 {
+                padding:0;
+                padding-top:5px;
+            }            
             ul {
                 display: inline-block;
                 li {
@@ -346,8 +379,8 @@ html, body {
     }
     .bottom {
         position: absolute;
-        left: 20px;
-        right: 20px;
+        left: 25px;
+        right: 25px;
         bottom: 0;
         z-index: 999;
         // padding: 10px;
@@ -390,13 +423,16 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 10px;
+                        // top: 10px;
+                        top: calc(~'50px + 10%');                        
+                        
                     }
                     .center {
 
                     }
                     .right {
-                        top: 10px;
+                        // top: 10px;
+                        top: calc(~'60px + 10%');                        
                     }
                 }
                 .left {
@@ -427,13 +463,13 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 5px;
+                        top: 18%;
                     }
                     .center {
                     }
                     .right {
-                        top: 5px;
-                        right: 15px;
+                        top: 18%;
+                        right: 10px;
                     }
                 }
                 .left {
@@ -461,13 +497,13 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 5px;
+                        top: 18%;
                     }
                     .center {
 
                     }
                     .right {
-                        top: 5px;
+                        top: 18%;
                     }
                 }
                 .left {
@@ -495,7 +531,7 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 10%;
+                        top: calc(~'60px + 10%');
                     }
                     .center {
                         .tabs {
@@ -531,7 +567,7 @@ html, body {
                         }
                     }
                     .right {
-                        top: 10%;
+                        top: calc(~'60px + 10%');
                     }
                 }
                 .left {
@@ -559,7 +595,8 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 10%;
+                        top: calc(~'60px + 10%');
+                        // top: 10%;
                     }
                     .center {
                         .tips {
@@ -571,12 +608,14 @@ html, body {
                         }
                     }
                     .right {
-                        top: 10%;
+                        // top: 10%;
+                        top: calc(~'60px + 10%');                        
                     }
                 }
                 .left {
                     top: 20px;
                     .list {
+                        width: 60%;
                         li{ 
                             a {
                                 font-size: 16px;     
@@ -584,6 +623,7 @@ html, body {
                         }
                     }
                     .tip {
+                        // width: 60%;
                         font-size: 16px;
                         text-align: left;
                         font-weight: 450;
@@ -607,7 +647,8 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: 10%;
+                        // top: 10%;
+                        top: calc(~'60px + 10%');                        
                     }
                     .center {
                         .tips {
@@ -619,7 +660,9 @@ html, body {
                         }
                     }
                     .right {
-                        top: 10%;
+                        // top: 10%;
+                        top: calc(~'60px + 10%');
+                        
                     }
                 }
                 .left {
