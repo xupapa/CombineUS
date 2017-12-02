@@ -10,6 +10,7 @@
         crossorigin="anonymous"></script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- <script src="./js/echarts.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animation.css">
@@ -208,28 +209,23 @@
                                 </div>
                             </div>
                             <div class="col-md-3 col-lg-2 column account">
-                                <div class="account-wrapper">
-                                    <img class="account-img" src="./img/icon/account-filling.png" alt="account">
+                                <div class="account1">
+                                    <!-- <div class="account-wrapper">
+                                        <img class="account-img" src="./img/icon/account-filling.png" alt="account">
 
-                                </div>
-                                <div class="name-wrapper">
-                                    <span class="name">管理员</span>
-                                </div>
-                                <div class="login-wrapper">
-                                    <img class="login" src="./img/icon/switch.png" alt="login">
+                                    </div> -->
+                                    <div class="name-wrapper">
+                                        <span class="avatar">
+                                            <img class="account-img" src="./img/icon/avatar.png" alt="avatar">
+                                        </span>
+                                        <span class="name">管理员</span>
+                                    </div>
+                                    <div class="login-wrapper">
+                                        <img class="login" src="./img/icon/switch.png" alt="login">
 
+                                    </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4 column">
-                        <div class="row clearfix">
-                            <div class="col-md-6 column">
-                                <button type="button" class="btn btn-default">默认</button>
-                            </div>
-                            <div class="col-md-6 column">
-                                <button type="button" class="btn btn-default">默认</button>
-                            </div>
-                        </div>
-                    </div> -->
                         </div>
                     </div>
                 </div>
@@ -238,55 +234,31 @@
                         <div id="time" style="height:50px;"></div>
                         <div class="link-img">
                             <a href="#">
-                                <img src="./img/icon/link-oc.png" alt="link">
+                                <img src="./img/icon/link-oc.png" alt="link" width="24px" height="24px">
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 left">
-                    <ul class="list list-wrapper">
-                        <li>
-                            <div class="link">
-                                <a href="#">灾害点</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="link">
-                                <a href="#">
-                                    隐患点
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="link">
-                                <a href="#">
-                                    险情隐患点
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="link">
-                                <a href="#">
-                                    年度新增隐患点
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="link">
-                                <a href="#">
-                                    年度核销隐患点
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="link">
-                                <a href="#">
-                                    年度成功避让
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="tip">
+                    <div class="line con_left">
+                        <ul class="erji">
+                            <li>灾&nbsp;害&nbsp;点</li>
+                            <li>隐&nbsp;患&nbsp;点</li>
+                            <li>特大型隐患点</li>
+                            <li>年度新增隐患点</li>
+                            <li>年度核销隐患点</li>
+                            <li>年度灾情险情点</li>
+                            <li>年度成功避让点</li>
+                        </ul>
+                        <ul class="tuli">
+                            <p>图例</p>
+                            <li>
+                                <span></span>新增隐患点</li>
+                            <li>
+                                <span></span>隐患点</li>
+                        </ul>
+                    </div>
+                    <!-- <div class="tip">
                         <h1 class="title">图例</h1>
                         <ul class="list">
                             <li>
@@ -306,9 +278,9 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="col-md-8 column center">
+                <div class="col-md-9 column center">
                     <div class="row clearfix tabs tips">
                         <div class="col-md-12 column">
                             <ul class="nav nav-tabs">
@@ -364,24 +336,24 @@
                             </ul>
                             <ul class="ull">
                                 <li>
-                                    <div>
+                                    <div class="bg-deep">
                                         <span>灾害点（
                                             <span class="purple">120</span>）处</span>
                                     </div>
                                     <li>
-                                        <div>
+                                        <div class="bg-light">
                                             隐患点（
                                             <span class="pink">200</span>）处
                                         </div>
                                     </li>
                                     <li>
-                                        <div>
+                                        <div class="bg-deep">
                                             <span>年度新增隐患点（
                                                 <span class="green">210</span>）处</span>
                                         </div>
                                     </li>
                                     <li>
-                                        <div>
+                                        <div class="bg-light">
                                             <span>年度核销隐患点（
                                                 <span class="yellow">300</span>）处</span>
                                         </div>
