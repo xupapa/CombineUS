@@ -518,12 +518,18 @@ var pieClass = (function () {
             }
             option = {
                 title: {
-                    text: data.cityName,
+                    text: '威胁人口',
+                    subtext: '(人)',
                     textStyle: {
                         color: '#ffffff',
+                        fontSize: 12,
                     },
-                    top: 0,
-                    show: false
+                    subtextStyle:{
+                        color: 'orange',
+                        contSize:11
+                    },
+                    left:'center',
+                    top:'40%',
                 },
                 tooltip: {
                     trigger: 'item',
@@ -536,23 +542,6 @@ var pieClass = (function () {
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
-                    }
-                },
-                graphic: {
-                    type: 'text',
-                    left: 'center',
-                    top: 'center',
-                    z: 2,
-                    zlevel: 100,
-                    style: {
-                        text: '威胁人口\n（人）',
-                        // x: 100,
-                        // y: 100,
-                        font: '14px "STHeiti", sans-serif',
-                        textAlign: 'center',
-                        fill: '#ffffff',
-                        width: 20,
-                        height: 20
                     }
                 },
                 itemStyle: {
@@ -588,7 +577,7 @@ var pieClass = (function () {
                     label: {
                         normal: {
                             show: true,
-                            formatter: '{b|{b}}\n{hr|}\n{per|{d}%}  ',
+                            formatter: '{b|{b}}\n{per|{d}%}  ',
                             rich: {
                                 a: {
                                     color: '#999',
@@ -597,28 +586,22 @@ var pieClass = (function () {
                                     data: xdata
                                 },
                                 per: {
-                                    fontSize: '12',
+                                    fontSize: '10',
                                 },
-                                hr: {
-                                    borderColor: 'red',
-                                    width: '100%',
-                                    borderWidth: 1,
-                                    height: 0,
-                                    marginRight:-5,
-                                }
-
                             }
                         },
                         emphasis: {
                             show: true,
                             textStyle: {
-                                fontSize: '14',
+                                fontSize: '12',
                                 fontWeight: 'bold'
                             }
                         }
                     },
                     labelLine: {
                         normal: {
+                            length:10,
+                            length2:10,
                             show: true
                         }
                     },
@@ -662,12 +645,18 @@ var pieClass2 = (function () {
             }
             option = {
                 title: {
-                    text: data.cityName,
+                    text: '威胁财产',
+                    subtext: '(万元)',
                     textStyle: {
                         color: '#ffffff',
+                        fontSize: 12,
                     },
-                    top: 0,
-                    show: false
+                    subtextStyle:{
+                        color: 'orange',
+                        fontSize:11
+                    },
+                    left:'center',
+                    top:'40%',
                 },
                 tooltip: {
                     trigger: 'item',
@@ -681,23 +670,6 @@ var pieClass2 = (function () {
                     data: xdata,
                     textStyle: {
                         color: '#ffffff'
-                    }
-                },
-                graphic: {
-                    type: 'text',
-                    left: 'center',
-                    top: 'center',
-                    z: 2,
-                    zlevel: 100,
-                    style: {
-                        text: '威胁财产\n（万元）',
-                        // x: 100,
-                        // y: 100,
-                        font: '14px "STHeiti", sans-serif',
-                        textAlign: 'center',
-                        fill: '#ffffff',
-                        width: 20,
-                        height: 20
                     }
                 },
                 itemStyle: {
@@ -744,20 +716,22 @@ var pieClass2 = (function () {
                                     data: xdata
                                 },
                                 per: {
-                                    fontSize: '12',
+                                    fontSize: '10',
                                 }
                             }
                         },
-                        emphasis: {
+                        emphasis: { 
                             show: true,
                             textStyle: {
-                                fontSize: '14',
+                                fontSize: '12',
                                 fontWeight: 'bold'
                             }
                         }
                     },
                     labelLine: {
                         normal: {
+                            length:10,
+                            length2:10,
                             show: true
                         }
                     },
