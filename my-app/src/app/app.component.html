@@ -1,22 +1,16 @@
-<nz-layout>
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="0" [nzBreakpoint]="'lg'">
-    <div class="logo">
-    </div>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-      <li nz-menu-item><span><i class="anticon anticon-user"></i><span class="nav-text">nav 1</span></span></li>
-      <li nz-menu-item><span><i class="anticon anticon-video-camera"></i><span class="nav-text">nav 2</span></span>
-      </li>
-      <li nz-menu-item><span><i class="anticon anticon-upload"></i><span class="nav-text">nav 3</span></span></li>
-      <li nz-menu-item><span><i class="anticon anticon-user"></i><span class="nav-text">nav 4</span></span></li>
-    </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header style="background: #fff; padding:0;"></nz-header>
-    <nz-content style="margin:24px 16px 0;">
-      <div style="padding:24px; background: #fff; min-height: 360px;">
-        Content
+<div nz-row>
+  <div nz-col [nzSpan]="7" style="background-color:black;height:60px">
+      <div nz-col [nzSpan]="4" style="background-color:yellow;height:60px">
+        <img src="../assets/img/header/logo.png" alt="logo">
       </div>
-    </nz-content>
-    <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
-  </nz-layout>
-</nz-layout>
+      <div nz-col [nzSpan]="20" style="background-color:pink;height:60px">
+      
+      </div>
+  </div>
+  <div nz-col [nzSpan]="12" style="background-color:blue;height:60px">
+    col-12
+  </div>
+  <div nz-col [nzSpan]="5" style="background-color:rgb(238, 53, 53);height:60px">
+    col-5
+  </div>
+</div>
