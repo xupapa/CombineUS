@@ -71,6 +71,7 @@ var colorsOfCity = ['#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98A
 var commonClass = (function () {
     var selectedTime;
     var selectedCity;
+    var selectedShape="square";
     var privateMethod = {
         formatInitData: function (data) {
             var metadata = {
@@ -138,8 +139,7 @@ var commonClass = (function () {
             }
             return metadata;
 
-        }
-
+        },
     };
     return {
         //全局初始化
@@ -168,6 +168,16 @@ var commonClass = (function () {
             pieClass.init(matedata.dataX, matedata.city);
             pieClass2.init(matedata.dataX, matedata.city);
             mapClass.init(matedata.city)
+        },
+        changeCityBarShap:function(){
+
+            if(selectedShape=="square"){
+                cityBarClass.changeShape("other");
+                selectedShape="other";            
+            }else{
+                cityBarClass.changeShape("square");
+                selectedShape="square";                            
+            }
         }
 
 
@@ -271,89 +281,6 @@ var timeLineClass = (function () {
         }
     }
 })();
-/**
- * 数据条形图实现类
- */
-// var dataBarClass = (function () {
-//     var dataBar = echarts.init(document.getElementById('dataBar'));
-//     var privateMethod = {
-//         initDataBar: function (xData, data) {
-//             var option = {
-//                 title: {
-//                     text: '',
-//                     textStyle: {
-//                         color: '#ffffff'
-//                     }
-//                 },
-//                 grid: {
-//                     top: 20,
-//                     left: 50,
-//                     right: 20,
-//                     bottom: 40
-//                 },
-//                 tooltip: {},
-//                 legend: {
-//                     data: ['数量']
-//                 },
-//                 itemStyle: {
-//                     normal: {
-//                         color: function () {
-//                             return colors[i++];
-//                         },
-//                         label: {
-//                             show: false
-//                         },
-//                         labelLine: {
-//                             show: false
-//                         }
-//                     }
-//                 },
-//                 xAxis: {
-//                     data: xData,
-//                     //调整x坐标轴字体颜色
-//                     axisLabel: {
-//                         textStyle: {
-//                             color: 'white',
-//                             fontSize: '12'
-//                         },
-//                     }
-//                 },
-//                 yAxis: {
-//                     //调整y坐标轴字体颜色
-//                     axisLabel: {
-//                         textStyle: {
-//                             color: 'white',
-//                             fontSize: '12'
-//                         },
-//                     }
-//                 },
-//                 series: [{
-//                     name: '销量',
-//                     type: 'bar',
-//                     data: data.detail,
-//                     //动画的设置 动画类型 缓动效果 延迟时间
-//                     animationType: 'scale',
-//                     animationEasing: 'elasticOut',
-//                     animationDelay: function (idx) {
-//                         return Math.random() * 400;
-//                     }
-//                 }]
-//             };
-//             // 使用刚指定的配置项和数据显示图表。
-//             dataBar.setOption(option);
-//             //清除颜色计数器
-//             i = 0;
-//         },
-//     };
-//     return {
-//         init: function (xData, data) {
-//             privateMethod.initDataBar(xData, data);
-//         },
-//     }
-// })();
-/**
- * 城市条形图实现类
- */
 var cityBarClass = (function () {
     var cityBar = echarts.init(document.getElementById('cityBar'));
     var privateMethod = {
@@ -468,24 +395,26 @@ var cityBarClass = (function () {
             });
         },
         changeShape:function(shape){
-            if(shape=='square'){
+            if(shape=='other'){
                 var option={
                     itemStyle:{
                         normal:{
-                            barBorderRadius: 8
+                            barBorderRadius: [7, 7, 0, 0]
                         },
                     }
                 };
-                cityBar.setOption(option);    
+                cityBar.setOption(option);
+                k = 0;    
             }else {
                 var option={
                     itemStyle:{
                         normal:{
-                            barBorderRadius: 0
+                            barBorderRadius: [0, 0, 0, 0]
                         },
                     }
                 };
                 cityBar.setOption(option); 
+                k = 0;
             }
         }   
     };
@@ -8098,6 +8027,9 @@ var dataMap = {
 }
 
 commonClass.init(dataMap);
+var changeCityBarShape=function(){
+commonClass.changeCityBarShap();
+};
 // })
 //用于使chart自适应高度和宽度
 window.onresize = function () {
