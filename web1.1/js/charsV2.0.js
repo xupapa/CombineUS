@@ -151,7 +151,7 @@ var commonClass = (function () {
             cityBarClass.init(matedata.citys, data);
             pieClass.init(matedata.dataX, matedata.citys[0]);
             pieClass2.init(matedata.dataX, matedata.citys[0]);
-            mapClass.init(matedata.citys[0])
+            mapClass.init();
         },
         changeTime: function (time, data) {
 
@@ -367,7 +367,6 @@ var cityBarClass = (function () {
             }
             var option = {
                 title: {
-                    text: '地址灾害及隐患点分省统计',
                     textStyle: {
                         color: '#ffffff'
                     },
@@ -420,6 +419,9 @@ var cityBarClass = (function () {
                 },
                 itemStyle: {
                     normal: {
+                        // color:['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],                        
+                        // barBorderRadius: 8, // 统一设置四个角的圆角大小
+                        // barBorderRadius: [5, 5, 0, 0], //（顺时针左上，右上，右下，左下）
                         color: function () {
                             if (colorsOfCity.length - 1 == k) {
                                 k = 0;
@@ -437,7 +439,7 @@ var cityBarClass = (function () {
                     }
                 },
                 series: [{
-                    name: '销量',
+                    name: '数据',
                     type: 'bar',
                     barWidth: '60%',
                     data: cityDatas,
@@ -447,10 +449,12 @@ var cityBarClass = (function () {
                     animationDelay: function (idx) {
                         return Math.random() * 400;
                     }
-                }]
+                }],
+                
             };
+          
             // 使用刚指定的配置项和数据显示图表。
-            cityBar.setOption(option);
+            cityBar.setOption(option); 
             //清除颜色计数器
             k = 0;
         },
@@ -460,16 +464,39 @@ var cityBarClass = (function () {
          */
         listenCityChange: function (data) {
             cityBar.on('click', function (params) {
-                commonClass.changeCity(params.name, data)
+                commonClass.changeCity(params.name, data); 
             });
-        }
-
+        },
+        changeShape:function(shape){
+            if(shape=='square'){
+                var option={
+                    itemStyle:{
+                        normal:{
+                            barBorderRadius: 8
+                        },
+                    }
+                };
+                cityBar.setOption(option);    
+            }else {
+                var option={
+                    itemStyle:{
+                        normal:{
+                            barBorderRadius: 0
+                        },
+                    }
+                };
+                cityBar.setOption(option); 
+            }
+        }   
     };
     return {
         init: function (xData, data) {
             privateMethod.initCityBar(xData);
             privateMethod.listenCityChange(data);
         },
+        changeShape:function(shape){
+            privateMethod.changeShape(shape);
+        }
     }
 })();
 /**
@@ -556,12 +583,12 @@ var pieClass = (function () {
                     type: 'pie',
                     radius: ['40%', '50%'],
                     center: ['50%', '50%'],
+                    color:['#25E37B', '#FD9752', '#319BFF', '#FEE327'],
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
                             show: true,
-                            formatter: '{b|{b}}\n{per|{d}%}',
-                            // formatter: '{b|{b}}\n{a|{a}}',
+                            formatter: '{b|{b}}\n{hr|}\n{per|{d}%}  ',
                             rich: {
                                 a: {
                                     color: '#999',
@@ -571,10 +598,15 @@ var pieClass = (function () {
                                 },
                                 per: {
                                     fontSize: '12',
-                                    function () {
-                                        return colors[j++];
-                                    }
+                                },
+                                hr: {
+                                    borderColor: 'red',
+                                    width: '100%',
+                                    borderWidth: 1,
+                                    height: 0,
+                                    marginRight:-5,
                                 }
+
                             }
                         },
                         emphasis: {
@@ -696,6 +728,7 @@ var pieClass2 = (function () {
                     type: 'pie',
                     radius: ['40%', '50%'],
                     center: ['50%', '50%'],
+                    color:['#25E37B', '#FD9752', '#319BFF', '#FEE327'],                    
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
@@ -712,9 +745,6 @@ var pieClass2 = (function () {
                                 },
                                 per: {
                                     fontSize: '12',
-                                    color: function () {
-                                        return colors[j++];
-                                    }
                                 }
                             }
                         },
@@ -759,45 +789,27 @@ var pieClass2 = (function () {
  * 地图实现类
  */
 var mapClass = (function () {
-    //私有属性map
-    var map = new T.Map('map');
-    // var map = new AMap.Map('map', {
-    //     //自适应开启
-    //     resizeEnable: true,
-    //     layers: [new AMap.TileLayer.RoadNet(),
-    //         new AMap.TileLayer.Satellite()
-    //     ],
-    // })
+    //图层覆盖地址
+    var imageURL = "http://t0.tianditu.cn/img_w/wmts?" +
+    "SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles" +
+    "&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
+        //私有属性map
+    
+    var map = new T.Map('map', {
+        //自适应开启
+        resizeEnable: true, 
+        layers:new T.TileLayer(imageURL, {minZoom: 1, maxZoom: 18})
+    });
     //私有属性地图标注类
     var privateMethod = {
         //标注地图点
-        markPoint: function (points) {
-            for (var i = 0; i < points.length; i++) {
-                //构建绘图对象
-                var marker = new AMap.Marker({
-                    map: map,
-                    position: points[i]
-                });
-            }
-
-        },
-        //map初始化
-        initMap: function (data) {
-            //设置皮肤
-            center = new T.LngLat(116.63072 ,40.054952);
-            var zoom=11;
-            //初始化地图对象
-            //设置显示地图的中心点和级别
-            map.centerAndZoom(center, zoom);
-            var imageURL = "http://t0.tianditu.cn/img_w/wmts?" +
-            "SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles" +
-            "&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}";
-            lay = new T.TileLayer(imageURL, {minZoom: 1, maxZoom: 18});
-            map.addLayer(lay)
-            //创建信息窗口对象
-            console.log(map.getOverlays())
-            marker = new T.Marker(center);// 创建标注
+        markPoint: function (point) {
+            console.log(point)
+            marker = new T.Marker(new T.LngLat(116.411794, 39.9068));// 创建标注
+            privateMethod.infoWindow(marker)
             map.addOverLay(marker);
+        },
+        infoWindow:function(marker){
             var infoWin1 = new T.InfoWindow();
             var sContent =
             `<div class="alert_window tag" style="border: 5px solid #09F;width: 400px;border: 2px solid #09F;background: rgba(63, 54, 45, 0.8);border-radius: 10px;z-index: 1000;">
@@ -910,12 +922,29 @@ var mapClass = (function () {
             marker.addEventListener("click", function () {
                 marker.openInfoWindow(infoWin1);
             });// 将标注添加到地图中
-
-            // map.setMapStyle("amap://styles/macaron");
-            //设置初始化中心点坐标
-            // map.setCenter(data.coordinate)
-            // //渲染灾难点
-            // privateMethod.markPoint(data.point)
+        },
+        //map初始化
+        initMap: function (data) {
+            //设置皮肤
+            center=new T.LngLat(116.40769, 39.89945);
+            //判断显示级别
+            var zoom;
+            if(data){
+                center = new T.LngLat(data.coordinate[0] ,data.coordinate[1]);                
+               zoom=12;                
+            }else{
+                zoom=6;
+            }
+            console.log(data);
+            if(data){
+                for(var i=0;i<data.point.length;i++){
+                    privateMethod.markPoint(data.point[i]);
+                }
+            }
+            map.centerAndZoom(center, zoom);
+            map.setMapType(TMAP_SATELLITE_MAP);
+			map.setMapType(TMAP_HYBRID_MAP);//地图混合开关
+        
         },
     };
     return {
