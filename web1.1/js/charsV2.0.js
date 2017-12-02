@@ -844,7 +844,7 @@ var mapClass = (function () {
                 center = new T.LngLat(data.coordinate[0], data.coordinate[1]);
                 zoom = 12;
             } else {
-                zoom = 6;
+                zoom = 5;
             }
             if (data) {
                 for (var i = 0; i < data.point.length; i++) {
@@ -852,8 +852,8 @@ var mapClass = (function () {
                 }
             }
             map.centerAndZoom(center, zoom);
-            map.setMapType(TMAP_SATELLITE_MAP);
             map.setMapType(TMAP_HYBRID_MAP); //地图混合开关
+            console.log(map.getMapType());
 
         },
     };
