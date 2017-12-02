@@ -301,10 +301,10 @@ var cityBarClass = (function () {
                     y: 10
                 },
                 grid: {
-                    top: 40,
+                    top: 30,
                     left: 50,
                     right: 50,
-                    bottom: 30
+                    bottom: 35
                 },
                 tooltip: {},
                 legend: {
@@ -730,7 +730,7 @@ var mapClass = (function () {
             <span class="span-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></span>
             <div class="alert_title" style="width: 100%;height: 35px;border-bottom: 1px solid #09F;position: relative;">
                 <h1 class="title" style=" padding-left: 10px;line-height: 35px;font-size: 14px;color: #ffffff;">县二中滑坡</h1>
-                <img class="close-icon" src="./img/icon/close.png" alt="close" style=" position: absolute;top: 50%;right: 10px;width: 24px;height: 24px;margin-top: -12px;">
+                <img class="close-icon" src="./img/icon/close.png" alt="close" style=" position: absolute;top: 50%;right: 10px;width: 24px;height: 24px;margin-top: -12px;display:none;">
             </div>
             <div class="alert_content" style="width: 100%;border-bottom:1px solid #09F;text-align: left;">
                 <div class="first-line" style="display: flex;">

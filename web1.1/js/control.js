@@ -27,4 +27,41 @@ $(function () {
         }
         cityContainer.addClass("slide-down");
     })
+    //	侧边点击隐藏
+    $(".left_hidden").bind("click", function () {
+        $(".con_right").animate({
+            right: "-260px"
+        });
+        $(".left_show").animate({
+            left: "-35px"
+        });
+    });
+    //	侧边点击显示
+    $(".left_show").bind("click", function () {
+        $(".left_show").animate({
+            left: "260px"
+        });
+        $(".con_right").animate({
+            right: "10px"
+        });
+    });
+
+    //	底部点击隐藏
+    $(".bottom_hidden").bind("click", function () {
+        $(".bottom").animate({
+            bottom: "-145px"
+        });
+        $(".bottom_show").animate({
+            top: "-45px"
+        });
+    });
+    //	底部点击显示
+    $(".bottom_show").bind("click", function () {
+        $(".bottom_show").animate({
+            top: "110%"
+        });
+        $(".bottom").animate({
+            bottom: "10px"
+        });
+    });
 });

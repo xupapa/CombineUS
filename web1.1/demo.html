@@ -9,8 +9,6 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="./js/echarts.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animation.css">
@@ -344,13 +342,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 right" id="mainContainer">
+                <div class="col-md-2 right con_right" id="mainContainer">
                     <div class="col-md-12 column" id="mainContainer1">
                         <div id="pie" style="height:175px;width:165px"></div>
                     </div>
-                    <!-- <a href="#" class="a-btn"> -->
-                    <div class="a-btn triangle_border_right"></div>
-                    <!-- </a> -->
+                    <!-- <div class="a-btn triangle_border_right"></div> -->
+                    <div class="left_hidden">
+                        <img src="./img/icon/right.png" />
+                    </div>
+                    <div class="left_show">
+                        <img src="./img/icon/left.png" />
+                    </div>
+                    <div class="shuxian"></div>
                     <div class="col-md-12 column" id="mainContainer2">
                         <div id="pie2" style="height:175px;width:165px"></div>
                     </div>
@@ -363,13 +366,19 @@
         <!-- 底部 -->
         <div class="row clearfix bottom">
             <div class="col-md-12 column" id="cityContainer">
-                <a href="#" class="a-btn-down">
+                <!-- <a href="#" class="a-btn-down">
                     <div class="triangle_border_down"></div>
-                </a>
+                </a> -->
+                <div class="bottom_hidden">
+                    <img src="./img/icon/down.png" />
+                </div>
+                <div class="bottom_show">
+                    <img src="./img/icon/top.png" />
+                </div>
                 <div id="cityBar" style="height:200px;width:200px"></div>
                 <div class="change-icon">
                     <button class="btn-change" onclick="changeCityBarShape()">
-                        <img class="change-img" src="./img/icon/change.png" alt="切换" width="24px" height="24px">
+                        <img class="change-img" src="./img/icon/change.png" alt="切换" width="18px" height="18px">
                     </button>
                 </div>
             </div>
