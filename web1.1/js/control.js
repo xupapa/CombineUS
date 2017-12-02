@@ -81,4 +81,15 @@ $(function () {
         });
         data_now = $(this).find('p').html();
     });
+    // 二级菜单点击效果
+    $(".erji li").bind("click", function () {
+        $(this).css({
+            background: "rgba(0, 0, 0, .9)",
+            color: "yellow"
+        }).siblings().css({
+            background: "rgba(0, 0, 0, .7)",
+            color: "#fff"
+        });
+        dataType = $(this).html();
+    });
 });
