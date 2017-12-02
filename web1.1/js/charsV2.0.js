@@ -785,7 +785,7 @@ var mapClass = (function () {
         initMap: function (data) {
             //设置皮肤
             center = new T.LngLat(116.63072 ,40.054952);
-            var zoom=11
+            var zoom=11;
             //初始化地图对象
             //设置显示地图的中心点和级别
             map.centerAndZoom(center, zoom);
@@ -905,18 +905,11 @@ var mapClass = (function () {
                         </li>
                     </ul>
                 </div>
-            </div>`
+            </div>`;
             infoWin1.setContent(sContent);
-            console.log(infoWin1.getContent())
             marker.addEventListener("click", function () {
                 marker.openInfoWindow(infoWin1);
             });// 将标注添加到地图中
-            var config = {
-                pageCapacity:10,	//每页显示的数量
-                onSearchComplete:localSearchResult	//接收数据的回调函数
-            };
-            //创建搜索对象
-            localsearch = new T.LocalSearch(map,config);
 
             // map.setMapStyle("amap://styles/macaron");
             //设置初始化中心点坐标
