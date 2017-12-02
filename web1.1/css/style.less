@@ -34,10 +34,15 @@ html, body {
         right:0;
         z-index:999;
         .wrapper-head {
+            height: 48px;
             .head {
                 background-color: black;
+                height: 48px;
+                .title {
+                    height: 48px;
+                }                
                 .account1 {
-                    height: 60px;
+                    height: 48px;
                     display: flex;
                     align-items:center;
                     // vertical-align: middle;
@@ -56,10 +61,10 @@ html, body {
                     }
                     .name-wrapper {
                         flex: 1;
-                        line-height: 30px;
                         display: inline-block;
                         text-align: right;
                         padding-right: 20px;
+                        margin-bottom: 10px;
                         .avatar {
                             display: inline-block;
                             width: 24px;
@@ -80,7 +85,7 @@ html, body {
                     .login {
                         width: 24px;
                         height: 24px;
-                        vertical-align: -6px;
+                        // vertical-align: -6px;
                         text-align: center;
                         // position: absolute;
                         // top: 50%;
@@ -103,20 +108,26 @@ html, body {
                 }
                 #header {
                     width: 100%;
-                    height: 60px;
+                    height: 48px;
                     padding-left: 20px;
                     display: inline-block;
                     .title {
-                        font-size: 25px;
+                        font-size: 22px;
                         font-weight: 700;
-                        vertical-align: bottom;
-                        line-height: 60px;
                         display: inline-block;
-                        // font-family: 'Microsoft YaHei' !important; 
+                        height: 48px;
+                        padding-left: 64px;
+                        color: #ffffff;
+                        text-decoration: none;
+                        line-height: 48px;
+                        background-image: url("../img/logo.png");
+                        background-repeat: no-repeat;
+                        background-position: left;
+                        background-size: 10%;
                     }
                     .logo {
                         display: inline-block;
-                        height: 60px;
+                        height: 48px;
                         padding-left: 64px;
                         color: #ffffff;
                         text-decoration: none;
@@ -140,7 +151,7 @@ html, body {
         -moz-opacity:0.8;
         opacity: 0.8;
         position:absolute;
-        top:60px;
+        top:48px;
         left:0;
         right:0;
         z-index:999;
@@ -318,7 +329,7 @@ html, body {
         }
         .center {
             position: absolute;
-            top: 150px;
+            top: 100px;
             left: 0;
             right: 0; 
             z-index: 999;   
@@ -335,7 +346,7 @@ html, body {
                         width: 840px;
                         margin: 0px auto !important;
                         display: flex !important;
-                        height: 90px;
+                        // height: 90px;
                         margin-top: 10px !important;
                         justify-content:space-around;
                     }
@@ -384,7 +395,8 @@ html, body {
             .tips {
                 .ull {
                     font-size: 0;
-                    margin: 0 auto;                    
+                    margin: 0 auto;
+                    margin-top: 20px;                     
                     li{
                         text-align: center;
                         font-size: 12px;
@@ -482,7 +494,7 @@ html, body {
                 top: 178px;
                 left: 22px;
                 z-index: 10;
-                width: 210px;
+                width: 180px;
                 border-bottom: 1px solid #324331;
             }
             .triangle_border_right{
@@ -624,7 +636,7 @@ html, body {
                 #map {
                     .left {
                         // top: 10px;
-                        top: calc(~'50px + 10%');                        
+                        top: calc(~'50px + 20%');                        
                         
                     }
                     .center {
@@ -632,7 +644,7 @@ html, body {
                     }
                     .right {
                         // top: 10px;
-                        top: calc(~'60px + 10%');                        
+                        top: calc(~'50px + 20%');                        
                     }
                 }
                 .left {
@@ -641,7 +653,7 @@ html, body {
                     }
                 }
                 .right {
-                    // max-width: 300px;
+                    max-width: 220px;
                     // min-width: 300px;
                     // max-height: 400px;
                     // min-height: 400px;
@@ -651,7 +663,7 @@ html, body {
             }
             .bottom {
                 #cityContainer {
-                    max-height: 150px;
+                    max-height: 120px;
 
                 }
             }
@@ -678,13 +690,13 @@ html, body {
                     }
                 }
                 .right {
-                    // max-width: 300px;
+                    max-width: 220px;
                     // max-height: 380px;
                 }
             }
             .bottom {
                 #cityContainer {
-                    max-height: 150px;
+                    max-height: 120px;
 
                 }
             }
@@ -712,13 +724,13 @@ html, body {
                     }
                 }
                 .right {
-                    // max-width: 300px;
+                    max-width: 220px;
                     // max-height: 380px;
                 }
             }
             .bottom {
                 #cityContainer {
-                    max-height: 150px;
+                    max-height: 120px;
 
                 }
             }
@@ -731,7 +743,7 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: calc(~'60px + 10%');
+                        top: calc(~'50px + 20%');
                     }
                     .center {
                         .tabs {
@@ -758,7 +770,6 @@ html, body {
                         }
                         .tips {
                             .ull {
-                                margin-top: 20px;
                                 li {
                                     min-width: 185px; 
                                     font-size: 12px !important;                                   
@@ -767,7 +778,8 @@ html, body {
                         }
                     }
                     .right {
-                        top: calc(~'60px + 10%');
+                        top: calc(~'50px + 20%');
+                        max-width: 220px;
                     }
                 }
                 .left {
@@ -776,14 +788,13 @@ html, body {
                     }
                 }
                 .right {
-                    // max-width: 300px;
+                    max-width: 250px;
                     // max-height: 380px;
                 }
             }
             .bottom {
                 #cityContainer {
-                    max-height: 150px;
-
+                    max-height: 120px;
                 }
             }
         }
@@ -795,7 +806,7 @@ html, body {
             .middle {
                 #map {
                     .left {
-                        top: calc(~'60px + 10%');
+                        top: calc(~'50px + 20%');
                         // top: 10%;
                     }
                     .center {
@@ -809,7 +820,7 @@ html, body {
                     }
                     .right {
                         // top: 10%;
-                        top: calc(~'60px + 10%');                        
+                        top: calc(~'50px + 20%');                        
                     }
                 }
                 .left {
@@ -830,13 +841,13 @@ html, body {
                     }
                 }
                 .right {
-                    // width: 300px;
+                    max-width: 220px;
                     // height: 380px;
                 }
             }
             .bottom {
                 #cityContainer {
-                    max-height: 250px;
+                    max-height: 120px;
                 }
             }
         }
@@ -848,7 +859,7 @@ html, body {
                 #map {
                     .left {
                         // top: 10%;
-                        top: calc(~'60px + 10%');                        
+                        top: 20%;                        
                     }
                     .center {
                         .tips {
@@ -861,7 +872,8 @@ html, body {
                     }
                     .right {
                         // top: 10%;
-                        top: calc(~'60px + 10%');
+                        top: 20%;
+                        max-width: 220px;
                         
                     }
                 }
@@ -881,14 +893,13 @@ html, body {
                     }
                 }
                 .right {
-                    // width: 300px;
+                    max-width: 220px;
                     // height: 380px;
                 }
             }
             .bottom {
                 #cityContainer {
-                    height: 130px;
-                    max-height: 250px;
+                    height: 120px;
                 }
             }
         }

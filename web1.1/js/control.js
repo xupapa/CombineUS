@@ -30,16 +30,16 @@ $(function () {
     //	侧边点击隐藏
     $(".left_hidden").bind("click", function () {
         $(".con_right").animate({
-            right: "-260px"
+            right: "-220px"
         });
         $(".left_show").animate({
-            left: "-35px"
+            left: "-15%"
         });
     });
     //	侧边点击显示
     $(".left_show").bind("click", function () {
         $(".left_show").animate({
-            left: "260px"
+            left: "120%"
         });
         $(".con_right").animate({
             right: "10px"
@@ -49,10 +49,10 @@ $(function () {
     //	底部点击隐藏
     $(".bottom_hidden").bind("click", function () {
         $(".bottom").animate({
-            bottom: "-165px"
+            bottom: "-135px"
         });
         $(".bottom_show").animate({
-            top: "-45px"
+            top: "-45%"
         });
     });
     //	底部点击显示

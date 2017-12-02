@@ -37,7 +37,7 @@ var resizeWorldMapContainerOfMain = function () {
     //     scaleWidth = 1;
     //     scaleHeight = 0.5;
     // }
-    // console.log(window.screen.availWidth);
+    console.log(window.screen.availWidth);
     // console.log(window.innerWidth)
     // switch (window.innerWidth) {
     //     case window.innerWidth <= 1440:
@@ -300,6 +300,12 @@ var cityBarClass = (function () {
                     x: 'center',
                     y: 10
                 },
+                // grid: {
+                //     top: 30,
+                //     left: 50,
+                //     right: 50,
+                //     bottom: 35
+                // },
                 grid: {
                     top: 30,
                     left: 50,
@@ -387,7 +393,6 @@ var cityBarClass = (function () {
             // })
             $(window).resize(function () {
                 cityBar.resize()
-                console.log(cityBar)
             })
             //清除颜色计数器
             k = 0;
@@ -711,7 +716,6 @@ var mapClass = (function () {
     var privateMethod = {
         //标注地图点
         markPoint: function (point) {
-            console.log(point)
             marker = new T.Marker(new T.LngLat(116.411794, 39.9068)); // 创建标注
             privateMethod.infoWindow(marker)
             map.addOverLay(marker);
@@ -842,7 +846,6 @@ var mapClass = (function () {
             } else {
                 zoom = 6;
             }
-            console.log(data);
             if (data) {
                 for (var i = 0; i < data.point.length; i++) {
                     privateMethod.markPoint(data.point[i]);
