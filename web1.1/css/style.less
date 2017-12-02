@@ -37,7 +37,7 @@ html, body {
             .head {
                 background-color: black;
                 .account1 {
-                    height: 69px;
+                    height: 60px;
                     display: flex;
                     align-items:center;
                     // vertical-align: middle;
@@ -103,23 +103,24 @@ html, body {
                 }
                 #header {
                     width: 100%;
+                    height: 60px;
                     padding-left: 20px;
                     display: inline-block;
                     .title {
                         font-size: 25px;
                         font-weight: 700;
                         vertical-align: bottom;
-                        line-height: 69px;
+                        line-height: 60px;
                         display: inline-block;
                         // font-family: 'Microsoft YaHei' !important; 
                     }
                     .logo {
                         display: inline-block;
-                        height: 69px;
+                        height: 60px;
                         padding-left: 64px;
                         color: #ffffff;
                         text-decoration: none;
-                        line-height: 69px;
+                        line-height: 60px;
                         background-image: url("../img/logo.png");
                         background-repeat: no-repeat;
                         background-position: left;
@@ -139,7 +140,7 @@ html, body {
         -moz-opacity:0.8;
         opacity: 0.8;
         position:absolute;
-        top:69px;
+        top:60px;
         left:0;
         right:0;
         z-index:999;
@@ -182,7 +183,7 @@ html, body {
                     width: 120px;
                     height: 245px;
                     
-                    border:1px solid #50c4aa;
+                    border:1px solid #72adbb;
                     border-radius: 9px;
                 }
                 .erji li {
@@ -216,7 +217,7 @@ html, body {
                     background: rgba(0, 0, 0, .7);
                     text-align: left;
                     padding-left: 10px;
-                    border: 1px solid #50c4aa;
+                    border: 1px solid #72adbb;
                     border-radius: 9px;
                 }
 
@@ -325,68 +326,58 @@ html, body {
             margin: auto;
             .tabs {
                 .col-md-12 {
-                    .nav-tabs {
-                        text-align: center;                        
-                        margin: 0 auto;
-                        border: 0;
-                        display: inline-block;
-                        li {
-                            list-style: none;
-                            display: inline-block;
-                            font-size: 14px;
-                            margin-right: 25px;
-                            &:nth-of-type(6) {
-                                margin-right: 0;
-                            }
-                            .link {
-                                padding: 0;
-                                text-decoration:none;
-                                &:active {
-                                    color: yellow;
-                                }
-                                &:hover {
-                                    background-color:black;
-                                    opacity:0.7;
-                                    border-radius:8px;
-                                }
-                                .tab {
-                                    color:white;
-                                    width:90px;
-                                    height:50px;
-                                    background-color:black;
-                                    opacity:0.7;
-                                    border-radius:8px;
-                                    img {
-                                        display:block;
-                                        margin:0 auto;
-                                        padding: 2px;
-                                    }
-                                }
-                                .white {
-                                    border:2px solid white;
-                                    
-                                }
-                                .orange {
-                                    border:2px solid orange;
-                                }
-                                .green {
-                                    border:2px solid green;                                    
-                                }
-                                .purple {
-                                    border:2px solid purple;                                    
-                                }
-                                .yellow {
-                                    border:3px solid yellow;
+                    .yijibaioti {
+                        height: 100px;
+                        text-align: center;
+                        
+                    }
+                    .yijibaioti-ul {
+                        width: 840px;
+                        margin: 0px auto !important;
+                        display: flex !important;
+                        height: 90px;
+                        margin-top: 10px !important;
+                        justify-content:space-around;
+                    }
+                    .yijibaioti-ul li {
+                        margin: 0px !important;
+                        width: 110px;
+                        height: 60px;
+                        text-align: center;
+                        border-radius: 10px;
+                        background: rgba(0, 0, 0, .7);
+                        cursor: pointer;
+                        border: 2px solid #fff;
+                        list-style: none;
+                    }
+                    .yijibaioti-ul li:nth-child(1){
+                        background: rgba(0, 0, 0, .8);
+                        border: 2px solid yellow;
+                    }
 
-                                }
-                                .red {
-                                    border:2px solid red;                                    
-                                }
-                                .blue {
-                                    border:2px solid blue;                                    
-                                }
-                            }
-                        }
+                    .yijibaioti-ul li:nth-child(1) p{
+                        color: yellow;
+                    }
+
+                    .yijibaioti-ul li:hover {
+                        background: rgba(0, 0, 0, .8);
+                    }
+
+                    .yijibaioti-ul li:hover p {
+                        color: yellow;
+                    }
+
+                    .yijibaioti-ul li img {
+                        width: 20px;
+                        height: 20px;
+                        margin-top: 7px;
+                        // margin-bottom: 5px;
+                    }
+
+                    .yijibaioti-ul li p {
+                        text-align: center;
+                        font-size: 15px;
+                        color: #fff;
                     }
                 }
             }
@@ -408,27 +399,31 @@ html, body {
                             line-height: 30px;
                             // background: linear-gradient(to right, rgba(35, 33, 31, 1), rgba(35, 33, 31, 0.1));                                
                             background-color: rgba(6, 8, 3, .8);
-                            box-shadow: 1px 0px 20px #ffffff;
+                            // box-shadow: 1px 0px 20px #ffffff;
                             border: 1px solid #77726c;
                         }
                         .bg-light {
                             line-height: 30px;                            
                             // background: linear-gradient(to right, rgba(35, 33, 31, 1), rgba(35, 33, 31, 0.1));                                
                             background-color: rgba(30, 43, 33, 0.65); 
-                            box-shadow: 1px 0px 20px #ffffff;
+                            // box-shadow: 1px 0px 20px #ffffff;
                             border: 1px solid #77726c;
                         }
                         .purple {
                             color: #ff8300;
+                            font-weight: bold;
                         }
                         .pink {
                             color: #fff900;
+                            font-weight: bold;                            
                         }
                         .green {
                             color: #f91c0f;
+                            font-weight: bold;                            
                         }
                         .yellow {
                             color: #42f942;
+                            font-weight: bold;                            
                         }
                     }
                 }
@@ -437,14 +432,14 @@ html, body {
         .right {
             // max-width: 300px;
             // height: 300px; 
-            width: 250px;           
+            // width: 250px;           
             position: absolute;
             top: 10%;
             right: 10px;
             z-index: 999;
             padding-top: 5px;
-            padding-right: 10px;
-            padding-left: 10px;
+            padding-right: 0;
+            padding-left: 0;
             padding-bottom: 0;
             background-color: rgba(12, 14, 9, 0.8);
             border: 1px solid #72adbb;
@@ -532,7 +527,7 @@ html, body {
         // position: fixed;
         left: 25px;
         right: 25px;
-        bottom: 10px;
+        bottom: 2px;
         z-index: 999;
         // padding: 10px;
         // padding-top: 0;
@@ -586,7 +581,8 @@ html, body {
             right: 5px;
             top: 5px;
             .btn-change {
-                border: 1px solid white;
+                // border: 1px solid white;
+                border: none !important;
                 background: rgba(30, 43, 33, 0.8);
                 outline: none;
                 padding: 0 8px 4px 8px;
@@ -613,6 +609,9 @@ html, body {
     }
     .tdt-pane .tdt-infowindow .tdt-infowindow-content-wrapper .tdt-infowindow-tip-container {
         left: -50px;
+    }
+    .tdt-control-container .tdt-bottom .tdt-control-copyright{
+        display: none !important;
     }
     @media (min-width: 1024px){
         body{font-size: 18px}

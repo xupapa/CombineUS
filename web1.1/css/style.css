@@ -39,7 +39,7 @@ body {
   background-color: black;
 }
 .container .row-head .wrapper-head .head .account1 {
-  height: 69px;
+  height: 60px;
   display: flex;
   align-items: center;
 }
@@ -80,6 +80,7 @@ body {
 }
 .container .row-head .wrapper-head .head #header {
   width: 100%;
+  height: 60px;
   padding-left: 20px;
   display: inline-block;
 }
@@ -87,16 +88,16 @@ body {
   font-size: 25px;
   font-weight: 700;
   vertical-align: bottom;
-  line-height: 69px;
+  line-height: 60px;
   display: inline-block;
 }
 .container .row-head .wrapper-head .head #header .logo {
   display: inline-block;
-  height: 69px;
+  height: 60px;
   padding-left: 64px;
   color: #ffffff;
   text-decoration: none;
-  line-height: 69px;
+  line-height: 60px;
   background-image: url("../img/logo.png");
   background-repeat: no-repeat;
   background-position: left;
@@ -109,7 +110,7 @@ body {
   -moz-opacity: 0.8;
   opacity: 0.8;
   position: absolute;
-  top: 69px;
+  top: 60px;
   left: 0;
   right: 0;
   z-index: 999;
@@ -147,7 +148,7 @@ body {
   display: block !important;
   width: 120px;
   height: 245px;
-  border: 1px solid #50c4aa;
+  border: 1px solid #72adbb;
   border-radius: 9px;
 }
 .container .middle .left .con_left .erji li {
@@ -181,7 +182,7 @@ body {
   background: rgba(0, 0, 0, 0.7);
   text-align: left;
   padding-left: 10px;
-  border: 1px solid #50c4aa;
+  border: 1px solid #72adbb;
   border-radius: 9px;
 }
 .container .middle .left .con_left .tuli p {
@@ -277,66 +278,51 @@ body {
   text-align: center;
   margin: auto;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs {
+.container .middle .center .tabs .col-md-12 .yijibaioti {
+  height: 100px;
   text-align: center;
-  margin: 0 auto;
-  border: 0;
-  display: inline-block;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li {
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul {
+  width: 840px;
+  margin: 0px auto !important;
+  display: flex !important;
+  height: 90px;
+  margin-top: 10px !important;
+  justify-content: space-around;
+}
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li {
+  margin: 0px !important;
+  width: 110px;
+  height: 60px;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  border: 2px solid #fff;
   list-style: none;
-  display: inline-block;
-  font-size: 14px;
-  margin-right: 25px;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li:nth-of-type(6) {
-  margin-right: 0;
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li:nth-child(1) {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid yellow;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link {
-  padding: 0;
-  text-decoration: none;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link:active {
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li:nth-child(1) p {
   color: yellow;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link:hover {
-  background-color: black;
-  opacity: 0.7;
-  border-radius: 8px;
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .tab {
-  color: white;
-  width: 90px;
-  height: 50px;
-  background-color: black;
-  opacity: 0.7;
-  border-radius: 8px;
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li:hover p {
+  color: yellow;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .tab img {
-  display: block;
-  margin: 0 auto;
-  padding: 2px;
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li img {
+  width: 20px;
+  height: 20px;
+  margin-top: 7px;
 }
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .white {
-  border: 2px solid white;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .orange {
-  border: 2px solid orange;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .green {
-  border: 2px solid green;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .purple {
-  border: 2px solid purple;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .yellow {
-  border: 3px solid yellow;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .red {
-  border: 2px solid red;
-}
-.container .middle .center .tabs .col-md-12 .nav-tabs li .link .blue {
-  border: 2px solid blue;
+.container .middle .center .tabs .col-md-12 .yijibaioti-ul li p {
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
 }
 .container .middle .center .tips .ull {
   font-size: 0;
@@ -353,36 +339,37 @@ body {
 .container .middle .center .tips .ull li .bg-deep {
   line-height: 30px;
   background-color: rgba(6, 8, 3, 0.8);
-  box-shadow: 1px 0px 20px #ffffff;
   border: 1px solid #77726c;
 }
 .container .middle .center .tips .ull li .bg-light {
   line-height: 30px;
   background-color: rgba(30, 43, 33, 0.65);
-  box-shadow: 1px 0px 20px #ffffff;
   border: 1px solid #77726c;
 }
 .container .middle .center .tips .ull li .purple {
   color: #ff8300;
+  font-weight: bold;
 }
 .container .middle .center .tips .ull li .pink {
   color: #fff900;
+  font-weight: bold;
 }
 .container .middle .center .tips .ull li .green {
   color: #f91c0f;
+  font-weight: bold;
 }
 .container .middle .center .tips .ull li .yellow {
   color: #42f942;
+  font-weight: bold;
 }
 .container .middle .right {
-  width: 250px;
   position: absolute;
   top: 10%;
   right: 10px;
   z-index: 999;
   padding-top: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 0;
+  padding-left: 0;
   padding-bottom: 0;
   background-color: rgba(12, 14, 9, 0.8);
   border: 1px solid #72adbb;
@@ -460,7 +447,7 @@ body {
   position: absolute;
   left: 25px;
   right: 25px;
-  bottom: 10px;
+  bottom: 2px;
   z-index: 999;
   padding-bottom: 10px;
   background: rgba(12, 14, 9, 0.5);
@@ -513,7 +500,7 @@ body {
   top: 5px;
 }
 .container .bottom .change-icon .btn-change {
-  border: 1px solid white;
+  border: none !important;
   background: rgba(30, 43, 33, 0.8);
   outline: none;
   padding: 0 8px 4px 8px;
@@ -534,6 +521,9 @@ body {
 }
 .tdt-pane .tdt-infowindow .tdt-infowindow-content-wrapper .tdt-infowindow-tip-container {
   left: -50px;
+}
+.tdt-control-container .tdt-bottom .tdt-control-copyright {
+  display: none !important;
 }
 @media (min-width: 1024px) {
   body {

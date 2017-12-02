@@ -49,7 +49,7 @@ $(function () {
     //	底部点击隐藏
     $(".bottom_hidden").bind("click", function () {
         $(".bottom").animate({
-            bottom: "-145px"
+            bottom: "-165px"
         });
         $(".bottom_show").animate({
             top: "-45px"
@@ -61,7 +61,24 @@ $(function () {
             top: "110%"
         });
         $(".bottom").animate({
-            bottom: "10px"
+            bottom: "2px"
         });
+    });
+    //一级菜单点击效果
+    $(".yijibaioti-ul li").bind("click", function () {
+        $(this).css({
+            background: "rgba(0, 0, 0, .8)",
+            borderColor: "yellow"
+        }).siblings().css({
+            background: "rgba(0, 0, 0, .7)",
+            borderColor: "#fff"
+        });
+        $(this).find('p').css({
+            color: "yellow"
+        });
+        $(this).siblings().find('p').css({
+            color: "#fff"
+        });
+        data_now = $(this).find('p').html();
     });
 });
