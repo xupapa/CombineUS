@@ -482,9 +482,6 @@ var pieClass = (function () {
                 },
                 itemStyle: {
                     normal: {
-                        color: function () {
-                            return colors[j++];
-                        },
                         label: {
                             show: false
                         },
@@ -610,9 +607,6 @@ var pieClass2 = (function () {
                 },
                 itemStyle: {
                     normal: {
-                        color: function () {
-                            return colors[j++];
-                        },
                         label: {
                             show: false
                         },
