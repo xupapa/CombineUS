@@ -194,41 +194,43 @@
     <div class="container">
 
         <div class="row clearfix middle">
-            <!-- <div id="map" style="height:100%;width:100%;" onmouseout="place(event)"> -->
-            <div id="map" style="height:100%;width:100%;">
-                <div class="row clearfix row-head">
-                    <div class="col-md-12 column wrapper-head">
-                        <div class="row clearfix head">
-                            <div class="col-md-9 col-lg-10 column">
-                                <div id="header">
-                                    <h1 class="title">
-                                        <a class="logo" href="#">
-                                            全国地质灾害信息管理系统
-                                        </a>
-                                    </h1>
-                                </div>
+            <!-- 顶部标题栏 -->
+            <div class="row clearfix row-head">
+                <div class="col-md-12 column wrapper-head">
+                    <div class="row clearfix head">
+                        <div class="col-md-9 col-lg-10 column">
+                            <div id="header">
+                                <h1 class="title">
+                                    <a class="logo" href="#">
+                                        全国地质灾害信息管理系统
+                                    </a>
+                                </h1>
                             </div>
-                            <div class="col-md-3 col-lg-2 column account">
-                                <div class="account1">
-                                    <!-- <div class="account-wrapper">
-                                        <img class="account-img" src="./img/icon/account-filling.png" alt="account">
+                        </div>
+                        <div class="col-md-3 col-lg-2 column account">
+                            <div class="account1">
+                                <!-- <div class="account-wrapper">
+                                                    <img class="account-img" src="./img/icon/account-filling.png" alt="account">
+            
+                                                </div> -->
+                                <div class="name-wrapper">
+                                    <span class="avatar">
+                                        <img class="account-img" src="./img/icon/avatar.png" alt="avatar">
+                                    </span>
+                                    <span class="name">管理员</span>
+                                </div>
+                                <div class="login-wrapper">
+                                    <img class="login" src="./img/icon/switch.png" alt="login">
 
-                                    </div> -->
-                                    <div class="name-wrapper">
-                                        <span class="avatar">
-                                            <img class="account-img" src="./img/icon/avatar.png" alt="avatar">
-                                        </span>
-                                        <span class="name">管理员</span>
-                                    </div>
-                                    <div class="login-wrapper">
-                                        <img class="login" src="./img/icon/switch.png" alt="login">
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- 中央地图 -->
+            <div id="map" style="height:100%;width:100%;">
+
                 <div class="row clearfix time">
                     <div class="col-md-12 column" id="timeContainer">
                         <div id="time" style="height:50px;"></div>
@@ -379,12 +381,18 @@
                 </div>
             </div>
         </div>
+        <!-- 底部 -->
         <div class="row clearfix bottom">
             <div class="col-md-12 column" id="cityContainer">
                 <a href="#" class="a-btn-down">
                     <div class="triangle_border_down"></div>
                 </a>
                 <div id="cityBar" style="height:200px;width:200px"></div>
+                <div class="change-icon">
+                    <button class="btn-change">
+                        <img class="change-img" src="./img/icon/change.png" alt="切换" width="24px" height="24px">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
