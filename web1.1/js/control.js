@@ -90,6 +90,17 @@ $(function () {
             background: "rgba(0, 0, 0, .7)",
             color: "#fff"
         });
-        dataType = $(this).html();
+        // dataType = $(this).html();
     });
+    //模态框 圆圈点击效果
+    // $(".modal-body li").bind("click", function () {
+    //     $(this).css({
+    //         background: "rgba(0, 0, 0, .9)",
+    //         color: "yellow"
+    //     }).siblings().css({
+    //         background: "rgba(0, 0, 0, .7)",
+    //         color: "#fff"
+    //     });
+    //     // dataType = $(this).html();
+    // });
 });

@@ -1,0 +1,48 @@
+.modal .modal-dialog {
+  width: 1000px !important;
+}
+.modal .modal-dialog .modal-header {
+  border: none !important;
+}
+.modal .modal-dialog .modal-header .close {
+  color: #ffffff;
+}
+.modal .modal-dialog .modal-content {
+  background: #38414f;
+}
+.modal .modal-dialog .modal-content .modal-body::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+.modal .modal-dialog .modal-content .modal-body .left {
+  display: inline-block;
+  float: left;
+  border-right: 1px solid #38414f;
+}
+.modal .modal-dialog .modal-content .modal-body .right {
+  width: calc(100% - 715px);
+  display: inline-block;
+  float: right;
+}
+.modal .modal-dialog .modal-content .modal-body .right .list .item {
+  margin-bottom: 10px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  display: inline-block;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  background: #7c7e81;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+.modal .modal-dialog .modal-content .modal-body .right .list .item-active {
+  color: black;
+  background: #EAE199;
+}
