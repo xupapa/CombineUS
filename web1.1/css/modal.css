@@ -8,7 +8,7 @@
   color: #ffffff;
 }
 .modal .modal-dialog .modal-content {
-  background: #38414f;
+  background: #003F76;
 }
 .modal .modal-dialog .modal-content .modal-body::after {
   content: "";
@@ -20,7 +20,6 @@
 .modal .modal-dialog .modal-content .modal-body .left {
   display: inline-block;
   float: left;
-  border-right: 1px solid #38414f;
 }
 .modal .modal-dialog .modal-content .modal-body .right {
   width: calc(100% - 715px);
