@@ -25,172 +25,35 @@
 
     <title>全国地质灾害信息管理系统</title>
 </head>
-<!-- <script>
-    function place(e) {
-        // console.log(e)
-        // e.stopPropagation();
-        var x = e.clientX;
-        var y = e.clientY;
-        // document.getElementsByTagName('span')[0].innerHTML = "当前位置：X轴" + x + " Y轴" + y + "";
-        if ((x < $(window).width() * 0.5) && (y < $(window).height() * 0.5)) {
-            console.log('进入左上半区');
-            $('.alert_window').find('.em-style').removeClass('right-bottom');
-            $('.alert_window').find('.span-style').removeClass('span-right-bottom');
-            $('.alert_window').find('.em-style').removeClass('left-bottom');
-            $('.alert_window').find('.span-style').removeClass('span-left-bottom');
-            $('.alert_window').find('.em-style').removeClass('right-top');
-            $('.alert_window').find('.span-style').removeClass('span-right-top');
-            $('.alert_window').find('.em-style').addClass('left-top');
-            $('.alert_window').find('.span-style').addClass('span-left-top');
-        }
-        if ((x > $(window).width() * 0.5) && (y < $(window).height() * 0.5)) {
-            console.log("进入右上半区");
-            $('.alert_window').find('.em-style').removeClass('left-top');
-            $('.alert_window').find('.span-style').removeClass('span-left-top');
-            $('.alert_window').find('.em-style').removeClass('right-bottom');
-            $('.alert_window').find('.span-style').removeClass('span-right-bottom');
-            $('.alert_window').find('.em-style').removeClass('left-bottom');
-            $('.alert_window').find('.span-style').removeClass('span-left-bottom');
-            $('.alert_window').find('.em-style').addClass('right-top');
-            $('.alert_window').find('.span-style').addClass('span-right-top');
-        }
-        if ((x < $(window).width() * 0.5) && (y > $(window).height() * 0.5)) {
-            console.log('进入左下半区');
-            $('.alert_window').find('.em-style').removeClass('right-bottom');
-            $('.alert_window').find('.span-style').removeClass('span-right-bottom');
-            $('.alert_window').find('.em-style').removeClass('left-top');
-            $('.alert_window').find('.span-style').removeClass('span-left-top');
-            $('.alert_window').find('.em-style').removeClass('right-top');
-            $('.alert_window').find('.span-style').removeClass('span-right-top');
-            $('.alert_window').find('.em-style').addClass('left-bottom');
-            $('.alert_window').find('.span-style').addClass('span-left-bottom');
-        }
-        if ((x > $(window).width() * 0.5) && (y > $(window).height() * 0.5)) {
-            console.log('进入右下半区');
-            $('.alert_window').find('.em-style').removeClass('left-bottom');
-            $('.alert_window').find('.span-style').removeClass('span-left-bottom');
-            $('.alert_window').find('.em-style').removeClass('left-top');
-            $('.alert_window').find('.span-style').removeClass('span-left-top');
-            $('.alert_window').find('.em-style').removeClass('right-top');
-            $('.alert_window').find('.span-style').removeClass('span-right-top');
-            $('.alert_window').find('.em-style').addClass('right-bottom');
-            $('.alert_window').find('.span-style').addClass('span-right-bottom');
-        }
-    }
-</script> -->
 
 <body>
-    <!-- 弹出层开始 -->
-    <!-- <div class="alert_window tag">
-        <em class="em-style"></em>
-        <span class="span-style"></span>
-        <div class="alert_title">
-            <h1 class="title">县二中滑坡</h1>
-            <img class="close-icon" src="./img/icon/close.png" alt="close">
-        </div>
-        <div class="alert_content">
-            <div class="first-line">
-                <div>
-                    <p>灾害类型：
-                        <span>滑坡</span>
-                    </p>
+    <!-- 模态框开始 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        模态框（Modal）标题
+                    </h4>
                 </div>
-                <div>
-                    <p>规模等级：
-                        <span>巨型</span>
-                    </p>
+                <div class="modal-body">
+                    在这里添加一些文本
                 </div>
-            </div>
-            <div class="second-line">
-                <div>
-                    <p>威胁人数：
-                        <span class="span-red">150</span>人
-                    </p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <!-- <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button> -->
                 </div>
-                <div>
-                    <p>威胁财产：
-                        <span class="span-orange">2725.7</span>万元
-                    </p>
-                </div>
-            </div>
-            <div class="third-line">
-                <p>地理位置：
-                    <span>陕西省商洛市镇安县</span>
-                </p>
             </div>
         </div>
-        <div class="alert_tips">
-            <div class="img">
-                <img class="icon-heart" src="./img/icon/heart.png" alt="heart">
-                <h1 class="title">
-                    全生命周期
-                </h1>
-            </div>
-            <div class="tip">
-                <ul class="items">
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-orange" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">基本情况</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-yellow" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">群测群防</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-green" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">勘察</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-red" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">测绘</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-yellow" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">监测预警</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-purple" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">搬迁避让</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="dot">
-                            <p>
-                                <span class="dot-light-green" style="font-size:24px;line-height:24px;vertical-align:middle">●</span>
-                                <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">工程治理</span>
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
-    <!-- 弹出层结束 -->
+    </div>
+    <!-- 模态框结束 -->
     <div class="container">
-
         <div class="row clearfix middle">
             <!-- 顶部标题栏 -->
             <div class="row clearfix row-head">
@@ -233,7 +96,7 @@
                     <div class="col-md-12 column" id="timeContainer">
                         <div id="time" style="height:50px;"></div>
                         <div class="link-img">
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#myModal">
                                 <img src="./img/icon/link-oc.png" alt="link" width="24px" height="24px">
                             </a>
                         </div>
