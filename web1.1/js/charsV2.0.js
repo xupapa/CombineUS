@@ -844,7 +844,7 @@ var mapClass = (function () {
                 center = new T.LngLat(data.coordinate[0], data.coordinate[1]);
                 zoom = 12;
             } else {
-                zoom = 5;
+                zoom = 4;
             }
             if (data) {
                 for (var i = 0; i < data.point.length; i++) {
