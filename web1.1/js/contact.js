@@ -467,6 +467,4 @@ option = {
 };
 contant.setOption(option);
 
-window.onresize = function () {
-    contant.resize();
-};
+

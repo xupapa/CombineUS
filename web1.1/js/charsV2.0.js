@@ -5,15 +5,19 @@
  * 3.异步加载数据
  */
 // 用于使chart自适应高度和宽度, 通过窗体高宽计算容器高宽-- -- --底部柱状图
-var cityBar = document.getElementById('cityBar');
-var cityContainers = document.getElementById('cityContainer');
-var resizeWorldMapContainerOfcityBar = function () {
-    cityBar.style.width = cityContainers.clientWidth + 'px';
-    cityBar.style.height = cityContainers.clientHeight + 'px';
-};
+// var cityBar = document.getElementById('cityBar');
+// var cityContainers = document.getElementById('cityContainer');
+// var resizeWorldMapContainerOfcityBar = function () {
+//     cityBar.style.width = cityContainers.clientWidth + 'px';
+//     cityBar.style.height = cityContainers.clientHeight + 'px';
+// };
 //设置容器高宽
-resizeWorldMapContainerOfcityBar();
-
+// resizeWorldMapContainerOfcityBar();
+var resizeChartsContainer = function (e) {    
+    var main = document.getElementById(e);    
+    main.style.width = main.parentNode.clientWidth+'px';    
+    main.style.height = main.parentNode.clientHeight+'px';    
+};   
 //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------环图和小柱状图
 var pie = document.getElementById('pie');
 var pie2 = document.getElementById('pie2');
@@ -37,7 +41,6 @@ var resizeWorldMapContainerOfMain = function () {
     //     scaleWidth = 1;
     //     scaleHeight = 0.5;
     // }
-    console.log(window.screen.availWidth);
     // console.log(window.innerWidth)
     // switch (window.innerWidth) {
     //     case window.innerWidth <= 1440:
@@ -292,6 +295,8 @@ var cityBarClass = (function () {
                 cityNames.push(xData[i].cityName)
                 cityDatas.push(xData[i].cityData)
             }
+            resizeChartsContainer('cityBar')
+            privateMethod.changeSize('cityBar')
             var option = {
                 title: {
                     textStyle: {
@@ -388,12 +393,6 @@ var cityBarClass = (function () {
 
             // 使用刚指定的配置项和数据显示图表。
             cityBar.setOption(option);
-            // window.addEventListener('resize', function () {
-            //     cityBar.resize()
-            // })
-            $(window).resize(function () {
-                cityBar.resize()
-            })
             //清除颜色计数器
             k = 0;
         },
@@ -405,6 +404,9 @@ var cityBarClass = (function () {
             cityBar.on('click', function (params) {
                 commonClass.changeCity(params.name, data);
             });
+        },
+        changeSize:function(){
+            cityBar.resize();
         },
         changeShape: function (shape) {
             if (shape == 'other') {
@@ -437,6 +439,9 @@ var cityBarClass = (function () {
         },
         changeShape: function (shape) {
             privateMethod.changeShape(shape);
+        },
+        changeSize:function(){
+            privateMethod.changeSize();
         }
     }
 })();
@@ -680,7 +685,7 @@ var pieClass2 = (function () {
                 }]
             };
             pie.setOption(option)
-            window.onresize = pie.resize;
+            // window.onresize = pie.resize;
             // window.onresize = function () {
             //     pie.resize();
             // }
@@ -853,8 +858,6 @@ var mapClass = (function () {
             }
             map.centerAndZoom(center, zoom);
             map.setMapType(TMAP_HYBRID_MAP); //地图混合开关
-            console.log(map.getMapType());
-
         },
     };
     return {
@@ -8037,12 +8040,10 @@ commonClass.init(dataMap);
 var changeCityBarShape = function () {
     commonClass.changeCityBarShap();
 };
-// })
-//用于使chart自适应高度和宽度
-// window.onresize = function () {
-//     //重置容器高宽
-//     resizeWorldMapContainerOfcityBar();
-//     resizeWorldMapContainerOfMain();
-//     resizeWorldMapContainerOfTime();
 
-// };
+window.onresize=function(){
+    var cityBar = document.getElementById('cityBar');
+    resizeChartsContainer('cityBar')
+    cityBarClass.changeSize();
+    
+}
