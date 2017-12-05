@@ -4,78 +4,19 @@
  * 2.组件数据绑定
  * 3.异步加载数据
  */
-// 用于使chart自适应高度和宽度, 通过窗体高宽计算容器高宽-- -- --底部柱状图
-// var cityBar = document.getElementById('cityBar');
-// var cityContainers = document.getElementById('cityContainer');
-// var resizeWorldMapContainerOfcityBar = function () {
-//     cityBar.style.width = cityContainers.clientWidth + 'px';
-//     cityBar.style.height = cityContainers.clientHeight + 'px';
-// };
-//设置容器高宽
-// resizeWorldMapContainerOfcityBar();
-var resizeChartsContainer = function (e) {
-    var main = document.getElementById(e);
-    main.style.width = main.parentNode.clientWidth + 'px';
-    main.style.height = main.parentNode.clientHeight + 'px';
-};
-//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------环图和小柱状图
-var pie = document.getElementById('pie');
-var pie2 = document.getElementById('pie2');
 
-// var dataBar = document.getElementById('dataBar');
-var mainContainers1 = document.getElementById('mainContainer1');
-var mainContainers2 = document.getElementById('mainContainer2');
 
-var resizeWorldMapContainerOfMain = function () {
-    var scaleWidth = 1;
-    var scaleHeight = 1;
-    // if (window.innerWidth <= 1440) {
-    //     scaleWidth = 1;
-    //     scaleHeight = 0.5;
-    // }
-    // if (window.innerWidth < 1680) {
-    //     scaleWidth = 1;
-    //     scaleHeight = 0.5;
-    // }
-    // if (window.innerWidth >= 1680) {
-    //     scaleWidth = 1;
-    //     scaleHeight = 0.5;
-    // }
-    // console.log(window.innerWidth)
-    // switch (window.innerWidth) {
-    //     case window.innerWidth <= 1440:
-    //         scaleHeight = 0.5;
-    // }
-    pie.style.width = mainContainers1.clientWidth * scaleWidth + 'px';
-    pie.style.height = mainContainers1.clientHeight * scaleHeight + 'px';
-    pie2.style.width = mainContainers2.clientWidth * scaleWidth + 'px';
-    pie2.style.height = mainContainers2.clientHeight * scaleHeight + 'px';
-    // dataBar.style.width = mainContainers2.clientWidth * scaleWidth + 'px';
-    // dataBar.style.height = mainContainers2.clientHeight * scaleHeight + 'px';
-};
-//设置容器高宽
-resizeWorldMapContainerOfMain();
-
-//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------时间轴
-var time = document.getElementById('time');
-var timeContainers = document.getElementById('timeContainer');
-var resizeWorldMapContainerOfTime = function () {
-    time.style.width = timeContainers.clientWidth + 'px';
-    time.style.height = timeContainers.clientHeight + 'px';
-};
-//设置容器高宽
-resizeWorldMapContainerOfTime();
-var i = 0;
-var j = 0;
-var k = 0;
 //柱状图颜色
-var colors = ['#25E37B', '#FD9752', '#319BFF', '#FEE327'];
-var colorsOfCity = ['#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98AAFE', '#FC790F', '#ffffff', '#938E94'];
 var commonClass = (function () {
     var selectedTime;
     var selectedCity;
     var selectedShape = "square";
     var privateMethod = {
+        resizeChartsContainer:function(e){
+            var main = document.getElementById(e);
+            main.style.width = main.parentNode.clientWidth + 'px';
+            main.style.height = main.parentNode.clientHeight + 'px';
+        },
         formatInitData: function (data) {
             var metadata = {
                 //x轴data
@@ -147,7 +88,18 @@ var commonClass = (function () {
     return {
         //全局初始化
         //1.各个组件初始化
+        resizeChartsContainer:function(){
+            privateMethod.resizeChartsContainer('time');
+            privateMethod.resizeChartsContainer('pie');
+            privateMethod.resizeChartsContainer('pie2');
+            privateMethod.resizeChartsContainer('cityBar');
+            cityBarClass.changeSize();
+            timeLineClass.changeSize();
+            pieClass.changeSize();
+            pieClass2.changeSize();
+        },
         init: function (data) {
+            commonClass.resizeChartsContainer();
             var matedata = privateMethod.formatInitData(data);
             timeLineClass.init(matedata.timeLine, data);
             // dataBarClass.init(matedata.dataX, matedata.citys[0]);
@@ -181,8 +133,9 @@ var commonClass = (function () {
                 cityBarClass.changeShape("square");
                 selectedShape = "square";
             }
-        }
+        },
 
+        
 
     }
 })();
@@ -258,8 +211,8 @@ var timeLineClass = (function () {
                         }
                     }
                 }
-            }
-            time.setOption(optionLine)
+            };
+            time.setOption(optionLine);
         },
         /**
          * 监听时间轴变化事件
@@ -268,10 +221,13 @@ var timeLineClass = (function () {
             time.on('timelinechanged', function (param) {
                 var currentTime = timeData[param.currentIndex];
                 commonClass.changeTime(currentTime, data)
-            })
+            });
+        },
+        changeSize:function(){
+            time.resize();
         },
         getEcharts: function () {
-            return time
+            return time;
         }
     };
     return {
@@ -281,6 +237,9 @@ var timeLineClass = (function () {
         },
         getEcharts: function () {
             return privateMethod.getEcharts();
+        },
+        changeSize:function(){
+            privateMethod.changeSize();
         }
     }
 })();
@@ -295,8 +254,6 @@ var cityBarClass = (function () {
                 cityNames.push(xData[i].cityName)
                 cityDatas.push(xData[i].cityData)
             }
-            resizeChartsContainer('cityBar')
-            privateMethod.changeSize('cityBar')
             var option = {
                 title: {
                     textStyle: {
@@ -305,12 +262,6 @@ var cityBarClass = (function () {
                     x: 'center',
                     y: 10
                 },
-                // grid: {
-                //     top: 30,
-                //     left: 50,
-                //     right: 50,
-                //     bottom: 35
-                // },
                 grid: {
                     top: 30,
                     left: 50,
@@ -357,17 +308,14 @@ var cityBarClass = (function () {
                 },
                 itemStyle: {
                     normal: {
-                        // color:['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],                        
-                        // barBorderRadius: 8, // 统一设置四个角的圆角大小
-                        // barBorderRadius: [5, 5, 0, 0], //（顺时针左上，右上，右下，左下）
-                        color: function () {
-                            if (colorsOfCity.length - 1 == k) {
-                                k = 0;
-                                return colorsOfCity[k++];
-                            } else {
-                                return colorsOfCity[k++];
-                            }
-                        },
+                        　　color: function(params) {
+                            // build a color map as your need.
+                            var colorList = ['#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98AAFE', '#FC790F', '#ffffff', '#938E94'
+                                            ,'#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98AAFE', '#FC790F', '#ffffff', '#938E94'
+                                            ,'#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98AAFE', '#FC790F', '#ffffff', '#938E94'
+                                            ,'#25E37B', '#FD9752', '#319BFF', '#09FEC1', '#FEE327', '#98AAFE', '#FC790F', '#ffffff', '#938E94'];
+                            return colorList[params.dataIndex]
+                       },
                         label: {
                             show: false
                         },
@@ -393,8 +341,6 @@ var cityBarClass = (function () {
 
             // 使用刚指定的配置项和数据显示图表。
             cityBar.setOption(option);
-            //清除颜色计数器
-            k = 0;
         },
         /**
          * 监听城市变化事件
@@ -418,7 +364,6 @@ var cityBarClass = (function () {
                     }
                 };
                 cityBar.setOption(option);
-                k = 0;
             } else {
                 var option = {
                     itemStyle: {
@@ -428,7 +373,6 @@ var cityBarClass = (function () {
                     }
                 };
                 cityBar.setOption(option);
-                k = 0;
             }
         }
     };
@@ -557,18 +501,18 @@ var pieClass = (function () {
                     }
                 }]
             };
-            pie.setOption(option)
-            // window.onresize = pie.resize;
-            window.addEventListener('resize', function () {
-                pie.resize()
-            })
-            //清除颜色计数器
-            j = 0;
+            pie.setOption(option);
+        },
+        changeSize:function(){
+            pie.resize();
         }
     };
     return {
         init: function (xdata, data) {
             privateMethod.initPie(xdata, data);
+        },
+        changeSize:function(){
+            privateMethod.changeSize();
         }
     }
 })();
@@ -576,15 +520,15 @@ var pieClass2 = (function () {
     var pie = echarts.init(document.getElementById('pie2'));
     var privateMethod = {
         initPie: function (xdata, data) {
-            var datas = []
+            var datas = [];
             for (var i = 0; i < data.detail.length; i++) {
                 var meta = {
                     value: "",
                     name: ""
                 }
-                meta.value = data.detail[i]
-                meta.name = xdata[i]
-                datas.push(meta)
+                meta.value = data.detail[i];
+                meta.name = xdata[i];
+                datas.push(meta);
             }
             option = {
                 title: {
@@ -684,20 +628,21 @@ var pieClass2 = (function () {
                     }
                 }]
             };
-            pie.setOption(option)
-            // window.onresize = pie.resize;
-            // window.onresize = function () {
-            //     pie.resize();
-            // }
-            //清除颜色计数器
-            j = 0;
+            privateMethod.changeSize();
+            pie.setOption(option);
+        },
+        changeSize:function(){
+            pie.resize();
         }
     };
     return {
         init: function (xdata, data) {
             privateMethod.initPie(xdata, data);
+        },
+        changeSize:function(){
+            privateMethod.changeSize();
         }
-    }
+    };
 })();
 /**
  * 地图实现类
@@ -8056,10 +8001,9 @@ commonClass.init(dataMap);
 var changeCityBarShape = function () {
     commonClass.changeCityBarShap();
 };
-
+/*
+自适应方法实现
+ */
 window.onresize = function () {
-    var cityBar = document.getElementById('cityBar');
-    resizeChartsContainer('cityBar')
-    cityBarClass.changeSize();
-
+    commonClass.resizeChartsContainer();
 }
