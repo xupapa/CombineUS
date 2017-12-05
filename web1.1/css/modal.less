@@ -1,16 +1,19 @@
 .modal {
-    
     .modal-dialog {
         width: 1000px !important;
         // background: #38414f;
         .modal-header {
             border: none !important;
+            padding-bottom: 0 !important;    
             .close {
                 color: #ffffff;
             }
         }
         .modal-content {
-            background: #003F76;
+            background: -webkit-linear-gradient(RGB(0, 53, 82), RGB(0, 99, 160) 50%, RGB(0, 53, 82) 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(RGB(0, 53, 82), RGB(0, 99, 160) 50%, RGB(0, 53, 82) 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(RGB(0, 53, 82), RGB(0, 99, 160) 50%, RGB(0, 53, 82) 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(RGB(0, 53, 82), RGB(0, 99, 160) 50%, RGB(0, 53, 82) 100%); /* 标准的语法（必须放在最后） */
             .modal-body {
                 // background: #38414f;                                            
                 &::after {
@@ -41,14 +44,15 @@
                             list-style: none;
                             width: 50px;
                             height: 50px;
-                            background: #7c7e81;
+                            // background: #7c7e81;
+                            border: 1px solid #ffffff;
                             -moz-border-radius: 50px;
                             -webkit-border-radius: 50px;
                             border-radius: 50px;
                         }
                         .item-active {
                             color: black;
-                            background: #EAE199;                            
+                            background: RGB(0, 255, 27);                            
                         }
                     }
                 }
