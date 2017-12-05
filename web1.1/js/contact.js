@@ -431,7 +431,7 @@ var series = [];
 });
 
 option = {
-    backgroundColor: '#404a59',
+    backgroundColor: '#004B7B',
 
     visualMap: {
         min: 0,
@@ -451,11 +451,11 @@ option = {
         },
         roam: true,
         layoutCenter: ['50%', '53%'],
-        layoutSize: "108%",
+        layoutSize: "100%",
         itemStyle: {
             normal: {
-                color: 'rgba(51, 69, 89, .5)',
-                borderColor: 'rgba(100,149,237,1)'
+                color: '#004B97',
+                borderColor: '#009FD8'
             },
             emphasis: {
                 color: 'rgba(37, 43, 61, .5)'
