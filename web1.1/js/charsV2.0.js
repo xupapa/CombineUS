@@ -13,11 +13,11 @@
 // };
 //设置容器高宽
 // resizeWorldMapContainerOfcityBar();
-var resizeChartsContainer = function (e) {    
-    var main = document.getElementById(e);    
-    main.style.width = main.parentNode.clientWidth+'px';    
-    main.style.height = main.parentNode.clientHeight+'px';    
-};   
+var resizeChartsContainer = function (e) {
+    var main = document.getElementById(e);
+    main.style.width = main.parentNode.clientWidth + 'px';
+    main.style.height = main.parentNode.clientHeight + 'px';
+};
 //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽------环图和小柱状图
 var pie = document.getElementById('pie');
 var pie2 = document.getElementById('pie2');
@@ -405,7 +405,7 @@ var cityBarClass = (function () {
                 commonClass.changeCity(params.name, data);
             });
         },
-        changeSize:function(){
+        changeSize: function () {
             cityBar.resize();
         },
         changeShape: function (shape) {
@@ -440,7 +440,7 @@ var cityBarClass = (function () {
         changeShape: function (shape) {
             privateMethod.changeShape(shape);
         },
-        changeSize:function(){
+        changeSize: function () {
             privateMethod.changeSize();
         }
     }
@@ -728,115 +728,131 @@ var mapClass = (function () {
         infoWindow: function (marker) {
             var infoWin1 = new T.InfoWindow();
             var sContent =
-                `<div class="alert_window tag" style="border: 5px solid #09F;width: 400px;border: 2px solid #09F;background: rgba(63, 54, 45, 0.8);border-radius: 10px;z-index: 1000;">
-            <em class="em-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></em>
-            <span class="span-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></span>
-            <div class="alert_title" style="width: 100%;height: 35px;border-bottom: 1px solid #09F;position: relative;">
-                <h1 class="title" style=" padding-left: 10px;line-height: 35px;font-size: 14px;color: #ffffff;">县二中滑坡</h1>
-                <img class="close-icon" src="./img/icon/close.png" alt="close" style=" position: absolute;top: 50%;right: 10px;width: 24px;height: 24px;margin-top: -12px;display:none;">
+                `<div class="alert_window tag" style="border: 5px solid #09F;width: 440px;border: 2px solid #09F;background: rgba(63, 54, 45, 0.8);border-radius: 10px;z-index: 1000;">
+        <em class="em-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></em>
+        <span class="span-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></span>
+        <div class="alert_title" style="width: 100%;height: 65px;border-bottom: 2px dotted #09F;position: relative;padding-top:6px;">
+            <h1 class="title" style="padding-left: 10px;font-size: 14px;color: #ffffff;">名称：
+                <span>县二中滑坡</span>
+            </h1>
+            <p style="padding-left: 10px;font-size: 14px;color: #ffffff;margin-bottom:0;">地理位置：
+                <span>陕西省商洛市镇安县</span>
+            </p>
+            <a class="more" href="#" style="position:absolute;top:21px;right:40px;font-size:12px;color:rgb(0, 190, 252);margin-top:-12px;text-decoration:underline">详情</a>
+        </div>
+        <div class="alert_content" style="position:relative;box-sizing:border-box;width:100%;height:185px;overflow:hidden;">
+            <!-- <div class="half-circle" style="z-index:998;position:absolute;top:10px;left:40px;width:350px;height:350px;border-radius:175px;border:2px dotted #ffffff;margin: 0 auto;"> -->
+            <div>
+                <canvas id="can" width="440px" height="180px"></canvas>
+                <ul>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:135px;left:35px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(255, 81, 81);padding:5px;box-sizing:border-box;margin-left: 12px">
+                            <img src="./img/icon/fasheng.png" width="20px" height="20px" alt="发生时间" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
+                            发生时间 <span style ="color:rgb(255, 81, 81)">2017.1</span>
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:87px;left:48px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(108, 143, 252);padding:5px;box-sizing:border-box;margin-left: 12px">
+                            <img src="./img/icon/survey.png" width="20px" height="20px" alt="调查时间" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
+                            调查时间 <span style="color:rgb(108, 143, 252);">2017.2</span>
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:42px;left:73px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin-left: 12px">
+                            <img src="./img/icon/dengji.png" width="20px" height="20px" alt="登记时间" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
+                            登记时间 <span>2017.3</span>
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:11px;left:94px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin:0 auto;">
+                            <img src="./img/icon/qun.png" width="20px" height="20px" alt="群防群测" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;line-height:12px;">
+                            群防群测
+                            <br/>2017.4
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:2px;left:145px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin:0 auto;">
+                            <img src="./img/icon/jiance.png" width="20px" height="20px" alt="专业监测" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;line-height:12px;">
+                            专业监测
+                            <br/><span>2017.5</span>
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:2px;right:140px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(255, 117, 25);padding:5px;box-sizing:border-box;margin:0 auto;">
+                            <img src="./img/icon/move.png" width="20px" height="20px" alt="搬迁" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;line-height:12px;">
+                            搬迁避让
+                            <br/><span style="color:rgb(255, 117, 25);">2017.6</span>
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:14px;right:92px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin:0 auto;">
+                            <img src="./img/icon/cehui.png" width="20px" height="20px" alt="测绘" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;line-height:12px;">
+                            测绘
+                            <br/>2017.7
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:44px;right:71px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin-left: 57px">
+                            <img src="./img/icon/yinhuan.png" width="20px" height="20px" alt="勘探" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
+                            2017.8 勘探
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:88px;right:42px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin-left: 57px">
+                            <img src="./img/icon/gongcheng.png" width="20px" height="20px" alt="工程治理" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
+                            2017.9 工程治理
+                        </p>
+                    </li>
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:135px;right:32px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(0 , 192, 255);padding:5px;box-sizing:border-box;margin-left: 59px">
+                            <img src="./img/icon/hexiao.png" width="20px" height="20px" alt="已核销" style="margin:0 auto;">
+                        </div>
+                        <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
+                            2017.10 已核销
+                        </p>
+                    </li>
+                </ul>
             </div>
-            <div class="alert_content" style="width: 100%;border-bottom:1px solid #09F;text-align: left;">
-                <div class="first-line" style="display: flex;">
-                    <div style="flex: 1;padding-top: 10px;padding-left: 10px;">
-                        <p style="color: #ffffff;font-size: 12px;margin:0;">灾害类型：
-                            <span>滑坡</span>
-                        </p>
-                    </div>
-                    <div style="flex: 1;padding-top: 10px;padding-left: 10px;">
-                        <p style="color: #ffffff;font-size: 12px;margin:0;">规模等级：
-                            <span>巨型</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="second-line" style="display: flex;">
-                    <div style="padding-top: 10px;padding-left: 10px;flex: 1;">
-                        <p style="color: #ffffff;font-size: 12px;margin:0;">威胁人数：
-                            <span class="span-red" style="color: red;">150</span>人
-                        </p>
-                    </div>
-                    <div style="padding-top: 10px;padding-left: 10px;flex: 1;">
-                        <p style="color: #ffffff;font-size: 12px;margin:0;" >威胁财产：
-                            <span class="span-orange" style="orange">2725.7</span>万元
-                        </p>
-                    </div>
-                </div>
-                <div class="third-line" style="display: flex;padding-top: 10px;padding-left: 10px;padding-bottom: 10px;">
-                    <p style="color: #ffffff;font-size: 12px;margin:0;">地理位置：
-                        <span>陕西省商洛市镇安县</span>
-                    </p>
-                </div>
-            </div>
-            <div class="alert_tips" style="padding: 5px;display: flex;">
-                <div class="img" style="flex: 1;border-right:1px solid #09F;text-align: center;">
-                    <img class="icon-heart" src="./img/icon/heart.png" alt="heart" style="width: 40px;height: 40px;">
-                    <h1 class="title" style="font-size: 12px;color: #ffffff;">
-                        全生命周期
-                    </h1>
-                </div>
-                <div class="tip" style="flex: 2;padding-top: 5px;padding-left: 10px;">
-                    <ul class="items" style="padding-left:0">
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-orange" style="font-size:24px;line-height:24px;vertical-align:middle;color: orange;">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">基本情况</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-yellow" style="font-size:24px;line-height:24px;vertical-align:middle;color: yellow;">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">群测群防</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-green" style="font-size:24px;line-height:24px;vertical-align:middle;color: green;">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">勘察</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-red" style="font-size:24px;line-height:24px;vertical-align:middle;color: red;">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">测绘</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-yellow" style="font-size:24px;line-height:24px;vertical-align:middle;color: yellow;">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">监测预警</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-purple" style="font-size:24px;line-height:24px;vertical-align:middle;color: purple;">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">搬迁避让</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li class="item" style="list-style: none;display: inline-block;color: #ffffff;">
-                            <div class="dot">
-                                <p style="margin:0;">
-                                    <span class="dot-light-green" style="font-size:24px;line-height:24px;vertical-align:middle;color: color: rgb(103, 207, 200);">●</span>
-                                    <span style="display:inline-block;font-size:12px;line-height:24px;vertical-align:middle">工程治理</span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>`;
+        </div>`;
             infoWin1.setContent(sContent);
             marker.addEventListener("click", function () {
                 marker.openInfoWindow(infoWin1);
+                //canvas逻辑
+                function $$(id) {
+                    return document.getElementById(id);
+                }
+
+                function pageLoad() {
+                    var can = $$('can');
+                    var cans = can.getContext('2d');
+                    cans.beginPath();
+                    cans.arc(220, 170, 160, 0, Math.PI, 1);
+                    cans.strokeStyle = 'white';
+                    cans.lineWidth = 1;
+                    cans.setLineDash([2, 5]);
+                    cans.stroke();
+                    cans.closePath();
+                }
+                // 执行canvas
+                pageLoad()
             }); // 将标注添加到地图中
         },
         //map初始化
@@ -8041,9 +8057,9 @@ var changeCityBarShape = function () {
     commonClass.changeCityBarShap();
 };
 
-window.onresize=function(){
+window.onresize = function () {
     var cityBar = document.getElementById('cityBar');
     resizeChartsContainer('cityBar')
     cityBarClass.changeSize();
-    
+
 }
