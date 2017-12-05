@@ -731,11 +731,11 @@ var mapClass = (function () {
                 `<div class="alert_window tag" style="border: 5px solid #09F;width: 440px;border: 2px solid #09F;background: rgba(63, 54, 45, 0.8);border-radius: 10px;z-index: 1000;">
         <em class="em-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></em>
         <span class="span-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></span>
-        <div class="alert_title" style="width: 100%;height: 65px;border-bottom: 2px dotted #09F;position: relative;padding-top:6px;">
+        <div class="alert_title" style="width: 100%;height: 65px;border-bottom: 2px dotted #09F;position: relative;padding-top:10px;">
             <h1 class="title" style="padding-left: 10px;font-size: 14px;color: #ffffff;">名称：
                 <span>县二中滑坡</span>
             </h1>
-            <p style="padding-left: 10px;font-size: 14px;color: #ffffff;margin-bottom:0;">地理位置：
+            <p style="padding-left: 10px;font-size: 14px;color: #ffffff;margin:10px 0 0 0;">地理位置：
                 <span>陕西省商洛市镇安县</span>
             </p>
             <a class="more" href="#" style="position:absolute;top:21px;right:40px;font-size:12px;color:rgb(0, 190, 252);margin-top:-12px;text-decoration:underline">详情</a>
