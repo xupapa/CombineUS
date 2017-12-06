@@ -673,24 +673,24 @@ var mapClass = (function () {
         infoWindow: function (marker) {
             var infoWin1 = new T.InfoWindow();
             var sContent =
-                `<div class="alert_window tag" style="border: 5px solid #09F;width: 440px;border: 2px solid #09F;background: rgba(63, 54, 45, 0.8);border-radius: 10px;z-index: 1000;">
+                `<div class="alert_window tag" style="border: 5px solid #09F;width: 540px;height:350px;border: 2px solid #09F;background: RGBA(7, 11, 10,0.31);border-radius: 10px;z-index: 1000;">
         <em class="em-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></em>
         <span class="span-style" style="display: block;border-width: 20px;position: absolute;font-size: 0;line-height: 0;"></span>
-        <div class="alert_title" style="width: 100%;height: 65px;border-bottom: 2px dotted #09F;position: relative;padding-top:10px;">
-            <h1 class="title" style="padding-left: 10px;font-size: 14px;color: #ffffff;">名称：
+        <div class="alert_title" style="width: 100%;height: 80px;border-bottom: 2px dotted #09F;position: relative;padding-top:15px;">
+            <h1 class="title" style="padding-left: 10px;font-size: 16px;color: #ffffff;">名称：
                 <span>县二中滑坡</span>
             </h1>
-            <p style="padding-left: 10px;font-size: 14px;color: #ffffff;margin:10px 0 0 0;">地理位置：
+            <p style="padding-left: 10px;font-size: 16px;color: #ffffff;margin:10px 0 0 0;line-height:30px">地理位置：
                 <span>陕西省商洛市镇安县</span>
             </p>
             <a class="more" href="#" style="position:absolute;top:21px;right:40px;font-size:12px;color:rgb(0, 190, 252);margin-top:-12px;text-decoration:underline">详情</a>
         </div>
-        <div class="alert_content" style="position:relative;box-sizing:border-box;width:100%;height:185px;overflow:hidden;">
+        <div class="alert_content" style="position:relative;box-sizing:border-box;width:100%;height:270px;overflow:hidden;">
             <!-- <div class="half-circle" style="z-index:998;position:absolute;top:10px;left:40px;width:350px;height:350px;border-radius:175px;border:2px dotted #ffffff;margin: 0 auto;"> -->
             <div>
-                <canvas id="can" width="440px" height="180px"></canvas>
+                <canvas id="can" width="540px" height="240px"></canvas>
                 <ul>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:135px;left:35px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:208px;left:30px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(255, 81, 81);padding:5px;box-sizing:border-box;margin-left: 12px">
                             <img src="./img/icon/fasheng.png" width="20px" height="20px" alt="发生时间" style="margin:0 auto;">
                         </div>
@@ -698,7 +698,7 @@ var mapClass = (function () {
                             发生时间 <span style ="color:rgb(255, 81, 81)">2017.1</span>
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:87px;left:48px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:148px;left:44px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(108, 143, 252);padding:5px;box-sizing:border-box;margin-left: 12px">
                             <img src="./img/icon/survey.png" width="20px" height="20px" alt="调查时间" style="margin:0 auto;">
                         </div>
@@ -706,7 +706,7 @@ var mapClass = (function () {
                             调查时间 <span style="color:rgb(108, 143, 252);">2017.2</span>
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:42px;left:73px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:99px;left:77px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin-left: 12px">
                             <img src="./img/icon/dengji.png" width="20px" height="20px" alt="登记时间" style="margin:0 auto;">
                         </div>
@@ -714,7 +714,7 @@ var mapClass = (function () {
                             登记时间 <span>2017.3</span>
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:11px;left:94px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:50px;left:112px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin:0 auto;">
                             <img src="./img/icon/qun.png" width="20px" height="20px" alt="群防群测" style="margin:0 auto;">
                         </div>
@@ -723,7 +723,7 @@ var mapClass = (function () {
                             <br/>2017.4
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:2px;left:145px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:26px;left:183px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin:0 auto;">
                             <img src="./img/icon/jiance.png" width="20px" height="20px" alt="专业监测" style="margin:0 auto;">
                         </div>
@@ -732,7 +732,7 @@ var mapClass = (function () {
                             <br/><span>2017.5</span>
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:2px;right:140px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:26px;right:183px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(255, 117, 25);padding:5px;box-sizing:border-box;margin:0 auto;">
                             <img src="./img/icon/move.png" width="20px" height="20px" alt="搬迁" style="margin:0 auto;">
                         </div>
@@ -741,7 +741,7 @@ var mapClass = (function () {
                             <br/><span style="color:rgb(255, 117, 25);">2017.6</span>
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:14px;right:92px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:50px;right:112px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin:0 auto;">
                             <img src="./img/icon/cehui.png" width="20px" height="20px" alt="测绘" style="margin:0 auto;">
                         </div>
@@ -750,7 +750,7 @@ var mapClass = (function () {
                             <br/>2017.7
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:44px;right:71px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:99px;right:77px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin-left: 57px">
                             <img src="./img/icon/yinhuan.png" width="20px" height="20px" alt="勘探" style="margin:0 auto;">
                         </div>
@@ -758,7 +758,7 @@ var mapClass = (function () {
                             2017.8 勘探
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:88px;right:42px;">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:148px;right:44px;">
                         <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(135, 135, 135);padding:5px;box-sizing:border-box;margin-left: 57px">
                             <img src="./img/icon/gongcheng.png" width="20px" height="20px" alt="工程治理" style="margin:0 auto;">
                         </div>
@@ -766,12 +766,12 @@ var mapClass = (function () {
                             2017.9 工程治理
                         </p>
                     </li>
-                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:135px;right:32px;">
-                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(0 , 192, 255);padding:5px;box-sizing:border-box;margin-left: 59px">
+                    <li style="display:inline-block;width:100px;height:50px;list-style:none;position:absolute;top:208px;right:21px;">
+                        <div style="width:30px;height:30px;border-radius:15px;background-color:rgb(0 , 192, 255);padding:5px;box-sizing:border-box;margin-left: 56px">
                             <img src="./img/icon/hexiao.png" width="20px" height="20px" alt="已核销" style="margin:0 auto;">
                         </div>
                         <p style="font-size:12px;color:#ffffff;margin: 0 auto;text-align:center;">
-                            2017.10 已核销
+                            <span style="color:#00C0FF">2017.10</span> 已核销
                         </p>
                     </li>
                 </ul>
@@ -789,7 +789,7 @@ var mapClass = (function () {
                     var can = $$('can');
                     var cans = can.getContext('2d');
                     cans.beginPath();
-                    cans.arc(220, 170, 160, 0, Math.PI, 1);
+                    cans.arc(270, 260, 220, 0, Math.PI, 1);
                     cans.strokeStyle = 'white';
                     cans.lineWidth = 1;
                     cans.setLineDash([2, 5]);
