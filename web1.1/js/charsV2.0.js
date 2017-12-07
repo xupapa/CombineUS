@@ -683,7 +683,7 @@ var mapClass = (function () {
             <p style="padding-left: 10px;font-size: 16px;color: #ffffff;margin:10px 0 0 0;line-height:30px">地理位置：
                 <span>陕西省商洛市镇安县</span>
             </p>
-            <a class="more" href="#" style="position:absolute;top:21px;right:40px;font-size:12px;color:rgb(0, 190, 252);margin-top:-12px;text-decoration:underline">详情</a>
+            <a class="more" href="#" style="position:absolute;top:21px;right:40px;font-size:16px;color:rgb(0, 190, 252);margin-top:-12px;text-decoration:underline">详情</a>
         </div>
         <div class="alert_content" style="position:relative;box-sizing:border-box;width:100%;height:270px;overflow:hidden;">
             <!-- <div class="half-circle" style="z-index:998;position:absolute;top:10px;left:40px;width:350px;height:350px;border-radius:175px;border:2px dotted #ffffff;margin: 0 auto;"> -->
