@@ -200,79 +200,553 @@
                         </div>
                     </div>
                 </div>
+                <!-- 二级菜单 -->
                 <div class="col-md-2 left">
-                    <div class="line con_left">
+                    <div class="line con_left" id="disaster">
                         <ul class="erji">
-                            <li>灾&nbsp;害&nbsp;点</li>
-                            <li>隐&nbsp;患&nbsp;点</li>
-                            <li>特大型隐患点</li>
-                            <li>年度新增隐患点</li>
-                            <li>年度核销隐患点</li>
-                            <li>年度灾情险情点</li>
-                            <li>年度成功避让点</li>
+                            <li class="trig" id="1001" parent="1000">灾&nbsp;害&nbsp;点</li>
+                            <li id="1002" parent="1000">隐&nbsp;患&nbsp;点</li>
+                            <li id="1003" parent="1000">特大型隐患点</li>
+                            <li id="1004" parent="1000">年度新增隐患点</li>
+                            <li id="1005" parent="1000">年度核销隐患点</li>
+                            <li id="1006" parent="1000">年度灾情险情点</li>
+                            <li id="1007" parent="1000">年度成功避让点</li>
                         </ul>
-                        <ul class="tuli">
+                        <ul class="tuli" id="zai">
                             <p>图例</p>
                             <li>
-                                <span></span>新增隐患点</li>
+                                <span class="span-dot-g"></span>核销隐患点</li>
                             <li>
-                                <span></span>隐患点</li>
+                                <span class="span-dot-y"></span>灾害点</li>
+                        </ul>
+                        <ul class="tuli" style="display:none" id="yin">
+                            <p>图例</p>
+                            <li>
+                                <span class="span-dot"></span>新增隐患点</li>
+                            <li>
+                                <span class="span-dot"></span>隐患点</li>
+                        </ul>
+
+                    </div>
+                    <div class="line con_left" style="display:none" id="research">
+                        <ul class="erji">
+                            <li id="2001" parent="2000">1:10&nbsp;万县市调查</li>
+                            <li id="2002" parent="2000">1:5&nbsp;万详细调查</li>
+                        </ul>
+                    </div>
+                    <div class="line con_left" style="display:none" id="survey">
+                        <ul class="erji">
+                            <li id="3001" parent="3000">群测群防</li>
+                            <li id="3002" parent="3000">专业监测</li>
+                            <li id="3003" parent="3000">气象预警</li>
+                        </ul>
+                        <ul class="tuli" id="qun">
+                            <p class="no-spacing">统计预警</p>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>红色预警
+                                <span>100 </span>处</li>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>橙色预警
+                                <span>100 </span>处</li>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>黄色预警
+                                <span>100 </span>处</li>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>蓝色预警
+                                <span>100 </span>处</li>
+                        </ul>
+                        <ul class="tuli" style="display:none" id="zhuan">
+                            <p class="no-spacing">统计预警</p>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>红色预警
+                                <span>200 </span>处</li>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>橙色预警
+                                <span>200 </span>处</li>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>黄色预警
+                                <span>200 </span>处</li>
+                            <li class="sm-li">
+                                <span class="span-dot"></span>蓝色预警
+                                <span>200 </span>处</li>
+                        </ul>
+                    </div>
+                    <div class="line con_left" style="display:none" id="comprehensive">
+                        <ul class="erji">
+                            <li id="4001" parent="4000">搬迁避让</li>
+                            <li id="4002" parent="4000">工程治理</li>
+                        </ul>
+                        <ul class="tuli" id="ban">
+                            <p>图例</p>
+                            <li>
+                                <span class="span-dot-g"></span>年度搬迁</li>
+                            <li>
+                                <span class="span-dot-y"></span>以往搬迁</li>
+                        </ul>
+                        <ul class="tuli" id="gong" style="display:none">
+                            <p>图例</p>
+                            <li class="sm-li">
+                                <span class="span-dot-g"></span>当年（
+                                <span class="font-g">219</span>）个</li>
+                            <li class="sm-li">
+                                <span class="span-dot-y"></span>以往（
+                                <span class="font-y">319</span>）个</li>
+                        </ul>
+                    </div>
+                    <div class="line con_left" style="display:none" id="emergency">
+                        <ul class="erji">
+                            <li id="5001" parent="5000">应急处置</li>
+                            <li id="5002" parent="5000">应急管理</li>
+                        </ul>
+                    </div>
+                    <div class="line con_left" style="display:none" id="ability">
+                        <ul class="erji">
+                            <li id="6001" parent="6000">十有县</li>
+                            <li id="6002" parent="6000">高标十有县</li>
                         </ul>
                     </div>
                 </div>
+                <!-- 一级菜单 -->
                 <div class="col-md-9 column center">
                     <div class="row clearfix tabs tips">
                         <div class="col-md-12 column">
                             <ul class="yijibaioti-ul">
-                                <li>
+                                <li id="1000">
                                     <img src="./img/icon/zhd.png" alt="灾害" />
                                     <p>灾害及隐患点</p>
                                 </li>
-                                <li>
+                                <li id="2000">
                                     <img src="./img/icon/dcpj.png" alt="调查评价" />
                                     <p>调查评价</p>
                                 </li>
-                                <li>
+                                <li id="3000">
                                     <img src="./img/icon/jcyj.png" alt="监测预警" />
                                     <p>监测预警</p>
                                 </li>
-                                <li>
+                                <li id="4000">
                                     <img src="./img/icon/zhzl.png" alt="综合治理" />
                                     <p>综合治理</p>
                                 </li>
-                                <li>
+                                <li id="5000">
                                     <img src="./img/icon/yjtx.png" alt="应急体系" />
                                     <p>应急体系</p>
                                 </li>
-                                <li>
+                                <li id="6000">
                                     <img src="./img/icon/jsnl.png" alt="建设能力" />
                                     <p>建设能力</p>
                                 </li>
                             </ul>
-                            <ul class="ull">
+                            <!-- 1-1灾害点 -->
+                            <ul class="ull" id="zaihai">
                                 <li>
                                     <div class="bg-deep">
                                         <span>灾害点（
                                             <span class="purple">120</span>）处</span>
                                     </div>
-                                    <li>
-                                        <div class="bg-light">
-                                            隐患点（
-                                            <span class="pink">200</span>）处
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="bg-deep">
-                                            <span>年度新增隐患点（
-                                                <span class="green">210</span>）处</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="bg-light">
-                                            <span>年度核销隐患点（
-                                                <span class="yellow">300</span>）处</span>
-                                        </div>
-                                    </li>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        年度新增灾害点（
+                                        <span class="pink">200</span>）处
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>隐患点（
+                                            <span class="green">210</span>）处</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        <span>年度核销隐患点（
+                                            <span class="yellow">300</span>）处</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 1-2隐患点 -->
+                            <ul class="ull" style="display:none" id="yinhuan">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>灾害点（
+                                            <span class="purple">120</span>）处</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        隐患点（
+                                        <span class="pink">200</span>）处
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度新增隐患点（
+                                            <span class="green">210</span>）处</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        <span>年度核销隐患点（
+                                            <span class="yellow">300</span>）处</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 1-3特大型隐患点 -->
+                            <ul class="ull" style="display:none" id="tdyinhuan">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>隐患点（
+                                            <span class="purple">120</span>）处</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        特大型隐患点（
+                                        <span class="pink">200</span>）处
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>特大型隐患点威胁人数（
+                                            <span class="green">800</span>）人</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        <span>特大型隐患点威胁财产（
+                                            <span class="yellow">3500</span>）万元</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 1-4年度新增隐患点 -->
+                            <ul class="ull" style="display:none" id="ndxzyinhuan">
+                                <li>
+                                    <div class="bg-light">
+                                        <span>年度新增隐患点（
+                                            <span class="pink">200</span>）处</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>新增点威胁人数（
+                                            <span class="green">210</span>）人</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        <span>新增点威胁财产（
+                                            <span class="yellow">320</span>）万元</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 1-5年度核销 -->
+                            <ul class="ull" style="display:none" id="ndhexiao">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度核销隐患点（
+                                            <span class="purple">120</span>）处</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        年度搬迁核销点（
+                                        <span class="pink">200</span>）处
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度工程治理核销点（
+                                            <span class="green">210</span>）处</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        <span>其他核销点（
+                                            <span class="yellow">300</span>）处</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 1-6年度灾险情点 -->
+                            <ul class="ull" style="display:none" id="ndzaixian">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度灾情险情点（
+                                            <span class="purple">120</span>）处</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        死亡/失踪人数（
+                                        <span class="pink">200</span>）人
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度新增隐患点（
+                                            <span class="green">210</span>）处</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        <span>直接经济损失（
+                                            <span class="yellow">300</span>）万元</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 1-7年度成功避让 -->
+                            <ul class="ull" style="display:none" id="ndbirang">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度成功避让（
+                                            <span class="purple">120</span>）次</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        避免伤亡人员（
+                                        <span class="pink">200</span>）人
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>避免经济损失（
+                                            <span class="green">210</span>）万元</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 2-1调查评价 1：10 -->
+                            <ul class="ull" style="display:none" id="yishi">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>总县数（
+                                            <span class="purple">2020</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        <span>1999</span>-
+                                        <span>2005</span>年部署（
+                                        <span class="pink">200</span>）个
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>2006</span>-
+                                        <span>2008</span>年部署（
+                                        <span class="green">1320</span>）个
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 2-2调查评价1：5 -->
+                            <ul class="ull" style="display:none" id="yiwu">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>总县数（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        国家部署（
+                                        <span class="pink">200</span>）个
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>省部署（
+                                            <span class="green">1210</span>）个</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 3-1监测 群防群策 -->
+                            <ul class="ull" style="display:none" id="qunfqc">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>群防群测点（
+                                            <span class="red">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        群防群测员（
+                                        <span class="pink">200</span>）人
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 3-2 监测 专业监测 -->
+                            <ul class="ull" style="display:none" id="zhuanyjc">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>专业监测点（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        专业监测员（
+                                        <span class="pink">20</span>）万
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 3-3 监测 气象监测 -->
+                            <ul class="ull" style="display:none" id="qixjc">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>省级开展数量（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        市级开展数量（
+                                        <span class="pink">200</span>）个
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>县级开展数量（
+                                            <span class="green">210</span>）个</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 4-1 综合治理 搬迁避让 -->
+                            <ul class="ull" style="display:none" id="banqbr">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>搬迁避让点（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        搬迁避让人数（
+                                        <span class="pink">20</span>）个
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度搬迁避让点（
+                                            <span class="green">210</span>）个</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        年度搬迁避让人数（
+                                        <span class="pink">2000</span>）个
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 4-2 综合治理 工程治理 -->
+                            <ul class="ull" style="display:none" id="gongczl">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>总数（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        保护人数（
+                                        <span class="pink">20</span>）人
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>年度工程治理点（
+                                            <span class="green">210</span>）个</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        年度保护人数（
+                                        <span class="pink">2000</span>）人
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 5-1 应急体系 应急处置 -->
+                            <ul class="ull" style="display:none" id="yingjcl">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>应急处置点（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        应急演练（
+                                        <span class="pink">20</span>）次
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>应急演练（
+                                            <span class="green">210</span>）人</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        省级以上演练专家（
+                                        <span class="pink">2000</span>）人
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 5-2 应急体系 应急管理 -->
+                            <ul class="ull" style="display:none" id="yingjgl">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>国家级应急技术支撑机构（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="bg-light">
+                                        省级（
+                                        <span class="pink">20</span>）个
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>市级（
+                                            <span class="green">210</span>）个</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="bg-light">
+                                        县级（
+                                        <span class="pink">2000</span>）个
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 6-1 能力建设 十有县 -->
+                            <ul class="ull" style="display:none" id="shiyou">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>十有县总数（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 6-2 能力建设 高标准十有县 -->
+                            <ul class="ull" style="display:none" id="gbshiyou">
+                                <li>
+                                    <div class="bg-deep">
+                                        <span>高标准十有县总数（
+                                            <span class="purple">120</span>）个</span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -282,7 +756,6 @@
                     <div class="col-md-12 column" id="mainContainer1">
                         <div id="pie" style="height:175px;width:150px"></div>
                     </div>
-                    <!-- <div class="a-btn triangle_border_right"></div> -->
                     <div class="left_hidden">
                         <img src="./img/icon/right.png" />
                     </div>
@@ -293,9 +766,6 @@
                     <div class="col-md-12 column" id="mainContainer2">
                         <div id="pie2" style="height:175px;width:150px"></div>
                     </div>
-                    <!-- <div class="col-md-12 column" id="mainContainer2">
-                        <div id="dataBar" style="height:300px;width:380px"></div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -325,6 +795,7 @@
 <script src="./js/control.js"></script>
 <script type="text/javascript" src="./js/china.js"></script>
 <script type="text/javascript" src="./js/contact.js"></script>
+<script src="./js/select.js"></script>
 <!-- <script src="./js/alert_window.js"></script> -->
 
 </html>

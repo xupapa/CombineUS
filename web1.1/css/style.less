@@ -185,10 +185,10 @@ html, body {
                 .erji {
                     display: block !important;
                     width: 120px;
-                    height: 245px;
-                    
+                    // height: 245px;
                     border:1px solid #72adbb;
                     border-radius: 9px;
+                    overflow: hidden;
                 }
                 .erji li {
                     color: #fff;
@@ -217,11 +217,13 @@ html, body {
                     color: #fff;
                     margin-top: 10% !important;
                     width: 120px;
-                    height: 100px;
+                    // height: 100px;
                     background: rgba(0, 0, 0, .7);
                     text-align: left;
                     border: 1px solid #72adbb;
                     border-radius: 9px;
+                    overflow: hidden;
+                    padding-bottom: 10px;
                 }
 
                 .tuli p {
@@ -230,39 +232,70 @@ html, body {
                     padding-top: 10px;
                     letter-spacing: 4px;
                 }
-
+                .tuli .no-spacing{
+                    letter-spacing: 0;
+                }
                 .tuli li {
                     font-size: 12px;
                     vertical-align: middle;
                     padding-top: 10px;
                     padding-left: 10px;                    
                 }
-
-                .tuli span {
+                .tuli .sm-li {
+                    padding-left: 0px;
+                    text-align: center;
+                }
+                .tuli .span-dot {
                     display: inline-block;
                     width: 13px;
                     height: 13px;
                     vertical-align: middle;
                     border-radius: 50%;
-                    margin-right: 8%;
+                    margin-right: 4%;
                 }
 
-                .tuli li:nth-child(2) span {
+                .tuli li:nth-child(2) .span-dot {
                     background: red;
                 }
 
-                .tuli li:nth-child(3) span {
+                .tuli li:nth-child(3) .span-dot {
                     background: #ffed00;
                 }
 
-                .tuli li:nth-child(4) span {
-                    background: yellow;
+                .tuli li:nth-child(4) .span-dot {
+                    background: #ff9900;
                 }
 
-                .tuli li:nth-child(5) span {
+                .tuli li:nth-child(5) .span-dot {
                     background: blue;
                 }
-                        }
+                .tuli .span-dot-g {
+                    display: inline-block;
+                    width: 13px;
+                    height: 13px;
+                    vertical-align: middle;
+                    border-radius: 50%;
+                    margin-right: 4%;
+                    background: #40ff00;
+                }
+
+                .tuli .span-dot-y {
+                    display: inline-block;
+                    width: 13px;
+                    height: 13px;
+                    vertical-align: middle;
+                    border-radius: 50%;
+                    margin-right: 4%;
+                    background: #ffed00;
+                }
+                .tuli .font-g {
+                    color: #40ff00;
+                }
+
+                .tuli .font-y {
+                    color: #ffed00;
+                }
+            }
             .tip {
                 width: 60%;                
                 font-size: 14px; 
@@ -407,6 +440,7 @@ html, body {
                             background-color: rgba(6, 8, 3, .8);
                             // box-shadow: 1px 0px 20px #ffffff;
                             border: 1px solid #77726c;
+                            padding: 0 10px;
                         }
                         .bg-light {
                             line-height: 30px;                            
@@ -414,6 +448,7 @@ html, body {
                             background-color: rgba(30, 43, 33, 0.65); 
                             // box-shadow: 1px 0px 20px #ffffff;
                             border: 1px solid #77726c;
+                            padding: 0 10px;                            
                         }
                         .purple {
                             color: #ff8300;
