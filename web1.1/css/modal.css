@@ -1,5 +1,6 @@
 .modal .modal-dialog {
-  width: 1000px !important;
+  width: 900px !important;
+  height: 600px !important;
 }
 .modal .modal-dialog .modal-header {
   border: none !important;
@@ -30,9 +31,13 @@
   float: left;
 }
 .modal .modal-dialog .modal-content .modal-body .right {
-  width: calc(100% - 715px);
+  width: calc(100% - 575px);
   display: inline-block;
   float: right;
+}
+.modal .modal-dialog .modal-content .modal-body .right .list {
+  padding-left: 20px;
+  margin: 0 auto;
 }
 .modal .modal-dialog .modal-content .modal-body .right .list .item {
   margin-bottom: 10px;
